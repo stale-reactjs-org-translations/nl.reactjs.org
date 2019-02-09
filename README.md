@@ -56,10 +56,7 @@ The documentation is divided into several sections with a different tone and pur
 1. If possible, include screenshots of visual changes. A Netlify build will also be automatically created once you make your PR so other people can see your change.
 
 ## Translation
-
-If you are interesting in translating `reactjs.org`, please join the Crowdin.
-
-* [Crowdin - React](https://crowdin.com/project/react)
+🚧WIP🚧
 
 ## Troubleshooting
 
