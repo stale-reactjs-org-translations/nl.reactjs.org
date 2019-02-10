@@ -1,5 +1,9 @@
 # reactjs.org
 
+<p align="center">
+  <a href="https://join.slack.com/t/dutchreactdocs/shared_invite/enQtNTQ2MzE0Mzk0NDY0LTM0ZGE5NjdlNjBiZjQxNmI2ODUyOGMwZTk4MTg4NjExMTJhZmE1M2I4Y2VmNjI1Y2NmNjFkMWU5MTQyYWU1ZmY"><img src="https://img.shields.io/badge/slack-@dutchreactdocs-blue.svg?logo=slack" alt="Dutch React Docs Slack invitation link"></a>
+</p>
+
 This repo contains the source code and documentation powering [reactjs.org](https://reactjs.org/).
 
 ## Getting started
