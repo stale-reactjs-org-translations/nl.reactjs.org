@@ -6,7 +6,7 @@ prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Kijk eens naar de volgende variabele toewijzing:
+Beschouw de volgende variabele toewijzing:
 
 ```js
 const element = <h1>Hello, world!</h1>;
