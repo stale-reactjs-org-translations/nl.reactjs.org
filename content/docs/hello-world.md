@@ -19,7 +19,8 @@ Het weergeeft een kop met de tekst "Hello, world!" op de pagina.
 
 [](codepen://hello-world)
 
-Klik op de bovenstaande link om een online editor te openen. Voel je vrij om wat aanpassingen te maken en te zien hoe deze de uitvoer beïnvloeden. De meeste pagina's in deze gids hebben bewerkbare voorbeelden zoals deze.
+Klik op de bovenstaande link om een online editor te openen. Voel je vrij om wat aanpassingen te maken en te zien hoe deze de uitvoer beïnvloeden. De meeste pagina's in deze gids hebben dit soort bewerkbare voorbeelden.
+
 
 ## Hoe Lees Je Deze Gids {#how-to-read-this-guide}
 
@@ -40,7 +41,6 @@ React is een JavaScript library en dus zullen we veronderstellen dat je een basi
 >Opmerking
 >
 >Deze gids gebruikt af en toe wat van de nieuwere JavaScript syntax in de voorbeelden. Als je in de laatste paar jaar niet met JavaScript hebt gewerkt, zouden [deze drie aandachtspunten](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) je op weg moeten helpen.
-
 
 ## Laten We Eraan Beginnen! {#lets-get-started}
 
