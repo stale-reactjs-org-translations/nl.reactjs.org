@@ -16,25 +16,25 @@ Deze rare tag syntax is noch een string, noch HTML.
 
 Dit heet JSX en het is een syntax uitbreiding voor JavaScript.
 Wij raden aan om het samen met React te gebruiken om te beschrijven hoe de UI er uit moet zien.
-JSX doet je misschien denken aan een template taal, maar het heeft de alle voordelen van JavaScript.
+JSX doet je misschien denken aan een template taal, maar het heeft alle voordelen van JavaScript.
 
-JSX produceert React "elementen". In het [volgende hoofdstuk](/docs/rendering-elements.html) zullen we gaan kijken naar hoe ze in de DOM gerenderd worden.
+JSX produceert React "elementen". In het [volgende hoofdstuk](/docs/rendering-elements.html) gaan we zien hoe ze in de DOM gerenderd worden.
 Hieronder vind je de basis van JSX die je nodig hebt om te beginnen.
 
 ### Waarom JSX? {#why-jsx}
 
 React omarmt het feit dat de logica voor het renderen vanzelfsprekend gekoppeld is met andere UI logica: hoe events worden afgehandeld, hoe de state veranderd na een tijdje en hoe de data wordt voorbereid voor weergave.
 
-In plaats van kunstmatig de *technologieën* te scheiden door opmaak en logica in verschillende bestanden te plaatsen, gebruikt React los gekoppelde eenheden genaamd "componenten" waar beide in zitten om de [verantwoordelijkheden te scheiden<sup>EN</sup>](https://nl.wikipedia.org/wiki/Separation_of_concerns). 
-In een [latere sectie](/docs/components-and-props.html) komen we terug op componenten, maar als je het nog ongemakkelijk vindt om opmaak in JavaScript te schrijven, kan [deze presentatie<sup>EN</sup>](https://www.youtube.com/watch?v=x7cQ3mrcKaY) je misschien nog overtuigen.
+In plaats van kunstmatig de *technologieën* te scheiden door opmaak en logica in verschillende bestanden te plaatsen, gebruikt React los gekoppelde eenheden, genaamd "componenten", waar beide in zitten om de [verantwoordelijkheden te scheiden<sup>[EN]</sup>](https://nl.wikipedia.org/wiki/Separation_of_concerns). 
+In een [latere sectie](/docs/components-and-props.html) komen we terug op componenten, maar als je het nog ongemakkelijk vindt om opmaak in JavaScript te schrijven, kan [deze presentatie<sup>[EN]</sup>](https://www.youtube.com/watch?v=x7cQ3mrcKaY) je misschien nog overtuigen.
 
-Het is in React [niet verplicht](/docs/react-without-jsx.html) om JSX te gebruiken, maar de meesten vinden het handig als visueel hulpmiddel bij het werken aan de UI in JavaScript code. Tevens zorgt het voor meer bruikbare foutmeldingen en waarschuwingen.
+Het is in React [niet verplicht](/docs/react-without-jsx.html) om JSX te gebruiken, maar de meesten vinden het handig als visueel hulpmiddel bij het werken aan de UI in JavaScript code. Tevens zorgt het voor betere foutmeldingen en waarschuwingen.
 
 Nu we dat gehad hebben, is het tijd om te beginnen!
 
-### Expressies gebruiken in JSX {#embedding-expressions-in-jsx}
+### Expressies Gebruiken in JSX {#embedding-expressions-in-jsx}
 
-In het onderstaande voorbeeld, wijzen we de variabele `name` toe en gebruiken deze vervolgens in de JSX code door hem tussen accolades te plaatsen.
+In het onderstaande voorbeeld, wijzen we een string aan de variabele `name` toe en gebruiken deze vervolgens in de JSX code door hem tussen accolades te plaatsen.
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -48,7 +48,7 @@ ReactDOM.render(
 
 Je kunt elke valide [JavaScript expressie <sup>[EN]</sup>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) tussen accolades in JSX plaatsen. Bijvoorbeeld, `2 + 2`, `user.firstName` of `formatName(user)` zijn allemaal valide JavaScript expressies.
 
-In het voorbeeld hieronder voegen we het resultaat van het aanroepen van een JavaScript functie, `formatName(user)` in in een `<h1>` element.
+In het voorbeeld hieronder voegen we het resultaat van het aanroepen van een JavaScript functie, `formatName(user)`, in in een `<h1>` element.
 
 ```js{12}
 function formatName(user) {
@@ -74,13 +74,16 @@ ReactDOM.render(
 
 [Probeer het op CodePen](codepen://introducing-jsx)
 
-We schrijven JSX over meerdere regels voor de leesbaarheid. Hoewel het niet vereist is, wordt het aanbevolen om er haakjes omheen te zetten als je JSX over meerdere regels schrijft. Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging<sup>EN</sup>](https://stackoverflow.com/q/2846283)
+We schrijven JSX over meerdere regels voor de leesbaarheid. 
+Hoewel het niet vereist is, wordt het aanbevolen om er haakjes omheen te zetten als je JSX over meerdere regels schrijft. 
+Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging<sup>[EN]</sup>](https://stackoverflow.com/q/2846283)
 
-### JSX is Ook Een Expression {#jsx-is-an-expression-too}
+### JSX is Ook Een Expressie {#jsx-is-an-expression-too}
 
-Na compilatie worden JSX expressies gewone JavaScript functie aanroepen die een JavaScript object terug geven.
+Na compilatie worden JSX expressies gewone JavaScript functieaanroepen die een JavaScript object terug geven.
 
-Dit betekent dat je JSX kan gebruiken in een `if` statement en `for` loops. Ook kun je het toewijzen aan variabelen, als argumenten meegeven aan een functie of als uitvoer van een functie teruggeven:
+Dit betekent dat je JSX kan gebruiken in een `if` statement of in `for` loops. 
+Ook kun je het toewijzen aan variabelen, als argumenten meegeven aan een functie of als uitvoer van een functie teruggeven:
 
 ```js{3,5}
 function getGreeting(user) {
@@ -111,9 +114,9 @@ Zet geen aanhalingstekens om accolades als je een JavaScript expressie wilt gebr
 >
 >Aangezien JSX meer op JavaScript lijkt dan op HTML, gebruikt React DOM de `camelCase` property naamgevingsconventie in plaats van HTML attribuutnamen.
 >
->Bijvoorbeeld, `class` wordt [`className` <sup>EN</sup>](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX. `tabindex` wordt [`tabIndex` <sup>EN</sup>](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)
+>Bijvoorbeeld, `class` wordt [`className` <sup>[EN]</sup>](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX. `tabindex` wordt [`tabIndex` <sup>[EN]</sup>](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)
 
-### Children specificeren in JSX {#specifying-children-with-jsx}
+### Children Specificeren in JSX {#specifying-children-with-jsx}
 
 Als een tag leeg is, kun je hem direct sluiten met `/>`, net als in XML:
 
@@ -121,7 +124,7 @@ Als een tag leeg is, kun je hem direct sluiten met `/>`, net als in XML:
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags kunnen ook children (= geneste JSX tags) bevatten:
+JSX tags kunnen ook children (= geneste tags) bevatten:
 
 ```js
 const element = (
@@ -142,8 +145,8 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-React DOM [escapet <sup>EN</sup>](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) alle waarden die ingevoegd worden in JSX voordat ze gerenderd worden. 
-Hiermee wordt verzekerd dat je nooit code kan injecteren dat niet expliciet in je applicatie is geschreven. 
+React DOM [escapet <sup>[EN]</sup>](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) alle waarden die ingevoegd worden in JSX voordat ze gerenderd worden. 
+Hiermee wordt verzekerd dat je nooit code kan injecteren die niet expliciet in je applicatie is geschreven. 
 Alles wordt omgezet naar een string voordat het gerenderd wordt. Dit helpt om [XSS (cross-site-scripting)](https://nl.wikipedia.org/wiki/Cross-site_scripting) aanvallen te voorkomen.
 
 ### JSX Vertegenwoordigt Objecten {#jsx-represents-objects}
@@ -168,7 +171,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` voert een aantal checks uit om jou te helpen met het schrijven van code zonder bugs maar in essentie maakt het een object zoals dit:
+`React.createElement()` voert een aantal controles uit om jou te helpen met het schrijven van code zonder bugs maar in essentie maakt het een object zoals dit:
 
 ```js
 // Opmerking: deze structuur is vereenvoudigd 
@@ -189,4 +192,4 @@ We zullen het renderen van React elementen naar het DOM in het volgende hoofdstu
 
 >**Tip:**
 >
->We bevelen het je aan om de ["Babel" taal definitie <sup>EN</sup>](http://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. Deze website gebruikt het compatibele [Oceanic Next <sup>EN</sup>](https://labs.voronianski.com/oceanic-next-color-scheme/) kleurenschema.
+>We bevelen het je aan om de ["Babel" taal definitie <sup>[EN]</sup>](http://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. Deze website gebruikt het compatibele [Oceanic Next <sup>[EN]</sup>](https://labs.voronianski.com/oceanic-next-color-scheme/) kleurenschema.
