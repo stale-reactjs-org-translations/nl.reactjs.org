@@ -17,7 +17,7 @@ ReactDOM.render(
 
 Het weergeeft een kop met de tekst "Hello, world!" op de pagina.
 
-[](codepen://hello-world)
+[Probeer het op CodePen](codepen://hello-world)
 
 Klik op de bovenstaande link om een online editor te openen. Voel je vrij om wat aanpassingen te maken en te zien hoe deze de uitvoer beïnvloeden. De meeste pagina's in deze gids hebben dit soort bewerkbare voorbeelden.
 
