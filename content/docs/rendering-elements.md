@@ -65,15 +65,15 @@ Hierin wordt `ReactDOM.render()` elke seconde aangeroepen via een [`setInterval(
 >**Opmerking:**
 >
 >In de praktijk roepen de meeste React apps `ReactDOM.render()` maar één keer aan. 
-In de volgende hoofdstukken hoe code zoals dit voorbeeld ingekapseld worden in [stateful componenten](/docs/state-and-lifecycle.html).
+In de volgende hoofdstukken zullen we leren hoe code zoals dit voorbeeld ingekapseld worden in [stateful componenten](/docs/state-and-lifecycle.html).
 >
 >We raden aan om geen hoofdstukken over te slaan, omdat ze op elkaar voortbouwen.
 
 ## React Werkt Alleen Datgene Bij Dat Nodig Is {#react-only-updates-whats-necessary}
 
-Het React DOM vergelijkt het element en zijn children met het vorige element en voert alleen de wijzigingen in het DOM uit die nodig zijn om het DOM in de gewenste staat te krijgen.
+Het React DOM vergelijkt het element en zijn children met het vorige element en voert alleen de wijzigingen in het DOM uit die nodig zijn om deze in de gewenste staat te krijgen.
 
-Je kunt dit onderzoeken door het [laatste voorbeeld](codepen://rendering-elements/update-rendered-element) met de browser tools te inspecteren:
+Je kunt dit zien door met de browser tools het [laatste voorbeeld](codepen://rendering-elements/update-rendered-element)  te inspecteren:
 
 ![DOM inspector toont granulaire updates](../images/docs/granular-dom-updates.gif)
 
