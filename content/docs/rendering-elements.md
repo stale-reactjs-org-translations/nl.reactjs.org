@@ -1,6 +1,6 @@
 ---
 id: rendering-elements
-title: Rendering Elements
+title: Elementen Renderen
 permalink: docs/rendering-elements.html
 redirect_from:
   - "docs/displaying-data.html"
@@ -10,22 +10,22 @@ next: components-and-props.html
 
 Elementen zijn de kleinste bouwstenen van React applicaties.
 
-Een element beschrijft wat je ziet op het scherm:
+Een element beschrijft hetgeen je ziet op het scherm:
 
 ```js
 const element = <h1>Hello, world</h1>;
 ```
 
-In tegenstelling tot de DOM elementen van de browser, zijn React elementen eenvoudige objecten en ze zijn goedkoop om te maken. 
+In tegenstelling tot de elementen van het browser DOM, zijn React elementen eenvoudige objecten en ze zijn goedkoop om te maken. 
 Het React DOM zorgt er voor dat het DOM wordt bijgewerkt zodat het gelijk blijft aan de React elementen.
 
 >**Opmerking:**
 >
 >Het zou kunnen dat men elementen verward met het bekendere concept van "componenten".
 We zullen componenten introduceren in het [volgende hoofdstuk](/docs/components-and-props.html).
-Componenten "zijn gemaakt" van elementen en we raden je aan om eerst dit hoofdstuk te lezen alvorens verder te gaan.
+Componenten "worden opgebouwd" met elementen en we raden je aan om eerst dit hoofdstuk te lezen alvorens verder te gaan.
 
-## Een element in het DOM renderen {#rendering-an-element-into-the-dom}
+## Een Element in het DOM Renderen {#rendering-an-element-into-the-dom}
 
 Stel dat er ergens in je HTML bestand een `<div>` staat:
 
