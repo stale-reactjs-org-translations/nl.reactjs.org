@@ -10,7 +10,7 @@ next: components-and-props.html
 
 Elementen zijn de kleinste bouwstenen van React applicaties.
 
-Een element beschrijft hetgeen je ziet op het scherm:
+Een element beschrijft hetgeen je wil laten zien op het scherm:
 
 ```js
 const element = <h1>Hello, world</h1>;
@@ -23,7 +23,7 @@ Het React DOM zorgt er voor dat het DOM wordt bijgewerkt zodat het gelijk blijft
 >
 >Het zou kunnen dat men elementen verward met het bekendere concept van "componenten".
 We zullen componenten introduceren in het [volgende hoofdstuk](/docs/components-and-props.html).
-Componenten "worden opgebouwd" met elementen en we raden je aan om eerst dit hoofdstuk te lezen alvorens verder te gaan.
+Elementen zijn waar componenten "van gemaakt zijn" en we raden je aan om eerst dit hoofdstuk te lezen alvorens verder te gaan.
 
 ## Een Element in het DOM Renderen {#rendering-an-element-into-the-dom}
 
