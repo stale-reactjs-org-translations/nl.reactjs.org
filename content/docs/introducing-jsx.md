@@ -6,7 +6,7 @@ prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Beschouw de volgende toewijzing van een variabele:
+Beschouw de volgende declaratie van een variabele:
 
 ```js
 const element = <h1>Hello, world!</h1>;
@@ -15,8 +15,8 @@ const element = <h1>Hello, world!</h1>;
 Deze rare tag syntax is noch een string, noch HTML.
 
 Dit heet JSX en is een syntax uitbreiding voor JavaScript.
-Wij raden aan om het samen met React te gebruiken om te beschrijven hoe de UI er uit moet zien.
-JSX doet je misschien denken aan een template taal, maar het heeft alle voordelen van JavaScript.
+Wij raden aan om JSX en React samen te gebruiken om te beschrijven hoe de UI er uit moet zien.
+JSX lijkt misschien op een template taal, maar heeft alle voordelen van JavaScript.
 
 JSX produceert React "elementen". 
 In het [volgende hoofdstuk](/docs/rendering-elements.html) gaan we bekijken hoe deze in de DOM gerenderd worden.
@@ -24,15 +24,15 @@ Hieronder vind je de basis van JSX die je nodig hebt om te beginnen.
 
 ### Waarom JSX? {#why-jsx}
 
-React omarmt het feit dat de logica voor het renderen vanzelfsprekend gekoppeld is met andere UI logica: hoe events worden afgehandeld, hoe de state voortdurend verandert en hoe de data wordt voorbereid voor weergave.
+React omarmt het feit dat de logica voor het renderen vanzelfsprekend gekoppeld is aan andere UI logica: hoe events worden afgehandeld, hoe de state voortdurend verandert en hoe de data wordt voorbereid voor weergave.
 
-In plaats van kunstmatig de *technologieën* te scheiden door opmaak en logica in verschillende bestanden te plaatsen, gebruikt React los gekoppelde eenheden, genaamd "componenten", welke beiden bevat om de [*verantwoordelijkheden* te scheiden (Engels)](https://nl.wikipedia.org/wiki/Separation_of_concerns). 
+In plaats van kunstmatig *technologieën* te scheiden door opmaak en logica in verschillende bestanden te plaatsen, gebruikt React los gekoppelde eenheden, genaamd "componenten", welke beiden bevat om de [*verantwoordelijkheden* te scheiden (Engels)](https://nl.wikipedia.org/wiki/Separation_of_concerns). 
 In een [latere sectie](/docs/components-and-props.html) komen we terug op componenten, maar als je het nog ongemakkelijk vindt om opmaak in JavaScript te schrijven, dan kan [deze presentatie (Engels)](https://www.youtube.com/watch?v=x7cQ3mrcKaY) je misschien nog overtuigen.
 
 Het is in React [niet verplicht](/docs/react-without-jsx.html) om JSX te gebruiken, maar de meesten vinden het handig als visueel hulpmiddel bij het werken aan de UI in JavaScript code.
 Tevens zorgt het voor betere foutmeldingen en waarschuwingen.
 
-Nu we dat gehad hebben, is het tijd om te beginnen!
+Nu we dat achter de rug hebben, is het tijd om te beginnen!
 
 ### Expressies Gebruiken in JSX {#embedding-expressions-in-jsx}
 
@@ -48,7 +48,7 @@ ReactDOM.render(
 );
 ```
 
-Je kunt elke valide [JavaScript expressie (Engels)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) tussen accolades in JSX plaatsen. Bijvoorbeeld, `2 + 2`, `user.firstName` of `formatName(user)` zijn allemaal valide JavaScript expressies.
+Je kunt elke geldige [JavaScript expressie (Engels)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) tussen accolades plaatsen in JSX. Bijvoorbeeld, `2 + 2`, `user.firstName` of `formatName(user)` zijn allemaal valide JavaScript expressies.
 
 In het voorbeeld hieronder plaatsen we het resultaat van het aanroepen van een JavaScript functie, `formatName(user)`, in een `<h1>` element.
 
@@ -96,7 +96,7 @@ function getGreeting(user) {
 }
 ```
 
-### Attributen specificeren met JSX {#specifying-attributes-with-jsx}
+### Attributen Specificeren met JSX {#specifying-attributes-with-jsx}
 
 Je kunt aanhalingstekens gebruiken om string literals als attributen te specificeren:
 
@@ -110,7 +110,7 @@ Je kunt ook accolades gebruiken om een JavaScript expressie in een attribuut te 
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Zet geen aanhalingstekens om accolades als je een JavaScript expressie wilt gebruiken in een attribuut. 
+Zet geen aanhalingstekens om accolades wanneer je een JavaScript expressie wilt gebruiken in een attribuut. 
 Je gebruikt of aanhalingstekens (voor string waarden) of accolades (voor expressies), maar niet beide in hetzelfde attribuut.
 
 >**Waarschuwing:**
@@ -175,7 +175,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` voert een aantal controles uit om jou te helpen met het schrijven van code zonder bugs, maar in essentie maakt het een object zoals dit:
+`React.createElement()` voert een aantal controles uit om je te helpen met het schrijven van code zonder bugs, maar in essentie maakt het een object zoals dit:
 
 ```js
 // Opmerking: deze structuur is vereenvoudigd 
