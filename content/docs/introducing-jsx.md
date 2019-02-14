@@ -48,7 +48,7 @@ ReactDOM.render(
 );
 ```
 
-Je kunt elke geldige [JavaScript expressie (Engels)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) tussen accolades plaatsen in JSX. Bijvoorbeeld, `2 + 2`, `user.firstName` of `formatName(user)` zijn allemaal valide JavaScript expressies.
+Je kunt elke geldige [JavaScript expressie (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) tussen accolades plaatsen in JSX. Bijvoorbeeld, `2 + 2`, `user.firstName` of `formatName(user)` zijn allemaal valide JavaScript expressies.
 
 In het voorbeeld hieronder plaatsen we het resultaat van het aanroepen van een JavaScript functie, `formatName(user)`, in een `<h1>` element.
 
@@ -117,7 +117,7 @@ Je gebruikt of aanhalingstekens (voor string waarden) of accolades (voor express
 >
 >Aangezien JSX meer op JavaScript lijkt dan op HTML, gebruikt React DOM de `camelCase` property naamgevingsconventie in plaats van HTML attribuutnamen.
 >
->Bijvoorbeeld: `class` wordt [`className` (Engels)](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX en `tabindex` wordt [`tabIndex` (Engels)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex)
+>Bijvoorbeeld: `class` wordt [`className` (Engels)](https://developer.mozilla.org/nl/docs/Web/API/Element/className) in JSX en `tabindex` wordt [`tabIndex` (Engels)](https://developer.mozilla.org/nl/docs/Web/API/HTMLElement/tabIndex)
 
 ### Children Specificeren in JSX {#specifying-children-with-jsx}
 
