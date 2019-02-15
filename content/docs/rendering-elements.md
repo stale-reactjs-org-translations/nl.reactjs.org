@@ -10,7 +10,7 @@ next: components-and-props.html
 
 Elementen zijn de kleinste bouwstenen van React applicaties.
 
-Een element beschrijft hetgeen je wilt laten zien op het scherm:
+Een element beschrijft dat wat je wilt laten zien op het scherm:
 
 ```js
 const element = <h1>Hello, world</h1>;
@@ -21,7 +21,7 @@ Het React DOM zorgt er voor dat het DOM wordt bijgewerkt zodat het gelijk blijft
 
 >**Opmerking:**
 >
->Het zou kunnen dat men elementen verward met het bekendere concept van "componenten".
+>Het zou kunnen dat men elementen verwart met het bekendere concept van "componenten".
 We zullen componenten introduceren in het [volgende hoofdstuk](/docs/components-and-props.html).
 Elementen zijn waar componenten "van gemaakt zijn" en we raden je aan om eerst dit hoofdstuk te lezen alvorens verder te gaan.
 
@@ -33,7 +33,7 @@ Stel dat er ergens in je HTML bestand een `<div>` staat:
 <div id="root"></div>
 ```
 
-We noemen dit een "root" DOM node omdat alle inhoud van deze node beheert zal worden door het React DOM.
+We noemen dit een "root" DOM node omdat alle inhoud van deze node beheerd zal worden door het React DOM.
 
 Applicaties die alleen met React gebouwd zijn, hebben meestal een enkele root DOM node.
 Als je React probeert te integreren in een bestaande applicatie, kun je zoveel geïsoleerde root DOM nodes hebben als je maar wilt.
@@ -52,7 +52,7 @@ React elementen zijn [immutable (Engels)](https://en.wikipedia.org/wiki/Immutabl
 Nadat je een element hebt gemaakt, kun je zijn children of attributen niet meer wijzigen. 
 Een element is als een enkel frame in een film: het vertegenwoordigt de UI op een bepaald moment in de tijd.
 
-Voor zover we nu weten, kan de UI alleen bijgewerkt worden door een nieuwe element te maken en het door te geven aan `ReactDOM.render()`.
+Voor zover we nu weten, kan de UI alleen bijgewerkt worden door een nieuw element te maken en het door te geven aan `ReactDOM.render()`.
 
 Neem dit voorbeeld van een tikkende klok:
 
