@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: Componenten Structuur
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+Bouw ingeperkte componenten die verantwoordelijk zijn voor hun eigen state en gebruik deze om complexe UIs in elkaar te zetten.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+Logica van componenten wordt geschreven in Javascript, in plaats van templates, wat het doorgeven van rijke data in uw applicatie en het gescheiden houden van state en DOM eenvoudig maakt.
