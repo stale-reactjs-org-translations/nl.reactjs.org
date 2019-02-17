@@ -16,8 +16,8 @@ Een element beschrijft dat wat je wilt laten zien op het scherm:
 const element = <h1>Hello, world</h1>;
 ```
 
-In tegenstelling tot de elementen van het browser DOM, zijn React elementen eenvoudige objecten en ze zijn goedkoop om te maken. 
-Het React DOM zorgt er voor dat het DOM wordt bijgewerkt zodat het gelijk blijft aan de React elementen.
+In tegenstelling tot de elementen van het browser DOM zijn React elementen eenvoudige objecten en goedkoop om te maken. 
+Het React DOM zorgt ervoor dat het DOM wordt bijgewerkt zodat het gelijk blijft aan de React elementen.
 
 >**Opmerking:**
 >
