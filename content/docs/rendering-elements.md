@@ -79,4 +79,4 @@ Je kunt dit zien door met de browser tools het [laatste voorbeeld](codepen://ren
 
 Ook al maken we een element dat de hele UI tree beschrijft op elke tick, alleen de tekst node waarvan de inhoud wijzigt, wordt bijgewerkt door het React DOM.
 
-Onze ervaringen hebben ons geleerd dat je een hele soort bugs elimineert als je nadenkt over hoe de UI er uitziet op een bepaald moment, in plaats van hoe ze voortdurend veranderd.
+Onze ervaringen hebben ons geleerd dat je een hele categorie aan bugs elimineert als je nadenkt over hoe de UI er uit moet zien op een bepaald moment, in plaats van hoe ze voortdurend verandert.
