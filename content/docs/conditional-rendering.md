@@ -127,7 +127,7 @@ Er zijn een paar manieren om op dezelfde lijn condities in te voeren in JSX, zoa
 
 ### Inline If met Logische && Operator {#inline-if-with-logical--operator}
 
-Je kan [alle expressies insluiten in JSX (Engels)](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten.
+Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten.
 Dit omvat JavaScript's logische `&&`-operator.
 Het kan handig zijn om conditioneel een element mee te renderen:
 
