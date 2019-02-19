@@ -14,7 +14,7 @@ Er zijn enkele syntactische verschillen:
 * React events worden in camelCase benoemd in plaats van kleine letters.
 * Met JSX geef je een functie door als de event handler in plaats van een string.
 
-Bijvoorbeeld de HTML:
+Als voorbeeld, de HTML:
 
 ```html
 <button onclick="activateLasers()">
