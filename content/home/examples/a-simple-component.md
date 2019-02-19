@@ -4,7 +4,7 @@ order: 0
 domid: hello-example
 ---
 
-React componenten implementeren een `render()` functie die input data inneemt en terug geeft wat er weergegeven moet worden.
+React componenten implementeren een `render()` functie die input data aanneemt en teruggeeft wat er weergegeven moet worden.
 Dit voorbeeld gebruikt een XML-achtige syntax genaamd JSX. 
 Input data die wordt doorgegeven aan het component is in de `render()` functie toegankelijk via `this.props`.
 
