@@ -64,7 +64,8 @@ Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie
 Wanneer je React gebruikt, zou je over het algemeen `addEventListener` niet moeten aanroepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt.
 Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
 
-Wanneer je een component definieert met een [ES6-klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes), is een algemeen patroon dat een event handler een methode van de klasse is. Dit `Toggle`-component rendert bijvoorbeeld een knop waarmee de gebruiker kan wisselen tussen "ON"- en "OFF"-toestanden:
+Wanneer je een component definieert met een [ES6-klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes), is een algemeen patroon dat een event handler een methode van de klasse is.
+Dit `Toggle`-component rendert bijvoorbeeld een knop waarmee de gebruiker kan wisselen tussen "ON"- en "OFF"-toestanden:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
