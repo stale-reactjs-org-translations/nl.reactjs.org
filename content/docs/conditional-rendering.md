@@ -8,10 +8,10 @@ redirect_from:
 ---
 
 In React kan je afzonderlijke componenten maken die gedrag inkapselen dat je nodig hebt.
-Vervolgens kan je er slechts enkele van renderen, afhankelijk van de  van je applicatie.
+Vervolgens is het mogelijk om er slechts enkele van te renderen, afhankelijk van je applicatie.
 
-Conditioneel renderen in React werkt op dezelfde manier als condities werken in JavaScript.
-Gebruik JavaScript operatoren zoals [`if`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Statements/if...else) of de [conditionele operator](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) om elementen aan te maken die de huidige  voorstellen en laat React de UI bijwerken op basis hiervan.
+Conditioneel renderen in React werkt op dezelfde manier als condities in JavaScript.
+Gebruik JavaScript operatoren zoals [`if`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Statements/if...else) of de [conditionele operator](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) om elementen aan te maken die de huidige state voorstellen en laat React de UI bijwerken op basis hiervan.
 
 Beschouw deze twee componenten:
 
@@ -45,7 +45,7 @@ ReactDOM.render(
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-Dit voorbeeld rendert een verschillende begroeting afhankelijk van de waarde van de `isLoggedIn` prop.
+Dit voorbeeld rendert een bepaalde begroeting afhankelijk van de waarde van de `isLoggedIn` prop.
 
 ### Element variabelen
 
@@ -128,7 +128,7 @@ Er zijn een paar manieren om op dezelfde lijn condities in te voeren in JSX, zoa
 ### Inline If met Logische && Operator {#inline-if-with-logical--operator}
 
 Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten.
-Dit omvat JavaScript's logische `&&`-operator.
+Hieronder valt ook de logische `&&`-operator uit Javascript.
 Het kan handig zijn om conditioneel een element mee te renderen:
 
 ```js{6-10}
