@@ -148,7 +148,7 @@ class LoggingButton extends React.Component {
 }
 ```
 
-Het probleem met deze syntax is dat elke keer dat de `LoggingButton` wordt gerenderd een andere callback wordt aangemaakt.
+Het probleem van deze syntax is dat elke keer dat de `LoggingButton` wordt gerenderd een andere callback wordt aangemaakt.
 In de meeste gevallen is dit prima.
 Echter, als deze callback wordt doorgegeven als prop naar lagere componenten, is het mogelijk dat deze componenten een extra re-render doen.
 Over het algemeen raden we aan te binden in de constructor of door de class fields syntax te gebruiken om dit soort performance problemen te voorkomen.
