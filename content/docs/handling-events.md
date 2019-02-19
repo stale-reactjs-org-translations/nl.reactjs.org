@@ -165,5 +165,5 @@ Als `id` bijvoorbeeld de rij-ID is, zou elk van de volgende werken:
 
 De bovenstaande twee regels zijn equivalent en gebruiken respectievelijk [pijlfuncties](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Functions/Arrow_functions) en [`Function.prototype.bind`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 
-In beide gevallen wordt het `e`-argument dat de React event vertegenwoordigt, als een tweede argument doorgegeven na de ID.
+In beide gevallen wordt het `e`-argument dat de React event vertegenwoordigt als een tweede argument doorgegeven na de ID.
 Met een pijlfunctie moeten we het expliciet doorgeven, maar met `bind` worden verdere argumenten automatisch doorgestuurd.
