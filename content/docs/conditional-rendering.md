@@ -47,7 +47,7 @@ ReactDOM.render(
 
 Dit voorbeeld rendert een bepaalde begroeting afhankelijk van de waarde van de `isLoggedIn` prop.
 
-### Element variabelen
+### Element Variabelen {#element-variables}
 
 Je kan variabelen gebruiken om elementen op te slaan.
 Dit kan je helpen om een deel van de component conditioneel te renderen terwijl de rest van de uitvoer niet verandert.
@@ -160,7 +160,7 @@ Dit werkt omdat in JavaScript `true && expression` altijd evalueert naar `expres
 Hierdoor verschijnt, als de conditie `true` is, het element meteen na `&&` in de uitvoer.
 Als ze `false` is, zal React ze negeren en overslaan.
 
-### Inline if-else met conditionele operator {# inline-if-else-with-conditional-operator}
+### Inline If-Else met Conditionele Operator {#inline-if-else-with-conditional-operator}
 
 Een andere methode voor het inline conditioneel renderen van elementen is het gebruik van JavaScript's conditionele operator [`condition ? true : false`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
