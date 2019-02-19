@@ -22,7 +22,7 @@ Bijvoorbeeld de HTML:
 </button>
 ```
 
-is licht verschillend in React:
+verschilt lichtelijk in React:
 
 ```js{1}
 <button onClick={activateLasers}>
