@@ -101,7 +101,7 @@ ReactDOM.render(
 [**Probeer het op CodePen**](http://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
 Je bent best voorzichtig met de betekenis van `this` in JSX callbacks.
-In JavaScript zijn klassenmethoden standaard niet [bound (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
+In JavaScript zijn klassenmethoden standaard niet [gebonden (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 Als je vergeet om `this.handleClick` te binden en het door te geven aan `onClick`, zal `this` `undefined` zijn wanneer de functie daadwerkelijk wordt aangeroepen.
 
 Dit gedrag is niet specifiek aan React; het is een onderdeel van [hoe functies werken in JavaScript (Engels)](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/).
