@@ -11,7 +11,7 @@ redirect_from:
 Omgaan met events met React-elementen lijkt sterk op omgaan met events met DOM-elementen.
 Maar, er zijn enkele syntactische verschillen:
 
-* React events worden in camelCase benoemd in plaats van kleine letters.
+* De naam van React events wordt in camelCase geschreven in plaats van kleine letters.
 * Met JSX geef je een functie door als de event handler in plaats van een string.
 
 Als voorbeeld, de HTML:
