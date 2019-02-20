@@ -49,7 +49,7 @@ Dit voorbeeld rendert een bepaalde begroeting afhankelijk van de waarde van de `
 
 ### Element Variabelen {#element-variables}
 
-Je kan variabelen gebruiken om elementen op te slaan.
+Je kunt variabelen gebruiken om elementen op te slaan.
 Dit kan je helpen om een deel van de component conditioneel te renderen terwijl de rest van de uitvoer niet verandert.
 
 Beschouw deze twee nieuwe componenten die de Logout- en Login-knoppen voorstellen:
@@ -74,8 +74,8 @@ function LogoutButton(props) {
 
 In het onderstaande voorbeeld maken we een [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) genaamd `LoginControl`.
 
-Hij zal ofwel `<LoginButton />` ofwel `<LogoutButton />` renderen, afhankelijk van de huidige state.
-Hij zal ook een `<Greeting />`, uit het vorige voorbeeld, renderen:
+Het zal ofwel `<LoginButton />` ofwel `<LogoutButton />` renderen, afhankelijk van de huidige state.
+Het zal ook een `<Greeting />`, uit het vorige voorbeeld, renderen:
 
 
 ```javascript{20-25,29,30}
@@ -128,8 +128,7 @@ Er zijn een paar manieren om op dezelfde lijn condities in te voeren in JSX, zoa
 ### Inline If met Logische && Operator {#inline-if-with-logical--operator}
 
 Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten.
-Hieronder valt ook de logische `&&`-operator uit Javascript.
-Het kan handig zijn om conditioneel een element mee te renderen:
+Hieronder valt ook de logische `&&`-operator uit JavaScript, waarmee je handig een element conditioneel kunt renderen.
 
 ```js{6-10}
 function Mailbox(props) {
