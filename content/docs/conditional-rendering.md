@@ -75,7 +75,7 @@ function LogoutButton(props) {
 In het onderstaande voorbeeld maken we een [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) genaamd `LoginControl`.
 
 Hij zal ofwel `<LoginButton />` ofwel `<LogoutButton />` renderen, afhankelijk van de huidige state.
-Het zal ook een `<Greeting />`, uit het vorige voorbeeld, renderen:
+Hij zal ook een `<Greeting />`, uit het vorige voorbeeld, renderen:
 
 
 ```javascript{20-25,29,30}
