@@ -77,6 +77,6 @@ Je kunt dit zien door met de browser tools het [laatste voorbeeld](codepen://ren
 
 ![DOM inspector toont granulaire updates](../images/docs/granular-dom-updates.gif)
 
-Ook al maken we een element dat de hele UI tree beschrijft op elke tick, alleen de tekst node waarvan de inhoud wijzigt, wordt bijgewerkt door het React DOM.
+Alleen de tekst node waarvan de inhoud wijzigt wordt bijgewerkt door het React DOM, ook al gebruiken we een element dat de hele UI tree beschrijft op elke tick.
 
 Onze ervaringen hebben ons geleerd dat je een hele categorie aan bugs elimineert als je nadenkt over hoe de UI er uit moet zien op een bepaald moment, in plaats van hoe ze voortdurend verandert.
