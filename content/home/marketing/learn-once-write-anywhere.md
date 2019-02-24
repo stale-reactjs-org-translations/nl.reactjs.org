@@ -1,5 +1,5 @@
 ---
-title: Leer Eenmaal, Gebruik Het Overal
+title: Leer Het Een Keer, Gebruik Het Overal
 order: 2
 ---
 
