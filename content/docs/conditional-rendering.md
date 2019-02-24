@@ -125,7 +125,7 @@ ReactDOM.render(
 Hoewel het verklaren van een variabele en het gebruiken van een `if` instructie een prima manier is om een component conditioneel te renderen, wil je soms een kortere syntax gebruiken.
 Er zijn een paar manieren om op dezelfde lijn condities in te voeren in JSX, zoals hieronder uitgelegd.
 
-### Inline If met Logische && Operator {#inline-if-with-logical--operator}
+### Inline If Met Logische && Operator {#inline-if-with-logical--operator}
 
 Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten.
 Hieronder valt ook de logische `&&`-operator uit JavaScript, waarmee je handig een element conditioneel kunt renderen.
@@ -159,7 +159,7 @@ Dit werkt omdat in JavaScript `true && expression` altijd evalueert naar `expres
 Hierdoor verschijnt, als de conditie `true` is, het element meteen na `&&` in de uitvoer.
 Als ze `false` is, zal React ze negeren en overslaan.
 
-### Inline If-Else met Conditionele Operator {#inline-if-else-with-conditional-operator}
+### Inline If-Else Met Conditionele Operator {#inline-if-else-with-conditional-operator}
 
 Een andere methode voor het inline conditioneel renderen van elementen is het gebruik van JavaScript's conditionele operator [`condition ? true : false`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
@@ -196,7 +196,7 @@ render() {
 Net als in JavaScript, is het aan jou om een geschikte stijl te kiezen op basis van wat jij en je team meer leesbaar vinden.
 Onthoud ook dat wanneer condities te ingewikkeld worden, het een goed moment kan zijn om een [component af te zonderen](/docs/components-and-props.html#extracting-components).
 
-### Voorkomen dat een Component Rendert {#preventing-component-from-rendering}
+### Voorkomen Dat Een Component Rendert {#preventing-component-from-rendering}
 
 In zeldzame gevallen wil je misschien dat een component zichzelf verbergt, ook al is het door een ander component gerenderd.
 Hiertoe geef je gewoon `null` terug in plaats van de normale renderuitvoer.
