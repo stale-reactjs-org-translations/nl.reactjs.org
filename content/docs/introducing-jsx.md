@@ -76,13 +76,9 @@ ReactDOM.render(
 
 [Probeer het op CodePen](codepen://introducing-jsx)
 
-<<<<<<< HEAD
 We verspreiden JSX over meerdere regels om het leesbaar te houden.
 Hoewel het niet vereist is, bevelen we aan om er haakjes omheen te zetten als je JSX over meerdere regels schrijft. 
-Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging (Engels)](https://stackoverflow.com/q/2846283)
-=======
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
->>>>>>> d615c5b7bcceef420c7f9246035f8ae3ba8ae11a
+Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging (Engels)](https://stackoverflow.com/q/2846283).
 
 ### JSX is Ook Een Expressie {#jsx-is-an-expression-too}
 
@@ -152,14 +148,10 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-<<<<<<< HEAD
-De React DOM [escapet (Engels)](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) standaard alle waarden die ingevoegd worden in JSX voordat ze gerenderd worden. 
+De React DOM [escapet (Engels)](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) standaard alle waarden die ingevoegd worden in JSX voordat ze gerenderd worden. 
 Hiermee wordt verzekerd dat je nooit code kan injecteren die niet expliciet in je applicatie is geschreven. 
 Alles wordt omgezet naar een string voordat het gerenderd wordt. 
 Dit helpt om [XSS (cross-site-scripting)](https://nl.wikipedia.org/wiki/Cross-site_scripting) aanvallen te voorkomen.
-=======
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
->>>>>>> d615c5b7bcceef420c7f9246035f8ae3ba8ae11a
 
 ### JSX Vertegenwoordigt Objecten {#jsx-represents-objects}
 
@@ -204,9 +196,5 @@ We zullen het renderen van React elementen naar het DOM in het volgende hoofdstu
 
 >**Tip:**
 >
-<<<<<<< HEAD
->We bevelen het je aan om de ["Babel" taal definitie (Engels)](http://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
+>We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
 Deze website gebruikt het compatibele [Oceanic Next (Engels)](https://labs.voronianski.com/oceanic-next-color-scheme/) kleurenschema.
-=======
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
->>>>>>> d615c5b7bcceef420c7f9246035f8ae3ba8ae11a
