@@ -1,6 +1,6 @@
 ---
 id: introducing-jsx
-title: Introductie tot JSX
+title: Introductie Tot JSX
 permalink: docs/introducing-jsx.html
 prev: hello-world.html
 next: rendering-elements.html
@@ -34,7 +34,7 @@ Tevens zorgt het voor betere foutmeldingen en waarschuwingen.
 
 Nu we dat achter de rug hebben, is het tijd om te beginnen!
 
-### Expressies Gebruiken in JSX {#embedding-expressions-in-jsx}
+### Expressies Gebruiken In JSX {#embedding-expressions-in-jsx}
 
 In het onderstaande voorbeeld wijzen we een string toe aan de variabele `name` en gebruiken deze vervolgens in de JSX code door hem tussen accolades te plaatsen.
 
@@ -80,7 +80,7 @@ We verspreiden JSX over meerdere regels om het leesbaar te houden.
 Hoewel het niet vereist is, bevelen we aan om er haakjes omheen te zetten als je JSX over meerdere regels schrijft. 
 Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging (Engels)](https://stackoverflow.com/q/2846283).
 
-### JSX is Ook Een Expressie {#jsx-is-an-expression-too}
+### JSX Is Ook Een Expressie {#jsx-is-an-expression-too}
 
 Na compilatie worden JSX expressies normale JavaScript functieaanroepen die een JavaScript object terug geven.
 
@@ -96,7 +96,7 @@ function getGreeting(user) {
 }
 ```
 
-### Attributen Specificeren met JSX {#specifying-attributes-with-jsx}
+### Attributen Specificeren Met JSX {#specifying-attributes-with-jsx}
 
 Je kunt aanhalingstekens gebruiken om string literals als attributen te specificeren:
 
@@ -119,7 +119,7 @@ Je gebruikt of aanhalingstekens (voor string waarden) of accolades (voor express
 >
 >Bijvoorbeeld: `class` wordt [`className` (Engels)](https://developer.mozilla.org/nl/docs/Web/API/Element/className) in JSX en `tabindex` wordt [`tabIndex` (Engels)](https://developer.mozilla.org/nl/docs/Web/API/HTMLElement/tabIndex)
 
-### Children Specificeren in JSX {#specifying-children-with-jsx}
+### Children Specificeren In JSX {#specifying-children-with-jsx}
 
 Als een tag leeg is, kun je hem direct sluiten met `/>`, net als in XML:
 

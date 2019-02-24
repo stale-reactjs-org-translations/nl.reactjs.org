@@ -25,7 +25,7 @@ Het React DOM zorgt ervoor dat het DOM wordt bijgewerkt zodat het gelijk blijft 
 We zullen componenten introduceren in het [volgende hoofdstuk](/docs/components-and-props.html).
 Elementen zijn waar componenten "van gemaakt zijn" en we raden je aan om eerst dit hoofdstuk te lezen alvorens verder te gaan.
 
-## Een Element in het DOM Renderen {#rendering-an-element-into-the-dom}
+## Een Element In Het DOM Renderen {#rendering-an-element-into-the-dom}
 
 Stel dat er ergens in je HTML bestand een `<div>` staat:
 
