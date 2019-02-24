@@ -78,7 +78,7 @@ ReactDOM.render(
 
 We verspreiden JSX over meerdere regels om het leesbaar te houden.
 Hoewel het niet vereist is, bevelen we aan om er haakjes omheen te zetten als je JSX over meerdere regels schrijft. 
-Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging (Engels)](https://stackoverflow.com/q/2846283)
+Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging (Engels)](https://stackoverflow.com/q/2846283).
 
 ### JSX is Ook Een Expressie {#jsx-is-an-expression-too}
 
@@ -148,7 +148,7 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-De React DOM [escapet (Engels)](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) standaard alle waarden die ingevoegd worden in JSX voordat ze gerenderd worden. 
+De React DOM [escapet (Engels)](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) standaard alle waarden die ingevoegd worden in JSX voordat ze gerenderd worden. 
 Hiermee wordt verzekerd dat je nooit code kan injecteren die niet expliciet in je applicatie is geschreven. 
 Alles wordt omgezet naar een string voordat het gerenderd wordt. 
 Dit helpt om [XSS (cross-site-scripting)](https://nl.wikipedia.org/wiki/Cross-site_scripting) aanvallen te voorkomen.
@@ -196,5 +196,5 @@ We zullen het renderen van React elementen naar het DOM in het volgende hoofdstu
 
 >**Tip:**
 >
->We bevelen het je aan om de ["Babel" taal definitie (Engels)](http://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
+>We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
 Deze website gebruikt het compatibele [Oceanic Next (Engels)](https://labs.voronianski.com/oceanic-next-color-scheme/) kleurenschema.

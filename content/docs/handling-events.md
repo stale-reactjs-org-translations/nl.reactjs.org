@@ -98,7 +98,7 @@ ReactDOM.render(
 );
 ```
 
-[**Probeer het op CodePen**](http://codepen.io/gaearon/pen/xEmzGg?editors=0010)
+[**Probeer het op CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
 Je moet voorzichtig zijn met de betekenis van `this` in JSX callbacks.
 In JavaScript zijn klassenmethoden standaard niet [gebonden (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
