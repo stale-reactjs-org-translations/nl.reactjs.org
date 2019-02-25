@@ -36,7 +36,7 @@ function Welcome(props) {
 Deze functie is een geldig React component omdat ze een enkel "props" (dit is een verkorte vorm van "properties") object argument met data krijgt en een React element terug geeft.
 We noemen dit soort componenten "functie componenten" omdat ze letterlijk JavaScript functies zijn.
 
-Je kunt ook een [ES6 klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes) gebruiken om een component te definiëren:
+Je kunt ook een [ES6 class](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes) gebruiken om een component te definiëren:
 
 ```js
 class Welcome extends React.Component {
@@ -250,7 +250,7 @@ Een goede vuistregel is: als een deel van je UI vaker gebruikt wordt (`Button`, 
 
 ## Props zijn Read-Only {#props-are-read-only}
 
-Of je een component nu als een [functie of een klasse](#function-and-class-components) definieert, hij mag nooit zijn eigen props wijzigen.
+Of je een component nu als een [functie of een class](#function-and-class-components) definieert, hij mag nooit zijn eigen props wijzigen.
 Neem bijvoorbeeld deze `sum` functie:
 
 ```js
