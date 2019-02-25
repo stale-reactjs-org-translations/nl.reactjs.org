@@ -1,6 +1,6 @@
 ---
 id: components-and-props
-title: Componenten and Props
+title: Componenten en Props
 permalink: docs/components-and-props.html
 redirect_from:
   - "docs/reusable-components.html"
@@ -33,7 +33,7 @@ function Welcome(props) {
 }
 ```
 
-Deze functie is een geldige React component omdat ze een enkel "props" (dit is een verkorte vorm van "properties") object argument met data krijgt en een React element terug geeft.
+Deze functie is een geldig React component omdat ze een enkel "props" (dit is een verkorte vorm van "properties") object argument met data krijgt en een React element terug geeft.
 We noemen dit soort componenten "functie componenten" omdat ze letterlijk JavaScript functies zijn.
 
 Je kunt ook een [ES6 klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes) gebruiken om een component te definiëren:
