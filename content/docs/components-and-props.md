@@ -102,7 +102,7 @@ Laten we samenvatten wat er gebeurt in dit voorbeeld:
 
 Componenten kunnen andere componenten gebruiken in hun uitvoer. 
 Hierdoor kunnen we dezelfde component abstractie gebruiken voor elk detailniveau.
-Een knop, een formulier, een dialoog, een scherm: in React applies worden deze gewoonlijk allemaal uitgedrukt als componenten. 
+Een knop, een formulier, een dialoog, een scherm: in React applicaties worden deze gewoonlijk allemaal uitgedrukt als componenten. 
 
 We kunnen bijvoorbeeld een `App` component maken die heel vaak `Welcome` op het scherm toont:
 
@@ -225,7 +225,7 @@ function UserInfo(props) {
 }
 ```
 
-Hierdoor wordt het `Comment` nog eenvoudiger:
+Hierdoor kunnen we `Comment` nog verder vereenvoudigen:
 
 ```js{4}
 function Comment(props) {
