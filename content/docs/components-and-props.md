@@ -23,7 +23,7 @@ Je vindt [hier de volledige component API referentie](/docs/react-component.html
 Conceptueel zijn componenten hetzelfde als JavaScript functies. 
 Ze accepteren willekeurige invoerwaarden (deze noemen we "props") en geven React elementen terug die beschrijven wat er op het scherm moet verschijnen.
 
-## Functie and Klasse Componenten {#function-and-class-components}
+## Functie and Class Componenten {#function-and-class-components}
 
 Een JavaScript functie is de eenvoudigste manier om een component te definiëren:
 
@@ -48,7 +48,7 @@ class Welcome extends React.Component {
 
 De twee bovenstaande componenten zijn gelijkwaardig vanuit Reacts oogpunt.
 
-Klassen hebben wat extra features die we zullen bespreken in de [volgende hoofdstukken](/docs/state-and-lifecycle.html).
+Classes hebben wat extra features die we zullen bespreken in de [volgende hoofdstukken](/docs/state-and-lifecycle.html).
 Tot die tijd zullen we functie componenten gebruiken omdat ze beknopter zijn.
 
 ## Een Component Renderen {#rendering-a-component}
