@@ -23,7 +23,7 @@ Je vindt [hier de volledige component API referentie](/docs/react-component.html
 Conceptueel zijn componenten hetzelfde als JavaScript functies. 
 Ze accepteren willekeurige invoerwaarden (deze noemen we "props") en geven React elementen terug die beschrijven wat er op het scherm moet verschijnen.
 
-## Functie and Class Componenten {#function-and-class-components}
+## Functie En Class Componenten {#function-and-class-components}
 
 Een JavaScript functie is de eenvoudigste manier om een component te definiëren:
 
@@ -53,7 +53,7 @@ Tot die tijd zullen we functie componenten gebruiken omdat ze beknopter zijn.
 
 ## Een Component Renderen {#rendering-a-component}
 
-Tot nu toe hebben we alleen React elementen gezien die een DOM tag vertegenwoordigen:
+Tot nu toe hebben we alleen React elementen gezien die een DOM tag voorstellen:
 
 ```js
 const element = <div />;
@@ -65,7 +65,7 @@ Maar elementen kunnen ook componenten vertegenwoordigen die door de gebruiker ge
 const element = <Welcome name="Sara" />;
 ```
 
-Als React een element ziet, dat een door de gebruiker gedefinieerd component vertegenwoordigt, dan worden de JSX attributen doorgegeven aan deze component als een enkel object. 
+Als React een element ziet, dat een door de gebruiker gedefinieerd component voorstelt, dan worden de JSX attributen doorgegeven aan deze component als een enkel object. 
 We noemen dit object "props".
 
 Deze code toont bijvoorbeeld "Hello, Sara" op de pagina:
@@ -88,8 +88,8 @@ Laten we samenvatten wat er gebeurt in dit voorbeeld:
 
 1. We roepen `ReactDOM.render() aan met het `<Welcome name="Sara" />` element.
 2. React roept het `Welcome` component aan met `{name: 'Sara'}` als de props.
-3. Onze `Welcome` component geeft een `<h1>Hello Sara</h1>` element terug als resultaat.
-4. Het React DOM werkt efficient het DOM bij zodat het `<h1>Hello, Sara</h1>` bevat.
+3. Onze `Welcome` component geeft een `<h1>Hello, Sara</h1>` element terug als resultaat.
+4. Het React DOM werkt efficiënt het DOM bij zodat het `<h1>Hello, Sara</h1>` bevat.
 
 >**Opmerking:** Begin component namen altijd met een hoofdletter.
 >
@@ -98,7 +98,7 @@ Laten we samenvatten wat er gebeurt in dit voorbeeld:
 >
 >Om meer te leren over de redenen achter deze conventie, kun je [JSX Uitgediept](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) lezen.
 
-## Components Componeren {#composing-components}
+## Components Samenstellen {#composing-components}
 
 Componenten kunnen andere componenten gebruiken in hun uitvoer. 
 Hierdoor kunnen we dezelfde component abstractie gebruiken voor elk detailniveau.
@@ -129,10 +129,10 @@ ReactDOM.render(
 
 [Probeer het op CodePen](codepen://components-and-props/composing-components)
 
-Normaalgesproken hebben React applicaties helemaal bovenin een enkele `App` component.
-Als je React echter integreert in een bestaande applicatie, kan het zijn dat je van onderaf begint met een kleine component, zoals een `Button`, en dan langzaam naar boven werkt in de view hierarchie.
+Normaal gesproken hebben React applicaties helemaal bovenin een enkele `App` component.
+Als je React echter integreert in een bestaande applicatie, kan het zijn dat je van onderaf begint met een kleine component, zoals een `Button`, en dan langzaam naar boven werkt in de view hiërarchie.
 
-## Components extraheren {#extracting-components}
+## Componenten Opsplitsen {#extracting-components}
 
 Wees niet bang om componenten te splitsen in kleinere componenten.
 
@@ -167,7 +167,7 @@ function Comment(props) {
 Het accepteert `author` (een object), `text` (een string) en `date` (een datum) als props en beschrijft een reactie op een social media website.
 
 Het kan lastig zijn om deze component te veranderen door de gelaagdheid en het is ook lastig om indivuele delen ervan te hergebruiken. 
-Laten we er een paar componenten uit extraheren. 
+Laten we er een paar componenten uit halen. 
 
 Als eerste gaan we `Avatar` eruit halen:
 
@@ -248,7 +248,7 @@ function Comment(props) {
 Componenten extraheren lijkt misschien zwaar werk in het begin, maar een palet van herbruikbare componenten is de moeite waard in grotere applicaties.
 Een goede vuistregel is: als een deel van je UI vaker gebruikt wordt (`Button`, `Panel`, `Avatar`) of complex genoeg is van zichzelf (`App`, `FeedStory`, `Comment`), dan is het een goede kandidaat voor een herbruikbare component.
 
-## Props zijn Read-Only {#props-are-read-only}
+## Props Zijn Read-Only {#props-are-read-only}
 
 Of je een component nu als een [functie of een class](#function-and-class-components) definieert, hij mag nooit zijn eigen props wijzigen.
 Neem bijvoorbeeld deze `sum` functie:
@@ -269,7 +269,7 @@ function withdraw(account, amount) {
 }
 ```
 
-React is behoorlijk flexibel, maar heeft een enkele stricte regel:
+React is behoorlijk flexibel, maar heeft een enkele strikte regel:
 
 **Alle React componenten moeten zich als pure functies gedragen ten opzichte van hun props.**
 
