@@ -1,6 +1,6 @@
 ---
 id: handling-events
-title: Omgaan met Events
+title: Omgaan Met Events
 permalink: docs/handling-events.html
 prev: state-and-lifecycle.html
 next: conditional-rendering.html
@@ -154,7 +154,7 @@ In de meeste gevallen is dit prima.
 Echter, als deze callback wordt doorgegeven als prop naar lagere componenten, is het mogelijk dat deze componenten een extra re-render uitvoeren.
 Over het algemeen raden we aan te binden in de constructor of de class fields syntax te gebruiken om dit soort performance problemen te voorkomen.
 
-## Argumenten Doorgeven aan Event Handlers {#passing-arguments-to-event-handlers}
+## Argumenten Doorgeven Aan Event Handlers {#passing-arguments-to-event-handlers}
 
 Binnen een loop is het gebruikelijk om een extra parameter te willen doorgeven aan een event handler.
 Als `id` bijvoorbeeld de rij-ID is, zou elk van de volgende werken:
