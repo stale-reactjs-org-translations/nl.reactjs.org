@@ -26,7 +26,7 @@
     - id: conditional-rendering
       title: Conditional Rendering
     - id: lists-and-keys
-      title: Lists and Keys
+      title: Lijsten En Keys
     - id: forms
       title: Forms
     - id: lifting-state-up
