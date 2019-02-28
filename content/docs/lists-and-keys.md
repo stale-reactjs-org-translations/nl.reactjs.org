@@ -216,9 +216,12 @@ ReactDOM.render(
 
 Een goede vuistregel is dat de elementen binnen een `map()` aanroep keys nodig hebben.
 
+### Keys Moeten Uniek Zijn Ten Opzichte Van Siblings {#keys-must-only-be-unique-among-siblings}
 ### Keys Must Only Be Unique Among Siblings {#keys-must-only-be-unique-among-siblings}
 
-Keys used within arrays should be unique among their siblings. However they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+Keys die in arrays gebruikt worden moeten uniek zijn ten op zichte van hun siblings.
+Ze hoeven echter niet uniek te zijn in de hele applicatie. 
+We kunnen dezelfde keys gebruiken als we twee verschillende arrays maken:
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -256,9 +259,10 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
+[**Probeer het op CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
-Keys serve as a hint to React but they don't get passed to your components. If you need the same value in your component, pass it explicitly as a prop with a different name:
+Keys geven een hint aan React maar ze worden niet doorgegeven aan je componenten.
+Als je de waarde nodig hebt in je component, moet je deze expliciet als een prop met een andere naam doorgeven.
 
 ```js{3,4}
 const content = posts.map((post) =>
@@ -269,11 +273,11 @@ const content = posts.map((post) =>
 );
 ```
 
-With the example above, the `Post` component can read `props.id`, but not `props.key`.
+In het voorbeeld hierboven kan de `Post` component `props.id` lezen, maar `props.key` niet.
 
-### Embedding map() in JSX {#embedding-map-in-jsx}
+### Map() Gebruiken In JSX {#embedding-map-in-jsx}
 
-In the examples above we declared a separate `listItems` variable and included it in JSX:
+In de eerdere voorbeelden maakten we een aparte `listItems` variabele die we in JSX gebruikten:
 
 ```js{3-6}
 function NumberList(props) {
@@ -290,7 +294,7 @@ function NumberList(props) {
 }
 ```
 
-JSX allows [embedding any expression](/docs/introducing-jsx.html#embedding-expressions-in-jsx) in curly braces so we could inline the `map()` result:
+JSX staat toe dat we [elke expressie gebruiken](/docs/introducing-jsx.html#embedding-expressions-in-jsx) tussen accolades, dus  we zouden het `map()` resultaat ook direct kunnen gebruiken:
 
 ```js{5-8}
 function NumberList(props) {
@@ -306,6 +310,8 @@ function NumberList(props) {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
+[**Probeer het op CodePen**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
-Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the `map()` body is too nested, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+Soms levert dit beter leesbare code, maar deze manier kan ook misbruikt worden.
+Net als in JavaScript is het aan jou om te bepalen of het loont om een variabele te gebruiken voor de leesbaarheid.
+Het kan een goed idee zijn om [een component op te splitsen](/docs/components-and-props.html#extracting-components)  als de `map()` body te diep genest is.
