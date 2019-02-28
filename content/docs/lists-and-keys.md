@@ -8,7 +8,7 @@ next: forms.html
 
 Laten we beginnen met te bekijken hoe je lijsten transformeert in JavaScript.
 
-In de code hieronder gebruiken we de [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie om een array van `numbers` en verdubbelt hun waarde.
+In de code hieronder gebruiken we de [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie op een array van `numbers` waarmee hun waarde wordt verdubbeld.
 We wijzen de array die door `map()` wordt teruggegeven toe aan de variabele `doubled` en loggen deze:
 
 ```javascript{2}
@@ -49,7 +49,7 @@ ReactDOM.render(
 
 Deze code toont een lijst met nummers van 1 tot en met 5.
 
-### Simpele Lijst Component {#basic-list-component}
+### Eenvoudige Lijst Component {#basic-list-component}
 
 Gewoonlijk render je lijsten in een [component](/docs/components-and-props.html).
 
