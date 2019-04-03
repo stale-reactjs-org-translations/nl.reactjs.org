@@ -27,7 +27,7 @@ Als je dit gedrag wilt in React, werkt het gewoon zo.
 Maar in de meeste gevallen, is het gemakkelijk om een JavaScript functie te hebben die het doorsturen van een form afhandelt en die toegang heeft tot de data die de gebruiker ingevuld heeft in de form.
 De standaard manier om dit te implementeren is met een techniek die "gecontroleerde componenten" (in het Engels: "controlled components") wordt genoemd.
 
-## Gecontroleerde componenten {#controlled-components}
+## Gecontroleerde Componenten {#controlled-components}
 
 In HTML behouden form elementen zoals `<input>`, `<textarea>`, en `<select>` typisch hun eigen state en werken ze deze bij op basis van gebruikersinput.
 In React wordt veranderlijke state typisch bijgehouden in de state eigenschap van componenten en enkel bijgewerkt via de functie [`setState()`](/docs/react-component.html#setstate).
