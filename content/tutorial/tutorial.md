@@ -27,7 +27,7 @@ De tutorial is opgedeeld in verschillende onderdelen:
 
 * [Setup voor de Tutorial](#setup-for-the-tutorial) geeft je *een beginpunt* om de tutorial te volgen.
 * [Overzicht](#overview) leert je de **fundamentele concepten** van React: componenten (components), eigenschappen (props), en staat (state).
-* [Het spel afwerken](#completing-the-game) leert je de **meest voorkomende technieken** in React development.
+* [Het Spel Afwerken](#completing-the-game) leert je de **meest voorkomende technieken** in React ontwikkeling.
 * [Tijdreizen toevoegen](#adding-time-travel) zal je **een dieper inzicht** geven in de unieke voordelen van React
 
 Het is niet noodzakelijk om alle onderdelen in één keer te voltooien. Probeer zo ver mogelijk te komen -- zelfs al is het een of twee onderdelen.
