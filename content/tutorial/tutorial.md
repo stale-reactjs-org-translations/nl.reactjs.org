@@ -21,7 +21,7 @@ We zullen een klein spelletje bouwen in deze tutorial. **Misschien ben je geneig
 
 >Tip
 >
->Deze tutorial is bedoelt voor degene die het liefst **al doende leren**. Indien je liever concepten vanuit de basis leert, neem dan een kijkje naar de [stapsgewijze documentatie](/docs/hello-world.html).
+>Deze tutorial is bedoeld voor zij die het liefst **al doende leren**. Indien je liever concepten stap voor stap leert, neem dan een kijkje in de [stapsgewijze documentatie](/docs/hello-world.html).
 
 De tutorial is opgedeeld in verschillende onderdelen:
 
