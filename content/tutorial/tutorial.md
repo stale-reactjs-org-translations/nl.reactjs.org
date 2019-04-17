@@ -122,7 +122,7 @@ Als je nu `npm start` in de map van het project gebruikt en `http://localhost:30
 We raden [deze instructies](https://babeljs.io/docs/editors/) om de *syntax highlighting* in te stellen in je editor.
 </details>
 
-### Help, ik zit vast! {#help-im-stuck}
+### Help, Ik Zit Vast! {#help-im-stuck}
 
 If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
 Als je vast zit, ga dan naar de [community support resources](/community/support.html).  [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) in het bijzonder is een geweldige manier om snel hulp te verkrijgen. Als je geen antwoord krijgt, of je vast blijft te zitten, open dan een *issue*, en we helpen je verder.
