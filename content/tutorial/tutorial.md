@@ -63,7 +63,7 @@ Dit is de snelste manier om te starten!
 
 Open eerst deze **[Start Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in een nieuwe tab. De nieuwe tab zou een leeg tic-tac-toe bord en React Code moeten weergeven. We zullen de React code aanpassen in deze tutorial.
 
-Je kan de tweede setup optie overslaan en dadelijk naar het [overzicht](#overview) hoofstuk voor een overzicht van React.
+Je kan nu de tweede setup optie overslaan en dadelijk naar het [overzicht](#overview) hoofdstuk gaan voor een overzicht van React.
 
 ### Setup Optie 2: Local Development Environment {#setup-option-2-local-development-environment}
 
