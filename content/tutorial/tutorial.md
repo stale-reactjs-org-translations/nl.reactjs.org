@@ -34,7 +34,7 @@ Het is niet noodzakelijk om alle onderdelen in één keer te voltooien. Probeer 
 
 Je kan code copy-pasten terwijl je de tutorial volgt, maar we raden je aan om de code zelf uit te typen. Dit helpt je om gewoontes te creëren en geeft je een dieper inzicht. 
 
-### Wat gaan we maken? {#wat-gaan-we-maken}
+### Wat gaan we maken? {#what-are-we-building}
 
 In deze tutorial, zullen we tonen hoe een interactieve tic-tac-toe (boter-kaas-eieren) spel maken met React.
 
