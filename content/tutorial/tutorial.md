@@ -65,7 +65,7 @@ Open eerst deze **[Start Code](https://codepen.io/gaearon/pen/oWWQNa?editors=001
 
 Je kan nu de tweede setup optie overslaan en dadelijk naar het [overzicht](#overview) hoofdstuk gaan voor een overzicht van React.
 
-### Setup Optie 2: Local Development Environment {#setup-option-2-local-development-environment}
+### Setup Optie 2: Lokale Ontwikkelingsomgeving {#setup-option-2-local-development-environment}
 
 Dit is volledig optioneel en niet vereist voor deze tutorial!
 <br>
