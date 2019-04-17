@@ -25,7 +25,7 @@ We zullen een klein spelletje bouwen in deze tutorial. **Misschien ben je geneig
 
 De tutorial is opgedeeld in verschillende onderdelen:
 
-* [Setup voor de Tutorial](#setup-for-the-tutorial) geeft je *een beginpunt* om de tutorial te volgen.
+* [Setup Voor De Tutorial](#setup-for-the-tutorial) geeft je **een beginpunt** om de tutorial te volgen.
 * [Overzicht](#overview) leert je de **fundamentele concepten** van React: componenten (components), eigenschappen (props), en staat (state).
 * [Het Spel Afwerken](#completing-the-game) leert je de **meest voorkomende technieken** in React ontwikkeling.
 * [Tijdreizen toevoegen](#adding-time-travel) zal je **een dieper inzicht** geven in de unieke voordelen van React
