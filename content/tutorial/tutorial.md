@@ -14,7 +14,7 @@ redirect_from:
 
 Deze tutorial vereist geen voorbestaande React kennis.
 
-## Voordat we beginnen {#voordat-we-beginnen}
+## Voordat we beginnen {#before-we-start-the-tutorial}
 
 
 We zullen een klein spelletje bouwen in deze tutorial. **Misschien ben je geneigd om dit over te slaan aangezien je geen games maakt -- maar probeer het.** De technieken die je zal leren in deze tutorial zijn fundamenteel om React applicaties te bouwen, eens je deze onder de knie krijgt, heb je een diep inzicht in React. 
@@ -45,7 +45,7 @@ We raden aan dat een kijkje neemt naar het tic-tac-toe spel voordat je verdergaa
 Eens je vertrouwd bent met het tic-tac-toe spel, kan je het afsluiten. We zullen vanuit een simpelere template starten voor deze tutorial. 
 Onze volgende stap is jouw setup in te stellen zodat je het spel kan beginnen te bouwen.
 
-### Vereisten {#vereisten}
+### Vereisten {#prerequisites}
 
 We gaan ervanuit dat je enigzins vertrouwd bent met HTML en Javascript, maar het is mogelijk om deze tutorial te volgen, zelfs als je van een andere programmeer taal komt. We gaan er ook vanuit dat je vertrouwd bent met programmeer concepten zoals functies (functions), objecten (objects), arrays en in mindere mate met klasses (classes).
 
@@ -53,11 +53,11 @@ Als je Javascript wil herhalen, raden we [deze handleiding](https://developer.mo
 We gebruiken ook sommige functies van ES6 -- een recente versie van Javscript. In deze tutorial zullen we [arrow functies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), en [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements gebruiken.
 Je kan de [Babel REPL](babel://es5-syntax-example) gebruiken om de controleren hoe ES6 code compileert.
 
-## Setup voor de Tutorial {#setup-voor-de-tutorial}
+## Setup voor de Tutorial {#setup-for-the-tutorial}
 
 There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
 
-### Setup Optie 1: Schrijf Code in de Browser{#setup-optie-1-schrijf-code-in-de-browser}
+### Setup Optie 1: Schrijf Code in de Browser {#setup-option-1-write-code-in-the-browser}
 
 Dit is de snelste manier om te starten!
 
@@ -65,7 +65,7 @@ Eerst, open deze **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=
 
 Je kan de tweede setup optie overslaan en dadelijk naar het [overzicht](#overview) hoofstuk voor een overzicht van React.
 
-### Setup Optie 2: Local Development Environment {#setup-optie-2-local-development-environment}
+### Setup Optie 2: Local Development Environment {#setup-option-2-local-development-environment}
 
 Dit is volledig optioneel en niet vereist voor deze tutorial!
 <br>
@@ -122,16 +122,16 @@ Als je nu `npm start` in de map van het project gebruikt en `http://localhost:30
 We raden [deze instructies](https://babeljs.io/docs/editors/) om de *syntax highlighting* in te stellen in je editor.
 </details>
 
-### Help, ik zit vast! {#help-ik-zit-vast}
+### Help, ik zit vast! {#help-im-stuck}
 
 If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
 Als je vast zit, ga dan naar de [community support resources](/community/support.html).  [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) in het bijzonder is een geweldige manier om snel hulp te verkrijgen. Als je geen antwoord krijgt, of je vast blijft te zitten, open dan een *issue*, en we helpen je verder.
 
-## Overzicht {#overzicht}
+## Overzicht {#overview}
 
 Nu dat je setup klaar is, tijd voor een overzicht van React!
 
-### Wat Is React? {#wat-is-react}
+### Wat Is React? {#what-is-react}
 
 React is een declaratieve, efficiente, en flexibele Javascript bibliotheek (library) om gebruikersinterfaces (user interfaces of UI) te bouwen. Het laat je toe om complexe UIs te maken met kleine en geisoleerde deeltjes code die componenten (components) genoemd worden.
 
@@ -179,7 +179,7 @@ JSX komt met de volledige functionaliteit van Javascript. Je kan *elke* Javascri
 Het `ShoppingList` component van hierboven rendert enkel in de ingebouwde DOM componenten zoals `<div />` en `<li />`. Maar je kan ook custom React componenten aanmaken en renderen. Bijvoorbeeld. we kunnen nu naar de hele *shopping list* refereren met `<ShoppingList />`.
 Elk React component is ingekapseld en kan onafhankelijk bestaan; dit laat ons toe om complexe UIs te maken van eenvoudige componenten.
 
-## De Start Code Inspecteren {#de-start-code-inspecteren}
+## De Start Code Inspecteren {#inspecting-the-starter-code}
 
 Als je **in je browser** aan de tutorial zal werken, open deze code in een nieuwe tab: **[Start Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Als je **lokaal** aan de tutorial werkt, open dan `src/index.js` in je project map (je hebt dit bestand reeds aangemaakt tijdens de [setup](#setup-option-2-local-development-environment)).
 
@@ -193,7 +193,7 @@ Bij het inspecteren van de code zal je opmerken dat we drie React componenten he
 
 Het Square component rendert een `<button>` en het Board component rendert 9 vierkante vakken Het Game component rendert een bord met een and the Board renders 9 squares met placeholder waardes die we later zullen aanpassen. Momenteel zijn er geen interactieve componenten.
 
-### Data doorgeven door middel van Props {#data-doorgeven-door-middel-van-props}
+### Data doorgeven door middel van Props {#passing-data-through-props}
 
 Om te beginnen, proberen we data van het Board component naar het Square component door te geven.
 
@@ -233,7 +233,7 @@ Na: Je zal normaal een nummer in elk vierant van de gerenderde output zien.
 Gefeliciteerd, je het zojuist een prop van de parent Board doorgegeven aan het child Square component door gegeven. 
 Props doorgeven is hoe informatie vloeit in React applicaties, van parents naar children.
 
-### Interactieve Componenten maken {#interactieve-componenten-maken}
+### Interactieve Componenten maken {#making-an-interactive-component}
 
 Laten we het Square component met een "X" vullen wanneer we dit aanklikken.
 Eerst, verander de button tag die gereturned wordt door de `render()` functie van het Square component:
@@ -354,7 +354,7 @@ Na het installeren van React DevTools, kan je op elk element rechts klikken en m
 3. Klik "Change View" en kies dan "Debug mode".
 4. In de nieuwe tab die opent, de devtools, zou je nu een React tab hebben.
 
-## Het spel afwerken {#het-spel-afwerken}
+## Het spel afwerken {#completing-the-game}
 
 We hebben nu de basis bouwblokken voor het tic-tac-toe spel. Om het spel te vervolledigen, hebben we een afwisselende "X" en "O" plaatsing nodig op het bord, en we hebben een manier nodig om een winner te determineren.
 
@@ -558,20 +558,20 @@ Aangezien de Square componenten niet langer de state bevatten, de Square compone
 
 Merk op hoe in `handleClick` we `.slice()` oproepen om een kopie van de `squares` array te modifieeren in plaats van de bestaande array. We bespreken in hetvolgende hoofstuk waarom we een kopie van de `squares` array maken.
 
-### Waarom Immutability Belangrijk Is {#waarom-immutability-belangrijk-is}
+### Waarom Immutability Belangrijk Is {#why-immutability-is-important}
 
 In het vorige code voorbeeld, hebben we aangeraden dat je de `.slice()` operator gebruikt om een kopie van de `squares` array creeert, om deze aan te passen. We bespreken immutability en waarom het belangrijk is om immutability te leren.
 
 Er zijn in het algemeen twee manieren om data aan te passen. De eerste manier is om de data direct te *muteren* door de data direct aan te passen. De tweede manier is de data te vervangen met een nieuwe kopie die de gewenste veranderingen bevat.
 
-#### Data Change door Mutation {#data-change-door-mutation}
+#### Data Change door Mutation {#data-change-with-mutation}
 ```javascript
 var player = {score: 1, name: 'Jeff'};
 player.score = 2;
 // Now player is {score: 2, name: 'Jeff'}
 ```
 
-#### Data Change zonder Mutation {#data-change-zonder-mutation}
+#### Data Change zonder Mutation {#data-change-without-mutation}
 ```javascript
 var player = {score: 1, name: 'Jeff'};
 
@@ -584,17 +584,17 @@ var newPlayer = Object.assign({}, player, {score: 2});
 
 Het eindresultaat is hetzelfde maar door het niet-muteren (of veranderen van onderliggende data) verkrijgen we enkele voordelen.
 
-#### Complex Features worden Simpel {#complex-features-worden-simpel}
+#### Complex Features worden Simpel {#complex-features-become-simple}
 
 Immutability maakt complex features veel gemakkelijker om toe te passen. Later in deze tutorial zullen we een "time travel" feature toepassen dat ons toelaat de spel geschiedenis te bekijken en "terug te springen" naar een vorige zet. Deze functionaliteit is niet specifiek voor spelletjes -- de mogelijkheid om zekere acties ongedaan of terug te zetten is een normale vereiste in applicaties. Directe data mutatie vermijden laat ons toe verschillende versies van de spel geschiedenis intact te houden en later te gebruiken.
 
-#### Veranderingen detecteren {#veranderingen-detecteren}
+#### Veranderingen detecteren {#detecting-changes}
 
 Veranderingen detecteren in mutable objects is moeilijk want ze worden direct gewijzigdt. Deze detectie vereist dat het mutable object zelf vergelijkt wordt met vorige kopiën van zichzelf en de volledige object tree die gevolgd werd.
 
 Veranderingen detecteren in immutable objects is aanzienlijk gemakkelijker. Als het immutable object dat gerefereerd word anders is dan het vorige dan is het object veranderd.
 
-#### Bepalen wanneer te herrenderen in React{#bepalen-wanneer-te-herrenderen-in-react}
+#### Bepalen wanneer te herrenderen in React {#determining-when-to-re-render-in-react}
 
 Het belangrijkste voordeel van immutability is dat het je helpt _pure components_ te maken in React. Immutable data kan gemakkelijk bepalen of veranderingen zijn gemaakt, wat op zich helpt determineren of een component her-rendert hoeft te worden.
 
@@ -626,7 +626,7 @@ We veranderden `this.props` in `props` beide keren dat het voorkwam.
 >
 >Wanneer we het Square component in een function component veranderden, veranderde we ook `onClick={() => this.props.onClick()}` in het kortere `onClick={props.onClick}` (merk op: het weglaten van haakjes aan *beide* kanten). In een klasse, gebruiken we een arrow function om toegang te krijgen tot de correcte `this` waarde, maar in een function component moeten we geen zorgen maken over `this`.
 
-### Beurten nemen {#beurten-nemen}
+### Beurten nemen {#taking-turns}
 
 We moeten een voordehand liggende fout herstellen in ons tic-tac-toe spel: de "0"-en kunnen niet op het bord aangeduid worden.
 
@@ -725,7 +725,7 @@ class Board extends React.Component {
 
 **[De volledige code tot zover](https://codepen.io/gaearon/pen/KmmrBy?editors=0010)**
 
-### Een winnaar aanduiden {#een-winnaar-aanduiden}
+### Een winnaar aanduiden {#declaring-a-winner}
 
 Nu dat we tonen welke speler de volgende zet heeft, kunnen we ook tonen wanneer het spel gewonnen is en er geen volgende beurten zijn. We kunnen een winnaar aanduiden door deze helper functie toe te voegen aan het einde van het bestand:
 
@@ -786,11 +786,11 @@ We kunnen nu de `handleClick` functie van Board aanpassen om vroegtijdig te retu
 
 Gefeliciteerd! Je hebt nu een werkend tic-tac-toe spel. En je ook zojuist de basis van React geleerd. Dus eigenlijk ben *jij* de echte winnaar.
 
-## Time Travel toevoegen {#time-travel-toevoegen}
+## Time Travel toevoegen {#adding-time-travel}
 
 Als een laatste opgave, gaan we het mogelijk maken om "terug in de tijd" te gaan naar vorige zetten in het spel.
 
-### Opslaan van de Geschiedenis van de Zetten in het Spel{#opslaan-van-de-geschiedenis-van-de-zetten-in-het-spel}
+### Opslaan van de Geschiedenis van de Zetten in het Spel {#storing-a-history-of-moves}
 
 Als we de `squares` array muteren, zou het implementeren van time travel zeer moeilijk zijn.
 
@@ -830,7 +830,7 @@ history = [
 
 Nu moeten we beslissen welk component de `history` state bevat.
 
-### De staat verheffen (lifting state), nogmaals {#de-staat-verheffen-(lifting-state)-nogmaals}
+### De staat verheffen (lifting state), nogmaals {#lifting-state-up-again}
 
 We willen dat het top-level Game component een lijst van vorige zetten toont.
 Hiervoor heeft het component toegang nodig tot `history` en dus zetten we de `history` state in het top-level Game component.
@@ -1018,7 +1018,7 @@ Op dit moment heeft het Board component enkel de `renderSquare` en `render` meth
 
 **[De volledige code tot zover](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)**
 
-### Tonen van Vorige Zetten{#tonen-van-vorige-zetten}
+### Tonen van Vorige Zetten {#showing-the-past-moves}
 
 Aangezien we de geschiedenis van het tic-tac-toe spel opnemen, kunnen we nu een lijst van vorige zetten aan de speler tonen.
 
@@ -1122,7 +1122,7 @@ Als geen key wordt bepaald, zal React een waarschuwing tonen en bij verstek de a
 keys hoeven niet globaal uniek te zijn; ze moeten enkel uniek zijn ten opzichte van componenten en hun siblings.
 
 
-### Time Travel toepassen {#time-travel-toepassen}
+### Time Travel toepassen {#implementing-time-travel}
 
 In de tic-tac-toe spel geschiedenis krijgt elke zet een unieke ID toegewezen. Het is een geordende nummer van de zet. De zetten worden nooit herordend, verwijderd of in het midden ingevoegd, en is het veilig om de index van de zet te gebruiken als key.
 
@@ -1220,7 +1220,7 @@ Als we een stap in de spel geschiedenis aanklikken, zou het tic-tac-toe bord onm
 
 **[De volledige code tot zover](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**
 
-### Tot slot {#tot-slot}
+### Tot slot {#wrapping-up}
 
 Gefeliciteerd! Je hebt zojuist een tic-tac-toe game gemaakt dat:
 
