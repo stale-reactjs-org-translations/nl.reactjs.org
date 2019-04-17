@@ -485,7 +485,7 @@ class Square extends React.Component {
 }
 ```
 
-Wanneer een Square aangeklikt wordt, wordt de functie `onClick`, die door Board bezorgd is opgeroepen. Hier is een overzicht van hoe dit wordt toegepast:
+Wanneer een Square aangeklikt wordt, wordt de functie `onClick`, die door Board bezorgd is, aangeroepen. Hier is een overzicht van hoe dit wordt bereikt:
 
 1. De `onClick` prop in het ingebouwde DOM `<button>` component zegt aan React om een click event listener op te zetten.
 2. Wanneer de knop aangeklikt wordt, roept React de `onClick` event handler die gedefinieerd is in de `render()` methode van Square.
