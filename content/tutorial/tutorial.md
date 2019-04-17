@@ -61,7 +61,7 @@ There are two ways to complete this tutorial: you can either write the code in y
 
 Dit is de snelste manier om te starten!
 
-Eerst, open deze **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in een nieuwe tab. De nieuwe tab toont een leeg tic-tac-toe bord en React Code. We zullen de React code aanpassen in deze tutorial.
+Open eerst deze **[Start Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in een nieuwe tab. De nieuwe tab zou een leeg tic-tac-toe bord en React Code moeten weergeven. We zullen de React code aanpassen in deze tutorial.
 
 Je kan de tweede setup optie overslaan en dadelijk naar het [overzicht](#overview) hoofstuk voor een overzicht van React.
 
