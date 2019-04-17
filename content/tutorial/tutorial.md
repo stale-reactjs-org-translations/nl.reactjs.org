@@ -30,7 +30,7 @@ De tutorial is opgedeeld in verschillende onderdelen:
 * [Het spel afwerken](#completing-the-game) leert je de **meest voorkomende technieken** in React development.
 * [Tijdreizen toevoegen](#adding-time-travel) zal je **een dieper inzicht** geven in de unieke voordelen van React
 
-Het is niet noodzakelijk om alle onderdelen in één keer te vervolledigen. Probeer zo ver mogelijk te geraken -- zelfs al is het een of twee onderdelen.
+Het is niet noodzakelijk om alle onderdelen in één keer te voltooien. Probeer zo ver mogelijk te komen -- zelfs al is het een of twee onderdelen.
 
 Je kan code copy-pasten terwijl je de tutorial volgt, maar we raden je aan om de code zelf uit te typen. Dit helpt je om gewoontes te creëren en geeft je een dieper inzicht. 
 
