@@ -206,7 +206,7 @@ class Board extends React.Component {
   }
 ```
 
-Pas de `render` methode aan van Square door `{/* TODO */}` met `{this.props.value}` te vervangen:
+Pas de `render` methode aan van Square door `{/* TODO */}` te vervangen door `{this.props.value}`:
 
 ```js{5}
 class Square extends React.Component {
