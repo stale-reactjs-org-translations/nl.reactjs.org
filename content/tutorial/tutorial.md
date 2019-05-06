@@ -119,7 +119,7 @@ import './index.css';
 
 Als je nu `npm start` in de map van het project uitvoert en `http://localhost:3000` in je browser opent, zou je een leeg tic-tac-toe veld moeten zien.
 
-We raden [deze instructies](https://babeljs.io/docs/editors/) om de *syntax highlighting* in te stellen in je editor.
+We raden [deze instructies](https://babeljs.io/docs/editors/) om de syntax highlighting in te stellen in je editor.
 </details>
 
 ### Help, Ik Zit Vast! {#help-im-stuck}
