@@ -36,7 +36,7 @@ Je kan code copy-pasten terwijl je de tutorial volgt, maar we raden je aan om de
 
 ### Wat Gaan We Maken? {#what-are-we-building}
 
-In deze tutorial, zullen we tonen hoe een interactieve tic-tac-toe (boter-kaas-eieren) spel maken met React.
+In deze tutorial, zullen we tonen hoe je een interactief tic-tac-toe (boter-kaas-eieren) spel kan maken met React.
 
 Je kan een kijkje nemen naar wat we zullen maken: **[Afgewerkt Resultaat](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Als de code nog geen steek houdt of je syntax nog niet kent, is dat geen probleem. Het doel van deze tutorial is je React en de syntax aan te leren.
 
