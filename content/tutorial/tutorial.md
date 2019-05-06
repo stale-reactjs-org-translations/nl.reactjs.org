@@ -1237,7 +1237,7 @@ Als je nog extra tijd hebt of je React vaardigheden wat meer wil oefenen, zijn h
 
 1. Toon de locatie van elke zet in het formaat (kolom, rij) in de geschiedenislijst van de zetten.
 2. Zet het huidig geselecteerde item in de geschiedenislijst in het vet.
-3. Herschrijf het Board component, gebruik makend van twee loops om de vierkanten te maken ipv deze te hardcoden.
+3. Herschrijf het Board component, gebruik makend van twee loops om de vierkanten te maken i.p.v. deze te hardcoden.
 4. Voeg een wisselknop toe die toelaat om de geschiedenislijst in opgaande of afnemede volgorde te schikken.
 5. Wanneer iemand wint, duid de vakken aan die de overwinning hebben gebracht.
 6. Wanneer er geen winnaar is, toon een boodschap die een gelijkspel vermeldt.
