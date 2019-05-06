@@ -1220,7 +1220,7 @@ Als we een stap in de spel geschiedenis aanklikken, zou het tic-tac-toe bord onm
 
 **[De volledige code tot zover](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**
 
-### Tot slot {#wrapping-up}
+### Tot Slot {#wrapping-up}
 
 Gefeliciteerd! Je hebt zojuist een tic-tac-toe game gemaakt dat:
 
