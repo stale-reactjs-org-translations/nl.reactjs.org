@@ -85,7 +85,7 @@ npx create-react-app my-app
 
 3. Verwijder alle bestanden in de map `src/` van het nieuwe project.
 
-> Nota:
+> Opmerking:
 >
 >**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
 >**Verwijder niet de gehele `src` map, maar enkel de originele source files in de map.** We zullen de standaard bestanden met voorbeelden voor dit project vervangen in de volgende stap.
