@@ -14,7 +14,7 @@ redirect_from:
 
 Deze tutorial vereist geen voorbestaande React kennis.
 
-## Voordat we beginnen {#before-we-start-the-tutorial}
+## Voordat We Beginnen {#before-we-start-the-tutorial}
 
 
 We zullen een klein spelletje maken in deze tutorial. **Misschien ben je geneigd om dit over te slaan aangezien je niet geïnteresseerd bent in het ontwikkelen van spelletjes -- maar geef het een kans.** De technieken die je zal leren in deze tutorial zijn fundamenteel om React applicaties te bouwen. Eens je deze volledig onder de knie hebt, heb je een diep inzicht in React. 
