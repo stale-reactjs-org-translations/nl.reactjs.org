@@ -125,7 +125,7 @@ We raden [deze instructies](https://babeljs.io/docs/editors/) om de syntax highl
 ### Help, Ik Zit Vast! {#help-im-stuck}
 
 If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
-Als je vast zit, ga dan naar de [community support resources](/community/support.html).  [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) in het bijzonder is een geweldige manier om snel hulp te verkrijgen. Als je geen antwoord krijgt, of je vast blijft te zitten, open dan een *issue*, en we helpen je verder.
+Als je vast zit, ga dan naar de [community support resources](/community/support.html). [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) in het bijzonder is een geweldige manier om snel hulp te verkrijgen. Als je geen antwoord krijgt, of als je vast blijft zitten, open dan een *issue*, en we helpen je verder.
 
 ## Overzicht {#overview}
 
