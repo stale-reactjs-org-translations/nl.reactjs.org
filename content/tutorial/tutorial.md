@@ -1240,7 +1240,7 @@ Als je nog extra tijd hebt of je React vaardigheden wat meer wil oefenen, zijn h
 3. Herschrijf het Board component, gebruik makend van twee loops om de vierkanten te maken ipv deze te hardcoden.
 4. Voeg een wisselknop toe die toelaat om de geschiedenislijst in opgaande of afnemede volgorde te schikken.
 5. Wanneer iemand wint, duid de vakken aan die de overwinning hebben gebracht.
-6. Wanneer er geen winnaar is, toon een boodschap die de een gelijkspel vermeld.
+6. Wanneer er geen winnaar is, toon een boodschap die een gelijkspel vermeldt.
 
 
 In deze tutorial hebben we React concepten leren kennen waaronder elementen, componenten, props en state. Voor een meer gedetailleerde uitleg over elk van deze onderwerpen, lees je best [de rest van de documentatie](/docs/hello-world.html). Om meer te leren over het definiëren van componenten, lees de [`React.Component` API referentie](/docs/react-component.html).
