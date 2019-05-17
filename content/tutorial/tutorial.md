@@ -183,7 +183,7 @@ Elk React component is ingekapseld en kan onafhankelijk bestaan; dit laat ons to
 
 Als je **in je browser** aan de tutorial gaat werken, open dan deze code in een nieuwe tab: **[Start Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Als je **lokaal** aan de tutorial gaat werken, open dan `src/index.js` in je project map (je hebt dit bestand reeds aangemaakt tijdens de [setup](#setup-option-2-local-development-environment)).
 
-Deze Start Code is de basis van wat we gaan maken. Wij hebben reeds de CSS styling bezorgd zodat je je enkel hoeft te concentreren op het leren van React en het programmeren van het tic-tac-toe spel
+Deze Start Code is de basis van wat we gaan maken. We hebben reeds voor de CSS styling gezorgd zodat je je enkel hoeft te concentreren op het leren van React en het programmeren van het tic-tac-toe spel.
 
 Bij het inspecteren van de code zal je opmerken dat we drie React componenten hebben:
 
