@@ -129,7 +129,7 @@ Als je vast zit, ga dan naar de [community support resources](/community/support
 
 ## Overzicht {#overview}
 
-Nu dat je setup klaar is, tijd voor een overzicht van React!
+Nu je setup klaar is, is het tijd voor een overzicht van React!
 
 ### Wat Is React? {#what-is-react}
 
