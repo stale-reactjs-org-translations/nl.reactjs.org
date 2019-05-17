@@ -191,7 +191,7 @@ Bij het inspecteren van de code zal je opmerken dat we drie React componenten he
 * Board
 * Game
 
-Het Square component rendert een `<button>` en het Board component rendert 9 vierkante vakken Het Game component rendert een bord met een and the Board renders 9 squares met placeholder waardes die we later zullen aanpassen. Momenteel zijn er geen interactieve componenten.
+Het Square component rendert een `<button>` en het Board component rendert 9 vierkante vakken. Het Game component rendert een bord met plaatshoudende waarden die we later zullen aanpassen. Momenteel zijn er geen interactieve componenten.
 
 ### Data doorgeven door middel van Props {#passing-data-through-props}
 
