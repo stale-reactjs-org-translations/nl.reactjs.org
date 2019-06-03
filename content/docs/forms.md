@@ -25,7 +25,7 @@ Bijvoorbeeld, onderstaande `form` in gewone HTML neemt een enkele naam aan:
 Deze `form` heeft het standaard HTML `form` gedrag van het browsen naar een nieuwe pagina wanneer een gebruiker de `form` verzendt.
 Als je dit gedrag wilt in React, werkt het gewoon zo.
 Maar in de meeste gevallen is het handig om een JavaScript functie te hebben die het verzenden van een `form` afhandelt en die toegang heeft tot de data die de gebruiker in de `form` ingevuld heeft.
-De standaard manier om dit te implementeren is met een techniek die "gecontroleerde componenten" (in het Engels: "controlled components") wordt genoemd.
+De standaard manier om dit te implementeren is met een techniek die "aangestuurde componenten" (in het Engels: "controlled components") wordt genoemd.
 
 ## Gecontroleerde Componenten {#controlled-components}
 
