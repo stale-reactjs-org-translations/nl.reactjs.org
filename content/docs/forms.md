@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 HTML form elementen werken een beetje anders dan andere DOM elementen in React omdat form elementen uit zichzelf een interne state bijhouden.
-Bijvoorbeeld, onderstaande form in gewone HTML neemt een enkele naam aan:
+Bijvoorbeeld, onderstaande `form` in gewone HTML neemt een enkele naam aan:
 
 ```html
 <form>
