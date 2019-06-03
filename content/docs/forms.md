@@ -310,7 +310,7 @@ setTimeout(function() {
 
 Het kan soms vermoeiend zijn om aangestuurde componenten te gebruiken, omdat je een event handler moet schrijven voor elke manier waarop jouw data kan veranderen en alle input staat door het React component heen moet sturen.
 Dit kan in het bijzonder vervelend worden wanneer je een bestaande _codebase_ naar React aan het omzetten bent, of een React applicatie aan het integreren bent met een niet-React library.
-In deze situaties, wil je misschien [ongecontroleerde componenten](/docs/uncontrolled-components.html) bekijken als alternatieve techniek om input forms te implementeren.
+In deze situaties wil je misschien [niet-aangestuurde componenten](/docs/uncontrolled-components.html) bekijken als alternatieve techniek om `input forms` te implementeren.
 
 ## Volwaardige Oplossingen {#fully-fledged-solutions}
 
