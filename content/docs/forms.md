@@ -308,7 +308,7 @@ setTimeout(function() {
 
 ## Alternatieven Voor Gecontroleerde Componenten {#alternatives-to-controlled-components}
 
-Het kan soms vervelend zijn om gecontroleerde componenten te gebruiken, omdat je een event handler moet schrijven voor elke manier waarop je data kan veranderen en alle input state doorheen het React component moet sturen.
+Het kan soms vermoeiend zijn om aangestuurde componenten te gebruiken, omdat je een event handler moet schrijven voor elke manier waarop jouw data kan veranderen en alle input staat door het React component heen moet sturen.
 Dit kan in het bijzonder vervelend worden wanneer je een bestaande codebase bent aan het omzetten naar React, of een React applicatie bent aan het integreren met een niet-React library.
 In deze situaties, wil je misschien [ongecontroleerde componenten](/docs/uncontrolled-components.html) bekijken als alternatieve techniek om input forms te implementeren.
 
