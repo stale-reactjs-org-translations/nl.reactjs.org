@@ -314,5 +314,5 @@ In deze situaties wil je misschien [niet-aangestuurde componenten](/docs/uncontr
 
 ## Volwaardige Oplossingen {#fully-fledged-solutions}
 
-Als je zoekt naar een volwaardige oplossing inclusief validatie, het bijhouden van bezoekte velden en het afhandelen van het doorsturen van forms, is [Formik](https://jaredpalmer.com/formik) één van de populaire keuzes.
+Als je zoekt naar een volwaardige oplossing inclusief validatie, het bijhouden van bezochte velden en het afhandelen van het verzenden van `forms`, is [Formik](https://jaredpalmer.com/formik) één van de populaire keuzes.
 Echter, het is gemaakt met dezelfde principes van gecontroleerde componenten en het beheren van state - het is dus zeker zinvol om deze te leren.
