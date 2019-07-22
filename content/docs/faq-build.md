@@ -18,15 +18,15 @@ Nee! Bekijk zeker ["React zonder ES6"](/docs/react-without-es6.html) om meer te 
 
 ```jsx
 <div>
-  {/* Comment goes here */}
+  {/* Commentaar komt hier */}
   Hello, {name}!
 </div>
 ```
 
 ```jsx
 <div>
-  {/* It also works 
-  for multi-line comments. */}
+  {/* Het werkt ook voor commentaar 
+  gesplitst over meerdere lijnen. */}
   Hello, {name}! 
 </div>
 ```
