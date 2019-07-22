@@ -1,24 +1,23 @@
 ---
 id: faq-ajax
-title: AJAX and APIs
+title: AJAX en APIs
 permalink: docs/faq-ajax.html
 layout: docs
 category: FAQ
 ---
 
-### How can I make an AJAX call? {#how-can-i-make-an-ajax-call}
+### Hoe kan ik een AJAX verzoek maken? {#how-can-i-make-an-ajax-call}
 
-You can use any AJAX library you like with React. Some popular ones are [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), and the browser built-in [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+Je kan eender welke AJAX library gebruiken met React. Enkele veelgebruikte zijn [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), en  [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) die ingebouwd is in de browser.
 
-### Where in the component lifecycle should I make an AJAX call? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
+### Waar in de component levenscyclus moet ik een AJAX verzoek maken? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
+Je zou een component van data moeten voorzien aan de hand van een AJAX verzoek in de [`componentDidMount`](/docs/react-component.html#mounting) levenscyclus methode. Op deze manier kan je gebruik maken van `setState` om de component te updaten als de data is ontvangen.
 
-You should populate data with AJAX calls in the [`componentDidMount`](/docs/react-component.html#mounting) lifecycle method. This is so you can use `setState` to update your component when the data is retrieved.
+### Voorbeeld: Een AJAX resultaat gebruiken om de lokale staat te veranderen{#example-using-ajax-results-to-set-local-state}
 
-### Example: Using AJAX results to set local state {#example-using-ajax-results-to-set-local-state}
+Onderstaande component geeft weer hoe je een AJAX verzoek maakt in `componentDidMount` om de lokale staat van data te voorzien. 
 
-The component below demonstrates how to make an AJAX call in `componentDidMount` to populate local component state. 
-
-The example API returns a JSON object like this:
+Ons voorbeeld API verzoek geeft onderstaand JSON object terug:
 
 ```
 {
