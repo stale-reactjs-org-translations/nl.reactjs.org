@@ -8,127 +8,127 @@ prev: getting-started.html
 next: create-a-new-react-app.html
 ---
 
-Use as little or as much React as you need.
+Gebruik zo weinig of veel mogelijk React als nodig.
 
-React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need**. Perhaps you only want to add some "sprinkles of interactivity" to an existing page. React components are a great way to do that.
+React is vanaf het begin ontworpen voor een groeiende implementatie en **je kunt zo weinig of veel mogelijk Reacht gebruiken als je nodig hebt**. Misschien wil je alleen een "sausje van interactiviteit" toevoegen aan een bestaande pagina. React componenten zijn een fantastische manier om dat te doen!
 
-The majority of websites aren't, and don't need to be, single-page apps. With **a few lines of code and no build tooling**, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+De meerderheid van website zijn niet, en hoeven geen Single Page Applicatie te zijn. Met **een paar regels code en zonder build tooling**, kun je React uitproberen op een klein deel van je website. Je kunt ofwel langzaamaan de aanwezigheid uitbreiden, of het beperkt houden tot een paar dynamische widgets.
 
 ---
 
-- [Add React in One Minute](#add-react-in-one-minute)
-- [Optional: Try React with JSX](#optional-try-react-with-jsx) (no bundler necessary!)
+- [React toevoegen binnen een minuut](#add-react-in-one-minute)
+- [Optioneel: Probeer React met JSX](#optional-try-react-with-jsx) (no bundler necessary!)
 
-## Add React in One Minute {#add-react-in-one-minute}
+## React toevoegen binnen een minuut {#add-react-in-one-minute}
 
-In this section, we will show how to add a React component to an existing HTML page. You can follow along with your own website, or create an empty HTML file to practice.
+In deze sectie laten we zien hoe je een React component kunt toevoegen aan een bestaande HTML pagina. Je kunt dit deel volgen met je eigen website, of een leeg HTML bestande aanmaken om te oefenen.
 
-There will be no complicated tools or install requirements -- **to complete this section, you only need an internet connection, and a minute of your time.**
+We hebben geen gecompliceerde tools of installaties nodig. -- **om deze sectie te voltooien, heb je alleen een internet verbinding en een minuutje van je tijd nodig**.
 
-Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+Optioneel: [Download het volledige voorbeeld (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
 
-### Step 1: Add a DOM Container to the HTML {#step-1-add-a-dom-container-to-the-html}
+### Stap 1: Voeg een DOM Container toe aan de HTML {#step-1-add-a-dom-container-to-the-html}
 
-First, open the HTML page you want to edit. Add an empty `<div>` tag to mark the spot where you want to display something with React. For example:
+Start met het openen van de HTML pagina die je wilt bewerken. Voeg een lege `<div>` tag toe om aan te geven waar je iets met React wilt weergeven. Bijvoorbeeld:
 
 ```html{3}
-<!-- ... existing HTML ... -->
+<!-- ... bestaande HTML ... -->
 
 <div id="like_button_container"></div>
 
-<!-- ... existing HTML ... -->
+<!-- ... bestaande HTML ... -->
 ```
 
-We gave this `<div>` a unique `id` HTML attribute. This will allow us to find it from the JavaScript code later and display a React component inside of it.
+We hebben deze `<div>` een uniek `id` HTML attribuut. Hiermee kunnen het het element later met JavaScript vinden en een React component er in tonen.
 
 >Tip
 >
->You can place a "container" `<div>` like this **anywhere** inside the `<body>` tag. You may have as many independent DOM containers on one page as you need. They are usually empty -- React will replace any existing content inside DOM containers.
+>Je kunt een "containter" `<div>` zoals deze **overal** binnen een `<body>` tag plaatsen. Je kunt zo veel onafhankelijke DOM containers op een pagina plaatsen als je nodig hebt. Meestal zijn ze leeg -- React vervangt de content binnen de DOM containers.
 
-### Step 2: Add the Script Tags {#step-2-add-the-script-tags}
+### Stap 2: Voeg de Script Tags toe {#step-2-add-the-script-tags}
 
-Next, add three `<script>` tags to the HTML page right before the closing `</body>` tag:
+Voeg vervolgens drie `<script>` tags teo aan de HTML pagina net boven de sluitende `</body>` tag:
 
 ```html{5,6,9}
-  <!-- ... other HTML ... -->
+  <!-- ... overige HTML ... -->
 
-  <!-- Load React. -->
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <!-- Inladen React. -->
+  <!-- Noot: Bij deployen, vervang "development.js" door "production.min.js". -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
-  <!-- Load our React component. -->
+  <!-- Inladen van ons React component. -->
   <script src="like_button.js"></script>
 
 </body>
 ```
 
-The first two tags load React. The third one will load your component code.
+De eerste twee tags laden React in. De derde laad de component code in.
 
-### Step 3: Create a React Component {#step-3-create-a-react-component}
+### Stap 3: Aanmaken van een React Component {#step-3-create-a-react-component}
 
-Create a file called `like_button.js` next to your HTML page.
+Maak een bestand aan met de naam `like_button.js` in dezelfde map als de HTML pagina.
 
-Open **[this starter code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** and paste it into the file you created.
+Open **[deze start code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** en plak die in het aangemaakte bestand.
 
 >Tip
 >
->This code defines a React component called `LikeButton`. Don't worry if you don't understand it yet -- we'll cover the building blocks of React later in our [hands-on tutorial](/tutorial/tutorial.html) and [main concepts guide](/docs/hello-world.html). For now, let's just get it showing on the screen!
+>Deze code definieert een React component genaamd `LikeButton`. Maak je geen zorgen wanneer je het nog niet begrijpt -- we behandelen de bouwblokken van React later in de [hands-on tutorial](/tutorial/tutorial.html) en [hoofdconcepten gids](/docs/hello-world.html). Voor nu gaan we het component tonen op het scherm!
 
-After **[the starter code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add two lines to the bottom of `like_button.js`:
+Voeg, na **[de start code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, twee regels toe onderaan het bestand `like_button.js`:
 
 ```js{3,4}
-// ... the starter code you pasted ...
+// ... de starter code die je hebt geplakt ...
 
 const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
-These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it. 
+Deze twee regels code vinden de `<div>` tag die we hebben toegevoegd in de eerste stap en tonen onze "Like" knop React component daarbinnen. 
 
-### That's It! {#thats-it}
+### Dat was alles! {#thats-it}
 
-There is no step four. **You have just added the first React component to your website.**
+Er is geen stap vier. **Je hebt zojuist je eerste React component toegevoegd aan je website.**
 
-Check out the next sections for more tips on integrating React.
+Lees ook de volgende sectie voor meer tips bij het integreren van React.
 
-**[View the full example source code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
+**[Bekijk de volledige broncode](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
-**[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+**[Download het volledige voorbeeld (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
 
-### Tip: Reuse a Component {#tip-reuse-a-component}
+### Tip: Hergebruik van een Component {#tip-reuse-a-component}
 
-Commonly, you might want to display React components in multiple places on the HTML page. Here is an example that displays the "Like" button three times and passes some data to it:
+Over het algemeen wil je React componenten op meerdere plaatsen op de HTML pagina kunnen tonen. Dit is een voorbeeld dat de "Like" knop drie keer toont en wat data doorgeeft aan het component:
 
-[View the full example source code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
+[Bekijk de volledige voorbeeld broncode](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
-[Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+[Download het volledige voorbeeld (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
 
->Note
+>Noot
 >
->This strategy is mostly useful while React-powered parts of the page are isolated from each other. Inside React code, it's easier to use [component composition](/docs/components-and-props.html#composing-components) instead.
+>Deze strategie is het meest geschikt wanneer verschillende React gedreven onderdelen van de pagina geïsoleerd functioneren ten opzichte van elkaar. Binnen de React code is het veel makkelijker om [component compositie](/docs/components-and-props.html#composing-components) te gebruiken.
 
-### Tip: Minify JavaScript for Production {#tip-minify-javascript-for-production}
+### Tip: Minify JavaScript voor Productie {#tip-minify-javascript-for-production}
 
-Before deploying your website to production, be mindful that unminifed JavaScript can significantly slow down the page for your users.
+Voordat je je website naar productie deployed, wees er van bewust van niet gecomprimeerde JavaScript de pagina aanzienlijk kan vertragen.
 
-If you already minify the application scripts, **your site will be production-ready** if you ensure that the deployed HTML loads the versions of React ending in `production.min.js`:
+Wanneer je je applicatie script al comprimeerd, **is je site productie klaar** wanneer je er voor zorgt dat de gedeployde HTML de versies van React inlaadt die eindigen op `production.min.js`:
 
 ```js
 <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
-If you don't have a minification step for your scripts, [here's one way to set it up](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
+Heb je geen compressie stap voor je scripts, [is dit een manier om dat op te zetten](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
 
-## Optional: Try React with JSX {#optional-try-react-with-jsx}
+## Optioneel: Probeer React met JSX {#optional-try-react-with-jsx}
 
-In the examples above, we only relied on features that are natively supported by the browsers. This is why we used a JavaScript function call to tell React what to display:
+In de voorbeelden hierboven, hebben we gebruik gemaakt van de eigenschappen die standaard ondersteund worden door de browsers. Om deze reden gebruikten we een JavaScript functie om React te vertellen wat weer te geven:
 
 ```js
 const e = React.createElement;
 
-// Display a "Like" <button>
+// Weergeven van de "Like" <button>
 return e(
   'button',
   { onClick: () => this.setState({ liked: true }) },
@@ -136,10 +136,10 @@ return e(
 );
 ```
 
-However, React also offers an option to use [JSX](/docs/introducing-jsx.html) instead:
+React biedt ook een optie om [JSX](/docs/introducing-jsx.html) te gebruiken:
 
 ```js
-// Display a "Like" <button>
+// Weergeven van de "Like" <button>
 return (
   <button onClick={() => this.setState({ liked: true })}>
     Like
@@ -147,56 +147,55 @@ return (
 );
 ```
 
-These two code snippets are equivalent. While **JSX is [completely optional](/docs/react-without-jsx.html)**, many people find it helpful for writing UI code -- both with React and with other libraries.
+De twee code voorbeelden zijn vergelijkbaar. Hoewel **JSX [volledig optioneel](/docs/react-without-jsx.html) is**, vinden veel mensen het handig bij het schrijven van UI code -- met zowel React als andere libraries.
 
-You can play with JSX using [this online converter](https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2%2Cstage-3&prettier=true&targets=Node-6.12&version=6.26.0&envVersion=).
+Je kunt JSX uitproberen door gebruik te maken van [deze online converter](https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2%2Cstage-3&prettier=true&targets=Node-6.12&version=6.26.0&envVersion=).
 
-### Quickly Try JSX {#quickly-try-jsx}
+### Snel JSX uitproberen {#quickly-try-jsx}
 
-The quickest way to try JSX in your project is to add this `<script>` tag to your page:
+De snelste manier om JSX uit te proberen in je project is door het volgende `<script>` tag toe te voegen aan je pagina:
 
 ```html
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) that you can download and play with.
+Nu kun je JSX in ieder `<script>` tag gebruiken door het `type="text/babel"` attribuut toe te voegen. Hier is [een voorbeeld HTML bestand met JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) wat je kunt downloaden om mee te spelen.
 
-This approach is fine for learning and creating simple demos. However, it makes your website slow and **isn't suitable for production**. When you're ready to move forward, remove this new `<script>` tag and the `type="text/babel"` attributes you've added. Instead, in the next section you will set up a JSX preprocessor to convert all your `<script>` tags automatically.
+Deze aanpak is prima om het te leren en eenvoudige demos mee te maken. Het nadeel is dat deze methode je website langzaam maakt en **niet geschikt is voor productie**. Wanneer je klaar bent om verder te gaan, verwijder dan het `<script>` tag en de `type="text/babel"` attributen die je toegevoegd hebt. In plaats daarvan, ga je in de volgende sectie een JSX preprocessor instellen om alle `<script>` tags automatisch om te zetten.
 
-### Add JSX to a Project {#add-jsx-to-a-project}
+### Voeg JSX toe aan een Project {#add-jsx-to-a-project}
 
-Adding JSX to a project doesn't require complicated tools like a bundler or a development server. Essentially, adding JSX **is a lot like adding a CSS preprocessor.** The only requirement is to have [Node.js](https://nodejs.org/) installed on your computer.
+Het toevoegen van JSX aan een project vereist geen gecompliceerde tools zoals bundelers of een development server. In wezen is het toevoegen van JSX **vergelijkbaar met het toevoegen van een CSS preprocessor**. De enige vereiste is dat je [Node.js](https://nodejs.org/) geïnstalleerd hebt op je computer.
 
-Go to your project folder in the terminal, and paste these two commands:
+Ga naar je project map in de terminal and plak deze twee commandos:
 
-1. **Step 1:** Run `npm init -y` (if it fails, [here's a fix](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
-2. **Step 2:** Run `npm install babel-cli@6 babel-preset-react-app@3`
+1. **Stap 1:** Voer uit `npm init -y` (wanneer er een fout ontstaat, [vind je hier een oplossing](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
+2. **Stap 2:** Voer uit: `npm install babel-cli@6 babel-preset-react-app@3`
 
 >Tip
 >
->We're **using npm here only to install the JSX preprocessor;** you won't need it for anything else. Both React and the application code can stay as `<script>` tags with no changes.
+>We gebruiken **gebruiken npm hier alleen om de JSX preprocessor te installeren;** je hebt het nergens anders voor nodig. Zowel React als de applicatie code kunnen in de `<script>` tags blijven staan, zonder wijzigingen.
 
-Congratulations! You just added a **production-ready JSX setup** to your project.
+Gefeliciteerd! Je hebt zojuist een **productieklare JSX instelling** toegevoegd aan je project.
 
+### Uitvoeren van een JSX Preprocessor {#run-jsx-preprocessor}
 
-### Run JSX Preprocessor {#run-jsx-preprocessor}
-
-Create a folder called `src` and run this terminal command:
+Maak een map aan genaamd `src` en voer het volgende commando uit in de terminal:
 
 ```
 npx babel --watch src --out-dir . --presets react-app/prod 
 ```
 
->Note
+>Noot
 >
->`npx` is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>`npx` is geen typefout -- het is een [package runner tool wat bij npm 5.2+ hoort](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 >
->If you see an error message saying "You have mistakenly installed the `babel` package", you might have missed [the previous step](#add-jsx-to-a-project). Perform it in the same folder, and then try again.
+>Als je een foutmelding ziet met de melding "You have mistakenly installed the `babel` package", heb je misschien de [de vorige stap](#add-jsx-to-a-project) gemist. Voer die uit in dezelfde map, en probeer het dan opnieuw.
 
-Don't wait for it to finish -- this command starts an automated watcher for JSX.
+Je hoeft niet te wachten tot dit commando afgelopen is -- het start een geautomatiseerde watcher voor JSX.
 
-If you now create a file called `src/like_button.js` with this **[JSX starter code](https://cdn.rawgit.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, the watcher will create a preprocessed `like_button.js` with the plain JavaScript code suitable for the browser. When you edit the source file with JSX, the transform will re-run automatically.
+Wanneer je nu een bestand aanmaakt, genaamd `src/like_button.js` met deze **[JSX start code](https://cdn.rawgit.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, zal de watcher een verwerkte versie `like_button.js` met standaard JavaScript genereren, die geschikt is voor de browser. Wanneer je de broncode van dit bestand met JSX bewerkt, wordt dit automatisch getransformeerd.
 
-As a bonus, this also lets you use modern JavaScript syntax features like classes without worrying about breaking older browsers. The tool we just used is called Babel, and you can learn more about it from [its documentation](https://babeljs.io/docs/en/babel-cli/).
+Als bonus, laat dit je ook moderne JavaSCript syntax eigenschappen gebruiken, zoals klassen, zonder dat je je zorgen hoeft te maken over het breken in oudere browsers. De tool die we hebben toegevoegd heet Babel, en je kunt meer leren over Babel uit [haar documentatie](https://babeljs.io/docs/en/babel-cli/).
 
-If you notice that you're getting comfortable with build tools and want them to do more for you, [the next section](/docs/create-a-new-react-app.html) describes some of the most popular and approachable toolchains. If not -- those script tags will do just fine!
+Als je merkt dat je comfortabel gebruik maakt van de build tools en je wilt dat ze meer voor je gaan werken, beschrijft [de volgende sectie](/docs/create-a-new-react-app.html) een aantal van de meest populaire en laagdrempelige oplossingen. Zo niet -- die script tags werken ook prima!
