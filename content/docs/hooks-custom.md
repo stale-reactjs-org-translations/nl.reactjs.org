@@ -6,9 +6,9 @@ next: hooks-reference.html
 prev: hooks-rules.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Haken* zijn een nieuwe toevoeging in React 16.8. Hiermee kunt u status en andere React-functies gebruiken zonder een klas te schrijven.
 
-Building your own Hooks lets you extract component logic into reusable functions.
+Door je eigen Hooks te bouwen, kun je componentlogica extraheren in herbruikbare functies.
 
 When we were learning about [using the Effect Hook](/docs/hooks-effect.html#example-using-hooks-1), we saw this component from a chat application that displays a message indicating whether a friend is online or offline:
 
