@@ -10,7 +10,7 @@ prev: hooks-rules.html
 
 Building your own Hooks lets you extract component logic into reusable functions.
 
-When we were learning about [using the Effect Hook](/docs/hooks-effect.html#example-using-hooks-1), we saw this component from a chat application that displays a message indicating whether a friend is online or offline:
+Toen we aan het leren waren [met behulp Effect Hook](/docs/hooks-effect.html#example-using-hooks-1), we zagen dit onderdeel uit een chat-applicatie die een bericht weergeeft dat aangeeft of een vriend online of offline is:
 
 ```js{4-15}
 import React, { useState, useEffect } from 'react';
