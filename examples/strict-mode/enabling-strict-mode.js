@@ -1,16 +1,16 @@
 import React from 'react';
 
-function ExampleApplication() {
+function Voorbeeldapplicatie() {
   return (
     <div>
       <Header />
-      {/* highlight-next-line */}
+      {/* hoogtepunt-volgende-regel */}
       <React.StrictMode>
         <div>
           <ComponentOne />
           <ComponentTwo />
         </div>
-        {/* highlight-next-line */}
+        {/* hoogtepunt-volgende-regel */}
       </React.StrictMode>
       <Footer />
     </div>
