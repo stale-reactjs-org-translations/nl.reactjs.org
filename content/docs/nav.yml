@@ -104,21 +104,21 @@
       title: JS Environment Requirements
     - id: glossary
       title: Glossary
-- title: Hooks (Nieuw)
+- title: Hooks (New)
   isOrdered: true
   items:
       - id: hooks-intro
-        title: Introductie tot Hooks
+        title: Introducie tot Hooks
       - id: hooks-overview
-        title: Hooks een Overzicht
+        title: Hooks at a Glance
       - id: hooks-state
-        title: De State Hook
+        title: Using the State Hook
       - id: hooks-effect
-        title: De Effect Hook
+        title: Using the Effect Hook
       - id: hooks-rules
-        title: Regels van Hooks
+        title: Rules of Hooks
       - id: hooks-custom
-        title: Bouw Je Eigen Hooks
+        title: Building Your Own Hooks
       - id: hooks-reference
         title: Hooks API Reference
       - id: hooks-faq
