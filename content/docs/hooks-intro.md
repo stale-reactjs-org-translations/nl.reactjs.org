@@ -63,7 +63,7 @@ Hooks lossen een breed scala van schijnbaar ongerelateerde problemen op in React
 
 React biedt geen manier om herbruikbaar gedrag aan een component te "hechten" (bijvoorbeeld, om het aan een store te koppelen). Als je al een tijd met React werkt, zou je al bekend kunnen zijn met patronen zoals [render props](/docs/render-props.html) en [higher-order components](/docs/higher-order-components.html) die dat proberen op te lossen. Maar om deze patronen te kunnen gebruiken, moet je je componenten herstructureren, wat lastig kan zijn, en het maakt je code moeilijk te volgen. Als je naar een typische React applicatie kijkt met React DevTools, zul je waarschijnlijk een "wrapper hell" van componenten vinden, die omringd zijn met providers, consumers, higher-order componenten, render props, en andere abstracties. Hoewel we die [uit DevTools kunnen filteren](https://github.com/facebook/react-devtools/pull/503), wijst dit op een dieper onderliggend probleem: React heeft een beter principe nodig om logica met state te delen.
 
-Met Hooks kun je logica met state extraheren uit een component, zodat die onafhankelijk kan worden getest en hergebruikt. **Hooks laten je logica met state hergebruiken zonder aanpassingen in je componenten hiërarchie.** Dit maakt het eenvoudig om Hooks te delen met componenten of met de community.
+Met Hooks kun je logica met state extraheren uit een component, zodat deze onafhankelijk kan worden getest en hergebruikt. **Hooks laten je logica met state hergebruiken zonder aanpassingen in je componenten hiërarchie.** Dit maakt het eenvoudig om Hooks te delen met componenten of met de community.
 
 We zullen dit verder bespreken in [Bouw Je Eigen Hooks](/docs/hooks-custom.html).
 
