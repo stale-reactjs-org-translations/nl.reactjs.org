@@ -84,7 +84,7 @@ React elementen zoals `<Contacts />` en `<Chat />` zijn maar objecten, dus je ka
 
 ## Specializatie {#specialization}
 
-Soms denken we over componenten als "speciale gevallen" van andere componenten. Bijvoorbeeld, We zouyden kunnen zeggen dat een `WelcomeDialog` een speciaal geval van `Dialog` is.
+Soms denken we over componenten als "speciale gevallen" van andere componenten. Bijvoorbeeld, we zouden kunnen zeggen dat een `WelcomeDialog` een speciaal geval van `Dialog` is.
 
 In React kan dit ook worden bereikt door middel van compositie, waar een "specifieker" component een "generieker" component rendert en configureert met props:
 
