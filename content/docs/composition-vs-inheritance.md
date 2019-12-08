@@ -14,7 +14,7 @@ In deze sectie zullen we een paar problemen overwegen waarbij ontwikkelaars die 
 
 ## Insluiting {#containment}
 
-Sommige componenten weten niet op voorhand welke hun kinderen gaan zijn. Dit is zeer gebruikelijk voor componenten zoals `Sidebar` of `Dialog` die generieke "dozen" representeren.
+Sommige componenten weten niet op voorhand wie hun kinderen worden. Dit is vooral gebruikelijk bij componenten zoals `Sidebar` of `Dialog` die generieke "boxes" vertegenwoordigen.
 
 We raden aan dat zulke componenten de speciale `children` prop gebruiken om elementen die als kinderen van de component worden meegegeven rechtstreeks naar hun uitvoer door te geven:
 
