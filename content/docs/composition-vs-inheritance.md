@@ -10,7 +10,7 @@ next: thinking-in-react.html
 
 React heeft een krachtig compositie model, en we bevelen aan om compositie te gebruiken in plaats van overerving om code voor meer componenten te hergebruiken.
 
-In deze sectie zullen we een paar problemen overwegen waarbij ontwikkelaars die beginnend zijn met React vaak grijpen naar overerving, en tonen hoe we ze kunnen oplossen met compositie.
+In dit hoofdstuk zullen we een paar problemen beschouwen waarbij ontwikkelaars die beginnend zijn met React vaak grijpen naar overerving, en laten we zien hoe we ze kunnen oplossen met compositie.
 
 ## Insluiting {#containment}
 
