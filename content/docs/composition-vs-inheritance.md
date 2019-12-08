@@ -16,7 +16,7 @@ In dit hoofdstuk zullen we een paar problemen beschouwen waarbij ontwikkelaars d
 
 Sommige componenten weten niet op voorhand wie hun kinderen worden. Dit is vooral gebruikelijk bij componenten zoals `Sidebar` of `Dialog` die generieke "boxes" vertegenwoordigen.
 
-We raden aan dat zulke componenten de speciale `children` prop gebruiken om elementen die als kinderen van de component worden meegegeven rechtstreeks naar hun uitvoer door te geven:
+We raden aan dat zulke componenten de speciale `children` prop gebruiken om child elementen rechtstreeks naar hun uitvoer door te geven:
 
 ```js{4}
 function FancyBorder(props) {
