@@ -86,7 +86,7 @@ React elementen zoals `<Contacts />` en `<Chat />` zijn maar objecten, dus je ka
 
 Soms denken we over componenten als "speciale gevallen" van andere componenten. Bijvoorbeeld, We zouyden kunnen zeggen dat een `WelcomeDialog` een speciaal geval van `Dialog` is.
 
-In React kan dit ook doormiddel van compositie, waar een "specifiekere" component een "generiekere" rendert en configureert met props:
+In React kan dit ook worden bereikt door middel van compositie, waar een "specifieker" component een "generieker" component rendert en configureert met props:
 
 ```js{5,8,16-18}
 function Dialog(props) {
