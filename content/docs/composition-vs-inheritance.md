@@ -28,7 +28,7 @@ function FancyBorder(props) {
 }
 ```
 
-Dit laat andere componenten toe om willekeurige kinderen door te geven door ze in de JSX te nesten:
+Dit staat andere componenten toe om willekeurige children door te geven door ze in de JSX te nesten:
 
 ```js{4-9}
 function WelcomeDialog() {
