@@ -163,7 +163,7 @@ class SignUpDialog extends React.Component {
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
-## Dus Wat Met Overerving? {#so-what-about-inheritance}
+## Dus Hoe Zit Het Met Overerving? {#so-what-about-inheritance}
 
 Bij Facebook gebruiken we React in duizenden componenten en we hebben nog geen enkel geval gevonden waar we zouden aanraden om een componenten hierarchie met overerving te gebruiken.
 
