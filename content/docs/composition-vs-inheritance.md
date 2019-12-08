@@ -167,6 +167,6 @@ class SignUpDialog extends React.Component {
 
 Bij Facebook gebruiken we React in duizenden componenten en we hebben nog geen enkel geval gevonden waar we zouden aanraden om een componenten hierarchie met overerving te gebruiken.
 
-Props en compositie geven je alle flexibiliteit die je nodig hebt om het uitzicht en het gedrag van een component te customizen op een expliciete en veilige manier. Onthoud dat componenten arbitraire props kunnen aannemen, waaronder primitieve waarden, React elementen of functies.
+Props en compositie geven je alle flexibiliteit die je nodig hebt om het uiterlijk en het gedrag van een component aan te passen op een expliciete en veilige manier. Onthoud dat componenten willekeurige props kunnen aannemen, waaronder primitieve waarden, React elementen of functies.
 
 Als je niet-UI functionaliteit wil herbruiken tussen componenten, raden we aan om ze te extraheren naar een aparte JavaScript module. De componenten kunnen die functie, object of class importeren en gebruiken, zonder het uit te breiden.
