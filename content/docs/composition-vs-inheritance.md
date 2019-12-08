@@ -169,4 +169,4 @@ Bij Facebook gebruiken we React in duizenden componenten en we hebben nog geen e
 
 Props en compositie geven je alle flexibiliteit die je nodig hebt om het uiterlijk en het gedrag van een component aan te passen op een expliciete en veilige manier. Onthoud dat componenten willekeurige props kunnen aannemen, waaronder primitieve waarden, React elementen of functies.
 
-Als je niet-UI functionaliteit wil herbruiken tussen componenten, raden we aan om ze te extraheren naar een aparte JavaScript module. De componenten kunnen die functie, object of class importeren en gebruiken, zonder het uit te breiden.
+Als je niet-UI-functionaliteit wil herbruiken voor meer componenten, raden we aan om die er uit te halen naar een aparte JavaScript module. De componenten kunnen de functie, object of class importeren en gebruiken, zonder hem uit te breiden.
