@@ -43,7 +43,7 @@ Op React Conf 2018 hebben Sophie Alpert en Dan Abramov Hooks geïntroduceerd, ge
 
 ## Geen Breaking Changes {#no-breaking-changes}
 
-Voor we verder gaan, Hooks zijn:
+Merk voordat we verder gaan op: Hooks zijn:
 
 * **Volledig opt-in.** Je kunt Hooks uitproberen in een paar componenten zonder bestaande code te herschrijven. Maar je hoeft niet nu meteen te leren hoe je Hooks moet gebruiken als je dat niet wilt.
 * **100% backwards-compatible.** Hooks bevatten geen breaking changes.
@@ -73,7 +73,7 @@ We hebben vaak componenten moeten onderhouden die eenvoudig begonnen, maar uitgr
 
 In veel gevallen is het niet mogelijk om deze componenten op te splitsen in kleinere componenten omdat de logica met state overal verspreid is. Het is ook moeilijk om ze te testen. Dit is één van de redenen waarom veel mensen ervoor kiezen om React te combineren met een aparte state management library, maar dat introduceert vaak te veel abstractie. Je moet constant tussen verschillende bestanden heen en weer springen en het maakt hergebruik van componenten moeilijker.
 
-Om dit op te lossen **laten Hooks je een component opsplitsen in kleinere functies gebaseerd op welke onderdelen gerelateerd zijn (zoals het opzetten van een subscription of het ophalen van data)**, in plaats van splitsing te forceren op basis van lifecycle methoden. Je kunt ook opteren om de lokale state van een component te managen met een reducer, om hem voorspelbaarder te maken.
+Om dit op te lossen **laten Hooks je een component opsplitsen in kleinere functies gebaseerd op welke onderdelen gerelateerd zijn (zoals het opzetten van een subscription of het ophalen van data)**, in plaats van splitsingen te forceren op basis van lifecycle methoden. Je kunt er ook voor kiezen om de lokale state van een component te managen met een reducer, om hem voorspelbaarder te maken.
 
 We zullen dit verder bespreken in [De Effect Hook](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns).
 
