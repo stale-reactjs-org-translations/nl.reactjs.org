@@ -61,8 +61,12 @@ Hier is `e` een synthetisch event.
 React definieert deze synthetische events volgens de [W3C-specificatie (Engels)](https://www.w3.org/TR/DOM-Level-3-Events/), zodat je je geen zorgen hoeft te maken over cross-browser compatibiliteit.
 Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie.
 
+<<<<<<< HEAD
 Wanneer je React gebruikt, zou je over het algemeen `addEventListener` niet moeten aanroepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt.
 Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
+=======
+When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
+>>>>>>> 335d64336234bcb7ba527ff94919a07da27f8549
 
 Wanneer je een component definieert met een [ES6-klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes), is een algemeen patroon dat een event handler een methode van de klasse is.
 Dit `Toggle`-component rendert bijvoorbeeld een knop waarmee de gebruiker kan wisselen tussen "ON"- en "OFF"-toestanden:
@@ -156,8 +160,12 @@ Over het algemeen raden we aan te binden in de constructor of de class fields sy
 
 ## Argumenten Doorgeven Aan Event Handlers {#passing-arguments-to-event-handlers}
 
+<<<<<<< HEAD
 Binnen een loop is het gebruikelijk om een extra parameter te willen doorgeven aan een event handler.
 Als `id` bijvoorbeeld de rij-ID is, zou elk van de volgende werken:
+=======
+Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+>>>>>>> 335d64336234bcb7ba527ff94919a07da27f8549
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
