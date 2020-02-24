@@ -77,6 +77,10 @@ Je kunt dit zien door met de browser tools het [laatste voorbeeld](codepen://ren
 
 ![DOM inspector toont granulaire updates](../images/docs/granular-dom-updates.gif)
 
+<<<<<<< HEAD
 Alleen de tekst node waarvan de inhoud wijzigt wordt bijgewerkt door het React DOM, ook al gebruiken we een element dat de hele UI tree beschrijft op elke tick.
+=======
+Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.
+>>>>>>> 821e20726266bc8113353d0c2b6d885f82e584a8
 
 Onze ervaringen hebben ons geleerd dat je een hele categorie aan bugs elimineert als je nadenkt over hoe de UI er uit moet zien op een bepaald moment, in plaats van hoe ze voortdurend verandert.
