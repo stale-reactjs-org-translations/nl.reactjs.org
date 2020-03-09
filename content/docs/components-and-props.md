@@ -48,8 +48,12 @@ class Welcome extends React.Component {
 
 De twee bovenstaande componenten zijn gelijkwaardig vanuit Reacts oogpunt.
 
+<<<<<<< HEAD
 Classes hebben wat extra features die we zullen bespreken in de [volgende hoofdstukken](/docs/state-and-lifecycle.html).
 Tot die tijd zullen we functie componenten gebruiken omdat ze beknopter zijn.
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 ## Een Component Renderen {#rendering-a-component}
 
@@ -65,8 +69,12 @@ Maar elementen kunnen ook componenten vertegenwoordigen die door de gebruiker ge
 const element = <Welcome name="Sara" />;
 ```
 
+<<<<<<< HEAD
 Als React een element ziet, dat een door de gebruiker gedefinieerd component voorstelt, dan worden de JSX attributen doorgegeven aan deze component als een enkel object. 
 We noemen dit object "props".
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 Deze code toont bijvoorbeeld "Hello, Sara" op de pagina:
 

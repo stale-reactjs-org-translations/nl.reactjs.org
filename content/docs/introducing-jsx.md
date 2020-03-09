@@ -192,9 +192,17 @@ Deze objecten worden "React elementen" genoemd.
 Je kunt ze zien als beschrijvingen van wat je wilt zien op het scherm.
 React leest deze objecten en gebruikt ze om het DOM op te bouwen and bij te werken.
 
+<<<<<<< HEAD
 We zullen het renderen van React elementen naar het DOM in het volgende hoofdstuk verder bekijken.
 
 >**Tip:**
 >
 >We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
 Deze website gebruikt het compatibele [Oceanic Next (Engels)](https://labs.voronianski.com/oceanic-next-color-scheme/) kleurenschema.
+=======
+We will explore rendering React elements to the DOM in the [next section](/docs/rendering-elements.html).
+
+>**Tip:**
+>
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
