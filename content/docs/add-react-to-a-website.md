@@ -8,7 +8,7 @@ prev: getting-started.html
 next: create-a-new-react-app.html
 ---
 
-Gebruik zo weinig of veel mogelijk React als nodig.
+Gebruik zo veel of zo weinig React als je nodig hebt.
 
 React is vanaf het begin ontworpen voor een groeiende implementatie en **je kunt zo weinig of veel mogelijk Reacht gebruiken als je nodig hebt**. Misschien wil je alleen een "sausje van interactiviteit" toevoegen aan een bestaande pagina. React componenten zijn een fantastische manier om dat te doen!
 
