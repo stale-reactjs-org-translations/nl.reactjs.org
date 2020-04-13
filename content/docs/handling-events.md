@@ -8,8 +8,12 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 Omgaan met events met React-elementen lijkt sterk op omgaan met events met DOM-elementen.
 Maar, er zijn enkele syntactische verschillen:
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 * De naam van React events wordt in camelCase geschreven in plaats van kleine letters.
 * Met JSX geef je een functie door als de event handler in plaats van een string.
@@ -61,8 +65,12 @@ Hier is `e` een synthetisch event.
 React definieert deze synthetische events volgens de [W3C-specificatie (Engels)](https://www.w3.org/TR/DOM-Level-3-Events/), zodat je je geen zorgen hoeft te maken over cross-browser compatibiliteit.
 Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie.
 
+<<<<<<< HEAD
 Wanneer je React gebruikt, zou je over het algemeen `addEventListener` niet moeten aanroepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt.
 Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
+=======
+When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
+>>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 Wanneer je een component definieert met een [ES6-klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes), is een algemeen patroon dat een event handler een methode van de klasse is.
 Dit `Toggle`-component rendert bijvoorbeeld een knop waarmee de gebruiker kan wisselen tussen "ON"- en "OFF"-toestanden:
@@ -141,7 +149,7 @@ class LoggingButton extends React.Component {
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );
@@ -156,8 +164,12 @@ Over het algemeen raden we aan te binden in de constructor of de class fields sy
 
 ## Argumenten Doorgeven Aan Event Handlers {#passing-arguments-to-event-handlers}
 
+<<<<<<< HEAD
 Binnen een loop is het gebruikelijk om een extra parameter te willen doorgeven aan een event handler.
 Als `id` bijvoorbeeld de rij-ID is, zou elk van de volgende werken:
+=======
+Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+>>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
