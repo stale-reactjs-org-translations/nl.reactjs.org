@@ -64,12 +64,7 @@ Maar elementen kunnen ook componenten vertegenwoordigen die door de gebruiker ge
 const element = <Welcome name="Sara" />;
 ```
 
-<<<<<<< HEAD
-Als React een element ziet, dat een door de gebruiker gedefinieerd component voorstelt, dan worden de JSX attributen doorgegeven aan deze component als een enkel object. 
-We noemen dit object "props".
-=======
-When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
->>>>>>> bc91fe4101420f98454a59ac34c1cf1d4d4f4476
+Als React een element ziet, dat een door de gebruiker gedefinieerd component voorstelt, dan worden de JSX attributen en children doorgegeven aan deze component als een enkel object. We noemen dit object "props".
 
 Deze code toont bijvoorbeeld "Hello, Sara" op de pagina:
 
