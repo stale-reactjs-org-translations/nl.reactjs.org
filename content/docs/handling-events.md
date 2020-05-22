@@ -154,12 +154,7 @@ Over het algemeen raden we aan te binden in de constructor of de class fields sy
 
 ## Argumenten Doorgeven Aan Event Handlers {#passing-arguments-to-event-handlers}
 
-<<<<<<< HEAD
-Binnen een loop is het gebruikelijk om een extra parameter te willen doorgeven aan een event handler.
-Als `id` bijvoorbeeld de rij-ID is, zou elk van de volgende werken:
-=======
-Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
->>>>>>> bc91fe4101420f98454a59ac34c1cf1d4d4f4476
+Binnen een loop is het gebruikelijk om een extra parameter te willen doorgeven aan een event handler. Als `id` bijvoorbeeld de rij-ID is, zou elk van de volgende werken:
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
