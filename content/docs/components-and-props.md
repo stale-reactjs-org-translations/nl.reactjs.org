@@ -48,12 +48,7 @@ class Welcome extends React.Component {
 
 De twee bovenstaande componenten zijn gelijkwaardig vanuit Reacts oogpunt.
 
-<<<<<<< HEAD
-Classes hebben wat extra features die we zullen bespreken in de [volgende hoofdstukken](/docs/state-and-lifecycle.html).
-Tot die tijd zullen we functie componenten gebruiken omdat ze beknopter zijn.
-=======
-Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
->>>>>>> bc91fe4101420f98454a59ac34c1cf1d4d4f4476
+Function en Class componenten hebben beide wat extra features die we zullen bespreken in de [volgende hoofdstukken](/docs/state-and-lifecycle.html).
 
 ## Een Component Renderen {#rendering-a-component}
 
