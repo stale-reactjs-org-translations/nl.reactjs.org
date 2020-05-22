@@ -38,11 +38,7 @@ We noemen dit een "root" DOM node omdat alle inhoud van deze node beheerd zal wo
 Applicaties die alleen met React gebouwd zijn, hebben meestal een enkele root DOM node.
 Als je React probeert te integreren in een bestaande applicatie, kun je zoveel geïsoleerde root DOM nodes hebben als je maar wilt.
 
-<<<<<<< HEAD
-Om een React element in de root DOM node te renderen, geef je beide door aan `ReactDOM.render()`:
-=======
-To render a React element into a root DOM node, pass both to [`ReactDOM.render()`](/docs/react-dom.html#render):
->>>>>>> bc91fe4101420f98454a59ac34c1cf1d4d4f4476
+Om een React element in de root DOM node te renderen, geef je beide door aan [`ReactDOM.render()`](/docs/react-dom.html#render):
 
 `embed:rendering-elements/render-an-element.js`
 
