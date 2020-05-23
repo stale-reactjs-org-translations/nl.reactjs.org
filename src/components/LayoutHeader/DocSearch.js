@@ -27,7 +27,7 @@ class DocSearch extends Component<{}, State> {
         inputSelector: '#algolia-doc-search',
       });
     } else {
-      console.warn('Search has failed to load and now is being disabled');
+      console.warn('Laden van zoekresultaat is mislukt en wordt nu uitgeschakeld');
       this.setState({enabled: false});
     }
   }
@@ -104,8 +104,8 @@ class DocSearch extends Component<{}, State> {
           }}
           id="algolia-doc-search"
           type="search"
-          placeholder="Search docs"
-          aria-label="Search docs"
+          placeholder="Zoeken"
+          aria-label="Zoeken"
         />
       </form>
     ) : null;
