@@ -59,9 +59,9 @@ class CodeEditor extends Component {
           Babel kon niet worden geladen.
           <br />
           <br />
-          Dit kan worden veroorzaakt door een ad blocker. Als je er een gebruikt, overweeg dan
-          reactjs.org toe te voegen aan de whitelist zodat de live code voorbeelden zullen
-          werken.
+          Dit kan worden veroorzaakt door een ad blocker. Als je er een
+          gebruikt, overweeg dan reactjs.org toe te voegen aan de whitelist
+          zodat de live code voorbeelden zullen werken.
         </span>
       );
     } else if (error != null) {
