@@ -69,13 +69,13 @@ De eerste twee tags laden React in. De derde laad de component code in.
 
 Maak een bestand aan met de naam `like_button.js` in dezelfde map als de HTML pagina.
 
-Open **[deze start code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** en plak die in het aangemaakte bestand.
+Open **[deze start code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** en plak die in het aangemaakte bestand.
 
 >Tip
 >
 >Deze code definieert een React component genaamd `LikeButton`. Maak je geen zorgen wanneer je het nog niet begrijpt -- we behandelen de bouwblokken van React later in de [hands-on tutorial](/tutorial/tutorial.html) en [hoofdconcepten gids](/docs/hello-world.html). Voor nu gaan we het component tonen op het scherm!
 
-Voeg, na **[de start code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, twee regels toe onderaan het bestand `like_button.js`:
+Voeg, na **[de start code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, twee regels toe onderaan het bestand `like_button.js`:
 
 ```js{3,4}
 // ... de starter code die je hebt geplakt ...
@@ -110,7 +110,7 @@ Over het algemeen wil je React componenten op meerdere plaatsen op de HTML pagin
 
 ### Tip: Minify JavaScript voor Productie {#tip-minify-javascript-for-production}
 
-Voordat je je website naar productie deployed, wees er van bewust van niet gecomprimeerde JavaScript de pagina aanzienlijk kan vertragen.
+Voordat je je website naar productie deployed, wees je er van bewust van niet gecomprimeerde JavaScript de pagina aanzienlijk kan vertragen voor je gebruikers.
 
 Wanneer je je applicatie script al comprimeerd, **is je site productie klaar** wanneer je er voor zorgt dat de gedeployde HTML de versies van React inlaadt die eindigen op `production.min.js`:
 
@@ -149,7 +149,7 @@ return (
 
 De twee code voorbeelden zijn vergelijkbaar. Hoewel **JSX [volledig optioneel](/docs/react-without-jsx.html) is**, vinden veel mensen het handig bij het schrijven van UI code -- met zowel React als andere libraries.
 
-Je kunt JSX uitproberen door gebruik te maken van [deze online converter](https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2%2Cstage-3&prettier=true&targets=Node-6.12&version=6.26.0&envVersion=).
+Je kunt JSX uitproberen door gebruik te maken van [deze online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3).
 
 ### Snel JSX uitproberen {#quickly-try-jsx}
 
@@ -194,7 +194,7 @@ npx babel --watch src --out-dir . --presets react-app/prod
 
 Je hoeft niet te wachten tot dit commando afgelopen is -- het start een geautomatiseerde watcher voor JSX.
 
-Wanneer je nu een bestand aanmaakt, genaamd `src/like_button.js` met deze **[JSX start code](https://cdn.rawgit.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, zal de watcher een verwerkte versie `like_button.js` met standaard JavaScript genereren, die geschikt is voor de browser. Wanneer je de broncode van dit bestand met JSX bewerkt, wordt dit automatisch getransformeerd.
+Wanneer je nu een bestand aanmaakt, genaamd `src/like_button.js` met deze **[JSX start code](https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)**, zal de watcher een verwerkte versie `like_button.js` met standaard JavaScript genereren, die geschikt is voor de browser. Wanneer je de broncode van dit bestand met JSX bewerkt, wordt dit automatisch getransformeerd.
 
 Als bonus, laat dit je ook moderne JavaSCript syntax eigenschappen gebruiken, zoals klassen, zonder dat je je zorgen hoeft te maken over het breken in oudere browsers. De tool die we hebben toegevoegd heet Babel, en je kunt meer leren over Babel uit [haar documentatie](https://babeljs.io/docs/en/babel-cli/).
 
