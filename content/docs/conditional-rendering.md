@@ -7,11 +7,9 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-In React kan je afzonderlijke componenten maken die gedrag inkapselen dat je nodig hebt.
-Vervolgens is het mogelijk om er slechts enkele van te renderen, afhankelijk van je applicatie.
+In React kan je afzonderlijke componenten maken die gedrag inkapselen dat je nodig hebt. Vervolgens is het mogelijk om er slechts enkele van te renderen, afhankelijk van je applicatie.
 
-Conditioneel renderen in React werkt op dezelfde manier als condities in JavaScript.
-Gebruik JavaScript operatoren zoals [`if`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Statements/if...else) of de [conditionele operator](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) om elementen aan te maken die de huidige state voorstellen en laat React de UI bijwerken op basis hiervan.
+Conditioneel renderen in React werkt op dezelfde manier als condities in JavaScript. Gebruik JavaScript operatoren zoals [`if`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Statements/if...else) of de [conditionele operator](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) om elementen aan te maken die de huidige state voorstellen en laat React de UI bijwerken op basis hiervan.
 
 Beschouw deze twee componenten:
 
@@ -49,8 +47,7 @@ Dit voorbeeld rendert een bepaalde begroeting afhankelijk van de waarde van de `
 
 ### Element Variabelen {#element-variables}
 
-Je kunt variabelen gebruiken om elementen op te slaan.
-Dit kan je helpen om een deel van de component conditioneel te renderen terwijl de rest van de uitvoer niet verandert.
+Je kunt variabelen gebruiken om elementen op te slaan. Dit kan je helpen om een deel van de component conditioneel te renderen terwijl de rest van de uitvoer niet verandert.
 
 Beschouw deze twee nieuwe componenten die de Logout- en Login-knoppen voorstellen:
 
@@ -74,8 +71,7 @@ function LogoutButton(props) {
 
 In het onderstaande voorbeeld maken we een [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) genaamd `LoginControl`.
 
-Het zal ofwel `<LoginButton />` ofwel `<LogoutButton />` renderen, afhankelijk van de huidige state.
-Het zal ook een `<Greeting />`, uit het vorige voorbeeld, renderen:
+Het zal ofwel `<LoginButton />` ofwel `<LogoutButton />` renderen, afhankelijk van de huidige state. Het zal ook een `<Greeting />`, uit het vorige voorbeeld, renderen:
 
 
 ```javascript{20-25,29,30}
@@ -122,13 +118,11 @@ ReactDOM.render(
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-Hoewel het verklaren van een variabele en het gebruiken van een `if` instructie een prima manier is om een component conditioneel te renderen, wil je soms een kortere syntax gebruiken.
-Er zijn een paar manieren om op dezelfde lijn condities in te voeren in JSX, zoals hieronder uitgelegd.
+Hoewel het verklaren van een variabele en het gebruiken van een `if` instructie een prima manier is om een component conditioneel te renderen, wil je soms een kortere syntax gebruiken. Er zijn een paar manieren om op dezelfde lijn condities in te voeren in JSX, zoals hieronder uitgelegd.
 
 ### Inline If Met Logische && Operator {#inline-if-with-logical--operator}
 
-Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten.
-Hieronder valt ook de logische `&&`-operator uit JavaScript, waarmee je handig een element conditioneel kunt renderen.
+Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten. Hieronder valt ook de logische `&&`-operator uit JavaScript, waarmee je handig een element conditioneel kunt renderen.
 
 ```js{6-10}
 function Mailbox(props) {
@@ -156,8 +150,7 @@ ReactDOM.render(
 
 Dit werkt omdat in JavaScript `true && expression` altijd evalueert naar `expression` en `false && expression` altijd evalueert naar` false`.
 
-Hierdoor verschijnt, als de conditie `true` is, het element meteen na `&&` in de uitvoer.
-Als ze `false` is, zal React ze negeren en overslaan.
+Hierdoor verschijnt, als de conditie `true` is, het element meteen na `&&` in de uitvoer. Als ze `false` is, zal React ze negeren en overslaan.
 
 ### Inline If-Else Met Conditionele Operator {#inline-if-else-with-conditional-operator}
 
@@ -193,16 +186,13 @@ render() {
 }
 ```
 
-Net als in JavaScript, is het aan jou om een geschikte stijl te kiezen op basis van wat jij en je team meer leesbaar vinden.
-Onthoud ook dat wanneer condities te ingewikkeld worden, het een goed moment kan zijn om een [component af te zonderen](/docs/components-and-props.html#extracting-components).
+Net als in JavaScript, is het aan jou om een geschikte stijl te kiezen op basis van wat jij en je team meer leesbaar vinden. Onthoud ook dat wanneer condities te ingewikkeld worden, het een goed moment kan zijn om een [component af te zonderen](/docs/components-and-props.html#extracting-components).
 
 ### Voorkomen Dat Een Component Rendert {#preventing-component-from-rendering}
 
-In zeldzame gevallen wil je misschien dat een component zichzelf verbergt, ook al is het door een ander component gerenderd.
-Hiertoe geef je gewoon `null` terug in plaats van de normale renderuitvoer.
+In zeldzame gevallen wil je misschien dat een component zichzelf verbergt, ook al is het door een ander component gerenderd. Hiertoe geef je gewoon `null` terug in plaats van de normale renderuitvoer.
 
-In het onderstaande voorbeeld wordt de `<WarningBanner />` gerenderd, afhankelijk van de waarde van de prop `warn`.
-Als de waarde van de prop `false` is, zal de component niet renderen:
+In het onderstaande voorbeeld wordt de `<WarningBanner />` gerenderd, afhankelijk van de waarde van de prop `warn`. Als de waarde van de prop `false` is, zal de component niet renderen:
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
@@ -250,5 +240,4 @@ ReactDOM.render(
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Het teruggeven van `null` vanuit de `render`-methode van een component heeft geen invloed op de uitvoering van deze component zijn levenscyclusmethoden.
-Zo wordt `componentDidUpdate` nog steeds aangeroepen.
+Het teruggeven van `null` vanuit de `render`-methode van een component heeft geen invloed op de uitvoering van deze component zijn levenscyclusmethoden. Zo wordt `componentDidUpdate` nog steeds aangeroepen.
