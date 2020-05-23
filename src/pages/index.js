@@ -133,7 +133,8 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    React &ndash; Een JavaScript bibliotheek om user interfaces mee te bouwen
+                    React &ndash; Een JavaScript bibliotheek om user interfaces
+                    mee te bouwen
                   </p>
                   <Flex
                     valign="center"
