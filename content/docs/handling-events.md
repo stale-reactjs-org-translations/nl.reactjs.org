@@ -8,7 +8,7 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
-Omgaan met events met React-elementen lijkt sterk op omgaan met events met DOM-elementen. Maar, er zijn enkele verschillen in de syntax:
+Omgaan met events met React-elementen lijkt sterk op omgaan met events met DOM-elementen. Er zijn wel enkele verschillen in de syntax:
 
 * De naam van React events wordt in camelCase geschreven in plaats van kleine letters.
 * Met JSX geef je een functie door als de event handler in plaats van een string.
