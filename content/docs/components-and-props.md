@@ -44,7 +44,7 @@ class Welcome extends React.Component {
 
 De twee bovenstaande componenten zijn gelijkwaardig vanuit Reacts oogpunt.
 
-Classes hebben wat extra features die we zullen bespreken in de [volgende hoofdstukken](/docs/state-and-lifecycle.html). Tot die tijd zullen we functie componenten gebruiken omdat ze beknopter zijn.
+Function en Class componenten hebben beide wat extra features die we zullen bespreken in de [volgende hoofdstukken](/docs/state-and-lifecycle.html).
 
 ## Een Component Renderen {#rendering-a-component}
 
@@ -60,7 +60,7 @@ Maar elementen kunnen ook componenten vertegenwoordigen die door de gebruiker ge
 const element = <Welcome name="Sara" />;
 ```
 
-Als React een element ziet, dat een door de gebruiker gedefinieerd component voorstelt, dan worden de JSX attributen doorgegeven aan deze component als een enkel object. We noemen dit object "props".
+Als React een element ziet dat een door de gebruiker gedefinieerd component voorstelt, dan worden de JSX attributen en children doorgegeven aan deze component als een enkel object. We noemen dit object "props".
 
 Deze code toont bijvoorbeeld "Hello, Sara" op de pagina:
 
