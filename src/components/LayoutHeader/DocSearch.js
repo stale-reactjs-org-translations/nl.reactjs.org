@@ -27,7 +27,9 @@ class DocSearch extends Component<{}, State> {
         inputSelector: '#algolia-doc-search',
       });
     } else {
-      console.warn('Laden van zoekresultaat is mislukt en wordt nu uitgeschakeld');
+      console.warn(
+        'Laden van zoekresultaat is mislukt en wordt nu uitgeschakeld',
+      );
       this.setState({enabled: false});
     }
   }
