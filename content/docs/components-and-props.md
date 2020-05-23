@@ -252,7 +252,7 @@ In tegenstelling hiermee is deze functie niet pure omdat ze haar eigen invoerwaa
 ```js
 function withdraw(account, amount) {
   account.total -= amount;
-}
+} 
 ```
 
 React is behoorlijk flexibel, maar heeft een enkele strikte regel:
