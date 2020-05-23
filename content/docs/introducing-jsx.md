@@ -177,8 +177,8 @@ const element = {
 
 Deze objecten worden "React elementen" genoemd. Je kunt ze zien als beschrijvingen van wat je wilt zien op het scherm. React leest deze objecten en gebruikt ze om het DOM op te bouwen and bij te werken.
 
-We zullen het renderen van React elementen naar het DOM in het volgende hoofdstuk verder bekijken.
+We zullen het renderen van React elementen naar het DOM in het [volgende hoofdstuk](/docs/rendering-elements.html) verder bekijken.
 
 >**Tip:**
 >
->We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. Deze website gebruikt het compatibele [Oceanic Next (Engels)](https://labs.voronianski.com/oceanic-next-color-scheme/) kleurenschema.
+>We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 

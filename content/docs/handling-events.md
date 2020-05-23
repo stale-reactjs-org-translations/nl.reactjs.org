@@ -8,7 +8,7 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
-Omgaan met events met React-elementen lijkt sterk op omgaan met events met DOM-elementen. Maar, er zijn enkele syntactische verschillen:
+Omgaan met events met React-elementen lijkt sterk op omgaan met events met DOM-elementen. Er zijn wel enkele verschillen in de syntax:
 
 * De naam van React events wordt in camelCase geschreven in plaats van kleine letters.
 * Met JSX geef je een functie door als de event handler in plaats van een string.
@@ -56,7 +56,7 @@ function ActionLink() {
 
 Hier is `e` een synthetisch event. React definieert deze synthetische events volgens de [W3C-specificatie (Engels)](https://www.w3.org/TR/DOM-Level-3-Events/), zodat je je geen zorgen hoeft te maken over cross-browser compatibiliteit. Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie.
 
-Wanneer je React gebruikt, zou je over het algemeen `addEventListener` niet moeten aanroepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt. Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
+Wanneer je React gebruikt, hoef je over het algemeen `addEventListener` niet aan te roepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt. Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
 
 Wanneer je een component definieert met een [ES6-klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes), is een algemeen patroon dat een event handler een methode van de klasse is. Dit `Toggle`-component rendert bijvoorbeeld een knop waarmee de gebruiker kan wisselen tussen "ON"- en "OFF"-toestanden:
 
@@ -130,7 +130,7 @@ class LoggingButton extends React.Component {
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );
