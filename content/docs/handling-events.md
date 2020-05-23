@@ -29,9 +29,7 @@ verschilt lichtelijk in React:
 </button>
 ```
 
-Een ander verschil is dat je `false` niet kan teruggeven om standaard gedrag te voorkomen in React.
-Je moet `preventDefault` expliciet aanroepen.
-In eenvoudige HTML kun je bijvoorbeeld, om de standaard manier waarop links in een nieuwe pagina worden geopend te voorkomen, schrijven:
+Een ander verschil is dat je `false` niet kan teruggeven om standaard gedrag te voorkomen in React. Je moet `preventDefault` expliciet aanroepen. In eenvoudige HTML kun je bijvoorbeeld, om de standaard manier waarop links in een nieuwe pagina worden geopend te voorkomen, schrijven:
 
 ```html
 <a href="#" onclick="console.log('The link was clicked.'); return false">
@@ -56,14 +54,11 @@ function ActionLink() {
 }
 ```
 
-Hier is `e` een synthetisch event.
-React definieert deze synthetische events volgens de [W3C-specificatie (Engels)](https://www.w3.org/TR/DOM-Level-3-Events/), zodat je je geen zorgen hoeft te maken over cross-browser compatibiliteit.
-Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie.
+Hier is `e` een synthetisch event. React definieert deze synthetische events volgens de [W3C-specificatie (Engels)](https://www.w3.org/TR/DOM-Level-3-Events/), zodat je je geen zorgen hoeft te maken over cross-browser compatibiliteit. Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie.
 
 Wanneer je React gebruikt, hoef je over het algemeen `addEventListener` niet aan te roepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt. Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
 
-Wanneer je een component definieert met een [ES6-klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes), is een algemeen patroon dat een event handler een methode van de klasse is.
-Dit `Toggle`-component rendert bijvoorbeeld een knop waarmee de gebruiker kan wisselen tussen "ON"- en "OFF"-toestanden:
+Wanneer je een component definieert met een [ES6-klasse](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Classes), is een algemeen patroon dat een event handler een methode van de klasse is. Dit `Toggle`-component rendert bijvoorbeeld een knop waarmee de gebruiker kan wisselen tussen "ON"- en "OFF"-toestanden:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
@@ -98,15 +93,11 @@ ReactDOM.render(
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
-Je moet voorzichtig zijn met de betekenis van `this` in JSX callbacks.
-In JavaScript zijn klassenmethoden standaard niet [gebonden (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
-Als je vergeet om `this.handleClick` te binden en het door te geven aan `onClick`, zal `this` `undefined` zijn wanneer de functie daadwerkelijk wordt aangeroepen.
+Je moet voorzichtig zijn met de betekenis van `this` in JSX callbacks. In JavaScript zijn klassenmethoden standaard niet [gebonden (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Function/bind). Als je vergeet om `this.handleClick` te binden en het door te geven aan `onClick`, zal `this` `undefined` zijn wanneer de functie daadwerkelijk wordt aangeroepen.
 
-Dit gedrag is niet specifiek aan React; het is een onderdeel van [hoe functies werken in JavaScript (Engels)](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/).
-Over het algemeen, als je verwijst naar een methode zonder `()` erachter, zoals in `onClick = {this.handleClick}`, moet je deze methode binden.
+Dit gedrag is niet specifiek aan React; het is een onderdeel van [hoe functies werken in JavaScript (Engels)](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Over het algemeen, als je verwijst naar een methode zonder `()` erachter, zoals in `onClick = {this.handleClick}`, moet je deze methode binden.
 
-Als `bind` aanroepen je ergert, zijn er twee manieren om dit te omzeilen.
-Als je de experimentele [public class fields syntax (Engels)](https://babeljs.io/docs/plugins/transform-class-properties/) gebruikt, kan je class fields gebruiken om callbacks correct te binden:
+Als `bind` aanroepen je ergert, zijn er twee manieren om dit te omzeilen. Als je de experimentele [public class fields syntax (Engels)](https://babeljs.io/docs/plugins/transform-class-properties/) gebruikt, kan je class fields gebruiken om callbacks correct te binden:
 
 ```js{2-6}
 class LoggingButton extends React.Component {
@@ -147,10 +138,7 @@ class LoggingButton extends React.Component {
 }
 ```
 
-Het probleem van deze syntax is dat elke keer dat de `LoggingButton` wordt gerenderd een andere callback wordt aangemaakt.
-In de meeste gevallen is dit prima.
-Echter, als deze callback wordt doorgegeven als prop naar lagere componenten, is het mogelijk dat deze componenten een extra re-render uitvoeren.
-Over het algemeen raden we aan te binden in de constructor of de class fields syntax te gebruiken om dit soort performance problemen te voorkomen.
+Het probleem van deze syntax is dat elke keer dat de `LoggingButton` wordt gerenderd een andere callback wordt aangemaakt. In de meeste gevallen is dit prima. Echter, als deze callback wordt doorgegeven als prop naar lagere componenten, is het mogelijk dat deze componenten een extra re-render uitvoeren. Over het algemeen raden we aan te binden in de constructor of de class fields syntax te gebruiken om dit soort performance problemen te voorkomen.
 
 ## Argumenten Doorgeven Aan Event Handlers {#passing-arguments-to-event-handlers}
 
@@ -163,5 +151,4 @@ Binnen een loop is het gebruikelijk om een extra parameter te willen doorgeven a
 
 De bovenstaande twee regels zijn equivalent en gebruiken respectievelijk [pijlfuncties](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Functions/Arrow_functions) en [`Function.prototype.bind`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 
-In beide gevallen wordt het `e`-argument dat de React event vertegenwoordigt als een tweede argument doorgegeven na de ID.
-Met een pijlfunctie moeten we het expliciet doorgeven, maar met `bind` worden verdere argumenten automatisch doorgestuurd.
+In beide gevallen wordt het `e`-argument dat de React event vertegenwoordigt als een tweede argument doorgegeven na de ID. Met een pijlfunctie moeten we het expliciet doorgeven, maar met `bind` worden verdere argumenten automatisch doorgestuurd.
