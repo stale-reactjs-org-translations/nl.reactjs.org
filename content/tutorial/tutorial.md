@@ -153,8 +153,7 @@ We komen zodadelijk tot de rare XML-achtige tags. We gebruiken componenten om Re
 
 In het voorbeeld is ShoppingList een **React component class**, of ook ** React component type**. Een component krijgt parameter, `props` (kort voor "properties") genaamd en returned een hierarchie van views om weer te geven via de `render` methode.
 
-De `render` methode gebruikt een *beschrijving* van wat je wilt zien om het scherm. React neemt deze beschrijving en geeft het resultaat weer. In het bijzonder, `render` returned een **React element**, een lichte beschrijving van wat te renderen. De meeste React ontwikkelaars gebruiken een speciale syntax "JSX" dat het toelaat om deze structuren gemakkelijker schrijven. De `<div />` syntax wordt tijdens de *build time* omgezet naar `React.createElement('div')`. 
-Het voorgaande voorbeeld is equivalent aan:
+De `render` methode gebruikt een *beschrijving* van wat je wilt zien om het scherm. React neemt deze beschrijving en geeft het resultaat weer. In het bijzonder, `render` returned een **React element**, een lichte beschrijving van wat te renderen. De meeste React ontwikkelaars gebruiken een speciale syntax "JSX" dat het toelaat om deze structuren gemakkelijker schrijven. De `<div />` syntax wordt tijdens de *build time* omgezet naar `React.createElement('div')`. Het voorgaande voorbeeld is equivalent aan:
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
