@@ -1052,10 +1052,9 @@ Voor elke zet in de tic-tac-toe spel geschiedenis, creëeren we een list item `<
 
 Laten we bespreken wat deze waarschuwing betekend.
 
-### Picking a Key {#picking-a-key}
+### Een Key Kiezen {#picking-a-key}
 
 Wanner we een lijst renderen, slaat React informatie op over elk gerendered element (list element). Wanneer we een llijst updaten, moet React beslissen wat veranderd moet worden. We zouden lijst elementen kunnen ingevoeg, verwijderen, herordenen of updaten.
-
 
 Beeld je in om overtegaan van:
 
