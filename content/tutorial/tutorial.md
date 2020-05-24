@@ -84,7 +84,6 @@ npx create-react-app my-app
 >
 >**Verwijder niet de gehele `src` map, enkel de bestanden in de map (de source files)** We zullen voor dit project de standaard bestanden met voorbeelden vervangen in de volgende stap.
 
-
 ```bash
 cd my-app
 cd src
