@@ -16,7 +16,6 @@ Deze tutorial vereist geen voorbestaande React kennis.
 
 ## Voordat We Beginnen {#before-we-start-the-tutorial}
 
-
 We zullen een klein spelletje maken in deze tutorial. **Misschien ben je geneigd om dit over te slaan aangezien je niet geïnteresseerd bent in het ontwikkelen van spelletjes -- maar geef het een kans.** De technieken die je zal leren in deze tutorial zijn fundamenteel om React applicaties te bouwen. Eens je deze volledig onder de knie hebt, heb je een diep inzicht in React. 
 
 >Tip
@@ -42,16 +41,13 @@ Je kan een kijkje nemen naar wat we zullen maken: **[Afgewerkt Resultaat](https:
 
 We raden aan dat een kijkje neemt naar het tic-tac-toe spel voordat je verdergaat met de tutorial. Een van de eigenschappen dat je zal opmerken is dat er een genummerde lijst is aan de rechterkant van het spel. Deze lijst geeft je een geschiedenis van alle zetten die in het spel zijn voorgekomen, en deze wordt geupdate tijdens het spel.
 
-Eens je vertrouwd bent met het tic-tac-toe spel, kan je het afsluiten. We zullen vanuit een simpelere template starten voor deze tutorial. 
-Onze volgende stap is jouw setup in te stellen zodat je het spel kan beginnen te bouwen.
+Eens je vertrouwd bent met het tic-tac-toe spel, kan je het afsluiten. We zullen vanuit een simpelere template starten voor deze tutorial.  Onze volgende stap is jouw setup in te stellen zodat je het spel kan beginnen te bouwen.
 
 ### Vereisten {#prerequisites}
 
 We gaan ervanuit dat je enigzins vertrouwd bent met HTML en Javascript, maar het is mogelijk om deze tutorial te volgen, zelfs als je van een andere programmeer taal komt. We gaan er ook vanuit dat je vertrouwd bent met programmeer concepten zoals functies (functions), objecten (objects), arrays en in mindere mate met klasses (classes).
 
-Als je Javascript wil herhalen, raden we [deze handleiding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript).
-We gebruiken ook sommige functies van ES6 -- een recente versie van Javscript. In deze tutorial zullen we [arrow functies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), en [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements gebruiken.
-Je kan de [Babel REPL](babel://es5-syntax-example) gebruiken om de controleren hoe ES6 code compileert.
+Als je Javascript wil herhalen, raden we [deze handleiding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). We gebruiken ook sommige functies van ES6 -- een recente versie van Javscript. In deze tutorial zullen we [arrow functies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), en [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements gebruiken. Je kan de [Babel REPL](babel://es5-syntax-example) gebruiken om de controleren hoe ES6 code compileert.
 
 ## Setup voor de Tutorial {#setup-for-the-tutorial}
 
@@ -68,6 +64,7 @@ Je kan nu de tweede setup optie overslaan en dadelijk naar het [overzicht](#over
 ### Setup Optie 2: Lokale Ontwikkelingsomgeving {#setup-option-2-local-development-environment}
 
 Dit is volledig optioneel en niet vereist voor deze tutorial!
+
 <br>
 
 <details>
@@ -87,9 +84,7 @@ npx create-react-app my-app
 
 > Opmerking:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
 >**Verwijder niet de gehele `src` map, maar enkel de originele source files in de map.** We zullen de standaard bestanden met voorbeelden voor dit project vervangen in de volgende stap.
-
 
 ```bash
 cd my-app
@@ -120,11 +115,11 @@ import './index.css';
 Als je nu `npm start` in de map van het project uitvoert en `http://localhost:3000` in je browser opent, zou je een leeg tic-tac-toe veld moeten zien.
 
 We raden [deze instructies](https://babeljs.io/docs/editors/) om de syntax highlighting in te stellen in je editor.
+
 </details>
 
 ### Help, Ik Zit Vast! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
 Als je vast zit, ga dan naar de [community support resources](/community/support.html). [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) in het bijzonder is een geweldige manier om snel hulp te verkrijgen. Als je geen antwoord krijgt, of als je vast blijft zitten, open dan een *issue*, en we helpen je verder.
 
 ## Overzicht {#overview}
@@ -160,8 +155,7 @@ We komen zodadelijk tot de rare XML-achtige tags. We gebruiken componenten om Re
 
 In het voorbeeld is ShoppingList een **React component class**, of ook ** React component type**. Een component krijgt parameter, `props` (kort voor "properties") genaamd en returned een hierarchie van views om weer te geven via de `render` methode.
 
-De `render` methode gebruikt een *beschrijving* van wat je wilt zien om het scherm. React neemt deze beschrijving en geeft het resultaat weer. In het bijzonder, `render` returned een **React element**, een lichte beschrijving van wat te renderen. De meeste React ontwikkelaars gebruiken een speciale syntax "JSX" dat het toelaat om deze structuren gemakkelijker schrijven. De `<div />` syntax wordt tijdens de *build time* omgezet naar `React.createElement('div')`. 
-Het voorgaande voorbeeld is equivalent aan:
+De `render` methode gebruikt een *beschrijving* van wat je wilt zien om het scherm. React neemt deze beschrijving en geeft het resultaat weer. In het bijzonder, `render` returned een **React element**, een lichte beschrijving van wat te renderen. De meeste React ontwikkelaars gebruiken een speciale syntax "JSX" dat het toelaat om deze structuren gemakkelijker schrijven. De `<div />` syntax wordt tijdens de *build time* omgezet naar `React.createElement('div')`.  Het voorgaande voorbeeld is equivalent aan:
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
@@ -176,8 +170,7 @@ Als je nieuwsgierig bent, `createElement()` wordt in meer detail omschreven in d
 
 JSX komt met de volledige functionaliteit van Javascript. Je kan *elke* Javascript expressie gebruiken binnen haakjes in JSX. Elk React element is een Javascript object dat je kan opslaan in een variabele of doorgeven in je programma.
 
-Het `ShoppingList` component van hierboven rendert enkel in de ingebouwde DOM componenten zoals `<div />` en `<li />`. Maar je kan ook custom React componenten aanmaken en renderen. Bijvoorbeeld. we kunnen nu naar de hele *shopping list* refereren met `<ShoppingList />`.
-Elk React component is ingekapseld en kan onafhankelijk bestaan; dit laat ons toe om complexe UIs te maken van eenvoudige componenten.
+Het `ShoppingList` component van hierboven rendert enkel in de ingebouwde DOM componenten zoals `<div />` en `<li />`. Maar je kan ook custom React componenten aanmaken en renderen. Bijvoorbeeld. we kunnen nu naar de hele *shopping list* refereren met `<ShoppingList />`. Elk React component is ingekapseld en kan onafhankelijk bestaan; dit laat ons toe om complexe UIs te maken van eenvoudige componenten.
 
 ## De Start Code Inspecteren {#inspecting-the-starter-code}
 
@@ -230,8 +223,7 @@ Na: Je zal normaal een nummer in elk vierant van de gerenderde output zien.
 
 **[De volledige code tot zover](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Gefeliciteerd, je het zojuist een prop van de parent Board doorgegeven aan het child Square component door gegeven. 
-Props doorgeven is hoe informatie vloeit in React applicaties, van parents naar children.
+Gefeliciteerd, je het zojuist een prop van de parent Board doorgegeven aan het child Square component door gegeven. Props doorgeven is hoe informatie vloeit in React applicaties, van parents naar children.
 
 ### Interactieve Componenten maken {#making-an-interactive-component}
 
@@ -254,7 +246,7 @@ Als we nu een Square aanklikken, dan krijgen we een alert in onze browser.
 
 >Nota
 >
->Om minder uit te typen en [het verwarrende gedrag van `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) te vermijden, zullen we de [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) gebruiken voor event handlers :
+>Om minder uit te typen en [het verwarrende gedrag van `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) te vermijden, zullen we de [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) gebruiken voor event handlers:
 >
 >```javascript{4}
 >class Square extends React.Component {
@@ -268,7 +260,6 @@ Als we nu een Square aanklikken, dan krijgen we een alert in onze browser.
 >}
 >```
 >
-
 > Merk op dat hoe we met `onClick={() => alert('click')}` een *functie* doorgeven als de `onClick` prop. Het zal enkel in werking treden bij na een click. Een veelvoorkomende fout is het vergeten van `() =>` en het schrijven van `onClick={alert('click')}`, dit zal het alert tonen elke keer dat het component her-rendert.
 
 Als een volgende stap, willen we dat het Square component "onthoudt" dat het aangeklikt werd, en het vullen met een "X". Om dingen te "onthouden" gebruiken componenten **state**.
@@ -301,7 +292,6 @@ class Square extends React.Component {
 >In [JavaScript klasses](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), moet je altijd `super` aanhalen wanneer je de constructor van een subklasse definieerd. Alle react component klasses die een `constructor` hebben moeten starten met een `super(props)` call.
 
 Nu passen we de `render` methode van het Square component aan om de huidige staat weer te geven wanneer het aangeklikt wordt.
-
 
 * Vervang `this.props.value` door `this.state.value` binnen de `<button>` tag.
 * Vervang de `() => alert()` event handler met `() => this.setState({value: 'X'})`.
@@ -362,11 +352,9 @@ We hebben nu de basis bouwblokken voor het tic-tac-toe spel. Om het spel te verv
 
 Momenteel, bevat elk Square component de staat van het spel. Om op een winnaar te controleren, onderhouden we de waarda van elk van de 9 vakken op één locatie.
 
-We zouden kunnen denken dat het Board component elk Square component de staat van Square kan vragen. Hoewel dit mogelijk is in React, raden we dit af omdat de code hierdoor moeilijk te begrijpen is, vatbaar is voor bugs en moeilijk te herstructureren is.
-Het is de beste benadering om de staat van het spel in het parent component Board op te slaan in plaats van in elk Square component. Het Board component kan elk Square zeggen wat te tonen door een prop door te geven, [net zoals hoe we het deden toen we een nummer aan elk Square doorgaven](#passing-data-through-props).
+We zouden kunnen denken dat het Board component elk Square component de staat van Square kan vragen. Hoewel dit mogelijk is in React, raden we dit af omdat de code hierdoor moeilijk te begrijpen is, vatbaar is voor bugs en moeilijk te herstructureren is. Het is de beste benadering om de staat van het spel in het parent component Board op te slaan in plaats van in elk Square component. Het Board component kan elk Square zeggen wat te tonen door een prop door te geven, [net zoals hoe we het deden toen we een nummer aan elk Square doorgaven](#passing-data-through-props).
 
 **Om data van meerdere children te verzamelen, of om twee child componenten met elkaar te laten communiceren, moeten we de shared state declareren in hun parent component. Het parent component kan de staat terug naar de child componenten doorgeven door middel van props; dit houdt de child componenten gesynchroniseerd met elkaar en met het parent component.**
-
 
 *Lifting state* naar een parent component is veelvoorkomend wanneer React componenten herstructureerd worden -- laten we deze mogelijkheid nemen om dit uit te proberen. We zullen een constructor aan het Board component toevoegen en zetten de initiële state van Board zodat het een array van 9 nullen bevat. Deze 9 nullen staat gelijk aan de 9 Squares:
 
@@ -427,11 +415,10 @@ De `renderSquare` methode van Board ziet er momenteel zo uit:
     return <Square value={i} />;
   }
 ```
-In het begin, [gaven we de prop `value` van Board door](#passing-data-through-props)om nummers van 0 tot 8 te tonen in elk Square component.
-In een andere vorige stap, vervingen we de nummers met een "X", dat [gedetermineerd werd door het Square component zijn eigen state](#making-an-interactive-component). Dit is waarom het Square component momenteel de `value` prop die door het bord wordt doorgegeven negeert.
 
-We zullen nu weer het prop doorgevings mechanisme gebruiken.
-We passen het Board component aan om aan ieder Square component zijn huidige waarde te informeren (`'X'`, `'O'`, of `null`). We hebben reeds de `squares` array gedefinieerd in de Board constructor en we zullen de Board `renderSquare` methode aanpassen om dit te lezen:
+In het begin, [gaven we de prop `value` van Board door](#passing-data-through-props)om nummers van 0 tot 8 te tonen in elk Square component. In een andere vorige stap, vervingen we de nummers met een "X", dat [gedetermineerd werd door het Square component zijn eigen state](#making-an-interactive-component). Dit is waarom het Square component momenteel de `value` prop die door het bord wordt doorgegeven negeert.
+
+We zullen nu weer het prop doorgevings mechanisme gebruiken. We passen het Board component aan om aan ieder Square component zijn huidige waarde te informeren (`'X'`, `'O'`, of `null`). We hebben reeds de `squares` array gedefinieerd in de Board constructor en we zullen de Board `renderSquare` methode aanpassen om dit te lezen:
 
 ```javascript{2}
   renderSquare(i) {
@@ -766,6 +753,7 @@ We roepen `calculateWinner(squares)` op in de `render` functie van Board om te c
     return (
       // the rest has not changed
 ```
+
 We kunnen nu de `handleClick` functie van Board aanpassen om vroegtijdig te returnen als iemand het spel heeft gewonnen of een Square reeds opgevuld is:
 
 ```javascript{3-5}
@@ -832,8 +820,7 @@ Nu moeten we beslissen welk component de `history` state bevat.
 
 ### De staat verheffen (lifting state), nogmaals {#lifting-state-up-again}
 
-We willen dat het top-level Game component een lijst van vorige zetten toont.
-Hiervoor heeft het component toegang nodig tot `history` en dus zetten we de `history` state in het top-level Game component.
+We willen dat het top-level Game component een lijst van vorige zetten toont. Hiervoor heeft het component toegang nodig tot `history` en dus zetten we de `history` state in het top-level Game component.
 
 Het plaatsen van de `history` state in het Game component laat ons toe om de `squares` state te verwijderen van het child component, Board. Net [zoals we de state verheften ("lifted state up")](#lifting-state-up) van het Square component naar het Board component, gaan we het nu verheffen van het Board element naar het top-level Game component. Dit geeft het Game component volledige controle over de data van Board en laat het toe om het Board component vorige zetten te renderen.
 
@@ -867,8 +854,7 @@ class Game extends React.Component {
 }
 ```
 
-Vervolgens zullen we het Board component de props `squares` en `onClick` doorgeven vanuit het Game component.
-Aangezien we nu een enkelvoudige click handler hebben in Board voor de vele Squares, moeten we ook de locatie van elke Square doorgeven in de `onClick` handler, om aan te duiden welke Square aangeklikt werd. Hier zijn de nodige stappen om het Board component te veranderen:
+Vervolgens zullen we het Board component de props `squares` en `onClick` doorgeven vanuit het Game component. Aangezien we nu een enkelvoudige click handler hebben in Board voor de vele Squares, moeten we ook de locatie van elke Square doorgeven in de `onClick` handler, om aan te duiden welke Square aangeklikt werd. Hier zijn de nodige stappen om het Board component te veranderen:
 
 * Verwijder de `constructor` in Board.
 * Vervang `this.state.squares[i]` met `this.props.squares[i]` in  `renderSquare` van Board.
@@ -1089,7 +1075,6 @@ Laten we bespreken wat deze waarschuwing betekend.
 
 Wanner we een lijst renderen, slaat React informatie op over elk gerendered element (list element). Wanneer we een llijst updaten, moet React beslissen wat veranderd moet worden. We zouden lijst elementen kunnen ingevoeg, verwijderen, herordenen of updaten.
 
-
 Beeld je in om overtegaan van:
 
 ```html
@@ -1104,8 +1089,8 @@ naar
 <li>Claudia: 8 tasks left</li>
 <li>Alexa: 5 tasks left</li>
 ```
-Naast de geupdate getallen, zou een mens die dit leest waarschijnlijk beweren dat we de rangschikking van Alexa en Ben veranderd hebben, en Claudia tussen Alexa en Ben hebben ingevoegd.
-Maar React is een computer programma en weet niet wat onze bedoeling is. Omdat React onze intenties niet kan weten, moeten we een *key* property definiëren voor elk element uit de lijst, om het van zijn siblings te kunnen onderscheiden. Een optie zou zijn om de strings `alexa`, `ben` en `claudia` te gebruiken. Indien we data uit een database gebruiken, dan kunnen we de database IDs gebruiken als keys.
+
+Naast de geupdate getallen, zou een mens die dit leest waarschijnlijk beweren dat we de rangschikking van Alexa en Ben veranderd hebben, en Claudia tussen Alexa en Ben hebben ingevoegd. Maar React is een computer programma en weet niet wat onze bedoeling is. Omdat React onze intenties niet kan weten, moeten we een *key* property definiëren voor elk element uit de lijst, om het van zijn siblings te kunnen onderscheiden. Een optie zou zijn om de strings `alexa`, `ben` en `claudia` te gebruiken. Indien we data uit een database gebruiken, dan kunnen we de database IDs gebruiken als keys.
 
 ```html
 <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
@@ -1241,6 +1226,5 @@ Als je nog extra tijd hebt of je React vaardigheden wat meer wil oefenen, zijn h
 4. Voeg een wisselknop toe die toelaat om de geschiedenislijst in opgaande of afnemede volgorde te schikken.
 5. Wanneer iemand wint, duid de vakken aan die de overwinning hebben gebracht.
 6. Wanneer er geen winnaar is, toon een boodschap die een gelijkspel vermeldt.
-
 
 In deze tutorial hebben we React concepten leren kennen waaronder elementen, componenten, props en state. Voor een meer gedetailleerde uitleg over elk van deze onderwerpen, lees je best [de rest van de documentatie](/docs/hello-world.html). Om meer te leren over het definiëren van componenten, lees de [`React.Component` API referentie](/docs/react-component.html).
