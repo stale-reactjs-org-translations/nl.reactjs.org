@@ -261,9 +261,7 @@ Als we nu op een Square klikt, zou je een alert moeten zien in je browser.
 >}
 >```
 >
->Merk op hoe met `onClick={() => alert('click')}` we *een functie* doorgeven als de `onClick` prop. React zal deze functie alleen aanroepen na een klik. `() =>` vergeten en `onClick={alert('click')}` schrijven is een veelgemaakt vergissing en zou de alert iedere keer aanroepen dat de component opnieuw rendert.
-
-> Merk op dat hoe we met `onClick={() => alert('click')}` een *functie* doorgeven als de `onClick` prop. Het zal enkel in werking treden bij na een click. Een veelvoorkomende fout is het vergeten van `() =>` en het schrijven van `onClick={alert('click')}`, dit zal het alert tonen elke keer dat het component her-rendert.
+>Merk op hoe met `onClick={() => alert('click')}` we *een functie* doorgeven als de `onClick` prop. React zal deze functie alleen aanroepen na een klik. `() =>` vergeten en `onClick={alert('click')}` schrijven is een veelgemaakte vergissing en zou de alert iedere keer aanroepen als de component opnieuw rendert.
 
 Als een volgende stap, willen we dat het Square component "onthoudt" dat het aangeklikt werd, en het vullen met een "X". Om dingen te "onthouden" gebruiken componenten **state**.
 
