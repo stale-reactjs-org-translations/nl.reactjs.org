@@ -62,6 +62,7 @@ Je kan de tweede setup optie overslaan en dadelijk naar het [overzicht](#overvie
 ### Setup Optie 2: Local Development Environment {#setup-option-2-local-development-environment}
 
 Dit is volledig optioneel en niet vereist voor deze tutorial!
+
 <br>
 
 <details>
@@ -79,7 +80,7 @@ npx create-react-app my-app
 
 3. Verwijder alle bestanden in de map `src/` van het nieuwe project.
 
-> Nota:
+> Opmerking:
 >
 >**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
 **Verwijder niet de gehele `src` map, enkel de bestanden in de map (de source files)** We zullen voor dit project de standaard bestanden met voorbeelden vervangen in de volgende stap.
