@@ -168,8 +168,7 @@ Als je nieuwsgierig bent, `createElement()` wordt in meer detail omschreven in d
 
 JSX komt met de volledige functionaliteit van Javascript. Je kan *elke* Javascript expressie gebruiken binnen haakjes in JSX. Elk React element is een Javascript object dat je kan opslaan in een variabele of doorgeven in je programma.
 
-Het `ShoppingList` component van hierboven rendert enkel in de ingebouwde DOM componenten zoals `<div />` en `<li />`. Maar je kan ook custom React componenten aanmaken en renderen. Bijvoorbeeld. we kunnen nu naar de hele *shopping list* refereren met `<ShoppingList />`.
-Elk React component is ingekapseld en kan onafhankelijk bestaan; dit laat ons toe om complexe UIs te maken van eenvoudige componenten.
+Het `ShoppingList` component van hierboven rendert enkel in de ingebouwde DOM componenten zoals `<div />` en `<li />`. Maar je kan ook custom React componenten aanmaken en renderen. Bijvoorbeeld. we kunnen nu naar de hele *shopping list* refereren met `<ShoppingList />`. Elk React component is ingekapseld en kan onafhankelijk bestaan; dit laat ons toe om complexe UIs te maken van eenvoudige componenten.
 
 ## De Start Code Inspecteren {#inspecting-the-starter-code}
 
