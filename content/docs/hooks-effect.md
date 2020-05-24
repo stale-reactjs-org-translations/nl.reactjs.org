@@ -144,7 +144,7 @@ Ervaren JavaScript ontwikkelaars zouden op kunnen merken dat de funtie die aan `
 
 ## Effecten met Cleanup {#effects-with-cleanup}
 
-Earlier, we looked at how to express side effects that don't require any cleanup. However, some effects do. For example, **we might want to set up a subscription** to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak! Let's compare how we can do it with classes and with Hooks.
+Eerder hebben we bekeken hoe je neveneffecten kunt beschrijven die niet hoeven te worden opgeschoond. Maar bij sommige effecten moet dat wel. Bijvoorbeeld **we willen misschien een subscription opzetten** op een externe gegevensbron. In dat geval is het belangrijk om op te schonen zodat we geen geheugenlek introduceren! Laten we eens vergelijken hoe we dat kunnen doen met classes en met Hooks.
 
 ### Voorbeeld met Classes {#example-using-classes-1}
 
@@ -197,7 +197,7 @@ Merk op hoe `componentDidMount` en `componentWillUnmount` elkaar moeten spiegele
 
 Laten we kijken hoe we deze component kunnen schrijven met Hooks.
 
-You might be thinking that we'd need a separate effect to perform the cleanup. But code for adding and removing a subscription is so tightly related that `useEffect` is designed to keep it together. If your effect returns a function, React will run it when it is time to clean up:
+Je zou denken dat we een afzonderlijk effect nodig hebben om de cleanup uit te voeren. Maar code voor het toevoegen en verwijderen van een subscription is zo nauw met elkaar verbonden dat `useEffect` ontworpen is om ze samen te houden. Als jou effect een functie teruggeeft zal React die uitvoeren zodra het tijd is voor de cleanup:
 
 ```js{6-16}
 import React, { useState, useEffect } from 'react';
@@ -224,7 +224,7 @@ function FriendStatus(props) {
 }
 ```
 
-**Waarom gaven we een functie terug van ons effect?** This is the optional cleanup mechanism for effects. Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other. They're part of the same effect!
+**Waarom gaven we een functie terug van ons effect?** Dit is het optionele cleanup mechanisme voor effecten. Ieder effect kan een functie teruggeven die achter hem opruimd. Dit maakt het mogelijk om de logica voor het toevoegen en verwijderen van subscriptions dicht bi elkaar te houden. Ze zijn onderdeel van één en hetzelfde effect!
 
 **Wanneer precies voert React het opschonen van een effect uit?** React performs the cleanup when the component unmounts. However, as we learned earlier, effects run for every render and not just once. This is why React *also* cleans up effects from the previous render before running the effects next time. We'll discuss [why this helps avoid bugs](#explanation-why-effects-run-on-each-update) and [how to opt out of this behavior in case it creates performance issues](#tip-optimizing-performance-by-skipping-effects) later below.
 
@@ -234,7 +234,7 @@ function FriendStatus(props) {
 
 ## Samenvatting {#recap}
 
-We've learned that `useEffect` lets us express different kinds of side effects after a component renders. Some effects might require cleanup so they return a function:
+We hebben geleerd dat `useEffect` ons verschillende vormen van neven effecten laat beschrijven nadat een component rendert. Sommige effecten kunnen vereisen een opschoning dus geven die een functie terug:
 
 ```js
   useEffect(() => {
@@ -249,7 +249,7 @@ We've learned that `useEffect` lets us express different kinds of side effects a
   });
 ```
 
-Other effects might not have a cleanup phase, and don't return anything.
+Andere effecten hebben misschien geen cleanup fase en geven niets terug.
 
 ```js
   useEffect(() => {
