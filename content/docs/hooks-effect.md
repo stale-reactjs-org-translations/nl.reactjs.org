@@ -134,7 +134,7 @@ function Example() {
 }
 ```
 
-We declareren de `count` state variabele en dan leten we React weten dat we een effect nodig hebben. We geven een functie door aan de `useEffect` Hook. Deze functie die we doorgeven *is* ons effect. Binnen ons effect stellen we de document titel in door de `document.title` browser API te gebruiken. We kunnen de recentste `count` lezen binnen het effect om dat het in de scope zit van onze functie. Als React ons component rendert, onthoudt het, het door ons gebruikte effect, en voert het effect dan uit na het bijwerken van het DOM. Dit gebeurt bij iedere render, inclusief de eerste.
+We declareren de `count` state variabele en dan laten we React weten dat we een effect nodig hebben. We geven een functie door aan de `useEffect` Hook. Deze functie die we doorgeven *is* ons effect. Binnen ons effect stellen we de document titel in door de `document.title` browser API te gebruiken. We kunnen de recentste `count` lezen binnen het effect om dat het in de scope zit van onze functie. Als React ons component rendert, onthoudt het, het door ons gebruikte effect, en voert het effect dan uit na het bijwerken van het DOM. Dit gebeurt bij iedere render, inclusief de eerste.
 
 Ervaren JavaScript ontwikkelaars zouden op kunnen merken dat de funtie die aan `useEffect` doorgegeven wordt iedere render een andere is. Dat is de bedoeling ook. Eigenlijk kunnen we juist daardoor de `count` waarde lezen van binnenin het effect zonder ons zorgen over of de waarde verouderd is. Eidere keer dat we opnieuw renderen plannen we een _ander_ effect, die de vorige vervangt. Dit zorgt er in zekere zin voor dat de effecten zich meer gedragen als een deel van het renderresultaat -- elk effect "hoort" bij één bepaalde render. Waarom dit nuttig is zullen we [later op deze pagina](#explanation-why-effects-run-on-each-update) duidelijker zien.
 
@@ -142,13 +142,13 @@ Ervaren JavaScript ontwikkelaars zouden op kunnen merken dat de funtie die aan `
 >
 >Anders dan `componentDidMount` of `componentDidUpdate` blokkeren effecten die met `useEffect` ingesteld zijn de browser niet om het scherm bij te werken. Dit maakt dat je app sneller (responsive) aanvoelt. De meeste effecten hoeven niet synchroon te gebeuren. In de zeldzame gevallen dat dat wel moet (zoals het meten van de layout) is er een afzonderlijke [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) Hook met een identieke API als `useEffect`.
 
-## Effects with Cleanup {#effects-with-cleanup}
+## Effecten met Cleanup {#effects-with-cleanup}
 
 Earlier, we looked at how to express side effects that don't require any cleanup. However, some effects do. For example, **we might want to set up a subscription** to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak! Let's compare how we can do it with classes and with Hooks.
 
-### Voorbeeld Met Classes {#example-using-classes-1}
+### Voorbeeld met Classes {#example-using-classes-1}
 
-In a React class, you would typically set up a subscription in `componentDidMount`, and clean it up in `componentWillUnmount`. For example, let's say we have a `ChatAPI` module that lets us subscribe to a friend's online status. Here's how we might subscribe and display that status using a class:
+In een React class zou je gewoonlijk een subscription opzetten in `componentDidMount` en die opschonen in `componentWillUnmount`. Bijvoorbeeld, laten we zeggen dat we een `ChatAPI` module hebben waarmee we ons kunnen abonneren (subscribe) op een vriend zijn online status. Hier is hoe we kunnen abonneren en de status weergeven met een class:
 
 ```js{8-26}
 class FriendStatus extends React.Component {
@@ -187,15 +187,15 @@ class FriendStatus extends React.Component {
 }
 ```
 
-Notice how `componentDidMount` and `componentWillUnmount` need to mirror each other. Lifecycle methods force us to split this logic even though conceptually code in both of them is related to the same effect.
+Merk op hoe `componentDidMount` en `componentWillUnmount` elkaar moeten spiegelen. Lifecycle methoden dwingen on deze logica te splitsen hoewel conceptueel de code in beiden gerelateerd is met hetzelfde effect.
 
 >Opmerking
 >
->Eagle-eyed readers may notice that this example also needs a `componentDidUpdate` method to be fully correct. We'll ignore this for now but will come back to it in a [later section](#explanation-why-effects-run-on-each-update) of this page.
+>Lezers met arendsogen kunnen opmerken dat dit voorbeeld ook een `componentDidUpdate`-methode nodig heeft om volledig correct te zijn. We zullen dit voorlopig negeren, maar komen er in een [later gedeelte](#explanation-why-effects-run-on-each-update) van deze pagina op terug.
 
-### Voorbeeld Met Hooks {#example-using-hooks-1}
+### Voorbeeld met Hooks {#example-using-hooks-1}
 
-Let's see how we could write this component with Hooks.
+Laten we kijken hoe we deze component kunnen schrijven met Hooks.
 
 You might be thinking that we'd need a separate effect to perform the cleanup. But code for adding and removing a subscription is so tightly related that `useEffect` is designed to keep it together. If your effect returns a function, React will run it when it is time to clean up:
 
