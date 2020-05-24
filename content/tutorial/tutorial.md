@@ -353,8 +353,7 @@ We hebben nu de basis bouwblokken voor het tic-tac-toe spel. Om het spel te verv
 
 Momenteel, bevat elk Square component de staat van het spel. Om op een winnaar te controleren, onderhouden we de waarda van elk van de 9 vakken op één locatie.
 
-We zouden kunnen denken dat het Board component elk Square component de staat van Square kan vragen. Hoewel dit mogelijk is in React, raden we dit af omdat de code hierdoor moeilijk te begrijpen is, vatbaar is voor bugs en moeilijk te herstructureren is.
-Het is de beste benadering om de staat van het spel in het parent component Board op te slaan in plaats van in elk Square component. Het Board component kan elk Square zeggen wat te tonen door een prop door te geven, [net zoals hoe we het deden toen we een nummer aan elk Square doorgaven](#passing-data-through-props).
+We zouden kunnen denken dat het Board component elk Square component de staat van Square kan vragen. Hoewel dit mogelijk is in React, raden we dit af omdat de code hierdoor moeilijk te begrijpen is, vatbaar is voor bugs en moeilijk te herstructureren is. Het is de beste benadering om de staat van het spel in het parent component Board op te slaan in plaats van in elk Square component. Het Board component kan elk Square zeggen wat te tonen door een prop door te geven, [net zoals hoe we het deden toen we een nummer aan elk Square doorgaven](#passing-data-through-props).
 
 **Om data van meerdere children te verzamelen, of om twee child componenten met elkaar te laten communiceren, moeten we de shared state declareren in hun parent component. Het parent component kan de staat terug naar de child componenten doorgeven door middel van props; dit houdt de child componenten gesynchroniseerd met elkaar en met het parent component.**
 
