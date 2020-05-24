@@ -357,7 +357,6 @@ We zouden kunnen denken dat het Board component elk Square component de staat va
 
 **Om data van meerdere children te verzamelen, of om twee child componenten met elkaar te laten communiceren, moeten we de shared state declareren in hun parent component. Het parent component kan de staat terug naar de child componenten doorgeven door middel van props; dit houdt de child componenten gesynchroniseerd met elkaar en met het parent component.**
 
-
 *Lifting state* naar een parent component komt vaak voor wanneer React componenten herstructureerd worden -- laten we deze gelegenheid aangrijpen om het uit te proberen. 
 
 Voeg een constructor toe aan de Board component en zet de initiële state van Board zo dat het een array van 9 nullen bevat corresponderend aan de negen hokjes:
@@ -393,11 +392,10 @@ De `renderSquare` methode van Board ziet er momenteel zo uit:
     return <Square value={i} />;
   }
 ```
-In het begin, [gaven we de prop `value` van Board door](#passing-data-through-props)om nummers van 0 tot 8 te tonen in elk Square component.
-In een andere vorige stap, vervingen we de nummers met een "X", dat [gedetermineerd werd door het Square component zijn eigen state](#making-an-interactive-component). Dit is waarom het Square component momenteel de `value` prop die door het bord wordt doorgegeven negeert.
 
-We zullen nu weer het prop doorgevings mechanisme gebruiken.
-We passen het Board component aan om aan ieder Square component zijn huidige waarde te informeren (`'X'`, `'O'`, of `null`). We hebben reeds de `squares` array gedefinieerd in de Board constructor en we zullen de Board `renderSquare` methode aanpassen om dit te lezen:
+In het begin, [gaven we de prop `value` van Board door](#passing-data-through-props)om nummers van 0 tot 8 te tonen in elk Square component. In een andere vorige stap, vervingen we de nummers met een "X", dat [gedetermineerd werd door het Square component zijn eigen state](#making-an-interactive-component). Dit is waarom het Square component momenteel de `value` prop die door het bord wordt doorgegeven negeert.
+
+We zullen nu weer het prop doorgevings mechanisme gebruiken. We passen het Board component aan om aan ieder Square component zijn huidige waarde te informeren (`'X'`, `'O'`, of `null`). We hebben reeds de `squares` array gedefinieerd in de Board constructor en we zullen de Board `renderSquare` methode aanpassen om dit te lezen:
 
 ```javascript{2}
   renderSquare(i) {
