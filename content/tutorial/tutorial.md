@@ -113,6 +113,7 @@ import './index.css';
 Als je nu `npm start` in de map van het project gebruikt en `http://localhost:3000` in je browser opent, zie je een leeg tic-tac-toe veld.
 
 We raden [deze instructies](https://babeljs.io/docs/editors/) om de *syntax highlighting* in te stellen in je editor.
+
 </details>
 
 ### Help, ik zit vast! {#help-im-stuck}
@@ -247,7 +248,7 @@ class Square extends React.Component {
 
 Als we nu op een Square klikt, zou je een alert moeten zien in je browser.
 
->Nota
+>Opmerking
 >
 >Om minder uit te typen en [het verwarrende gedrag van `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) te vermijden, zullen we de [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) gebruiken voor event handlers :
 >
