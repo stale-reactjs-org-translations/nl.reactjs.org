@@ -734,6 +734,7 @@ We roepen `calculateWinner(squares)` aan in de `render` functie van Board om te 
     return (
       // the rest has not changed
 ```
+
 We kunnen nu de `handleClick` functie van Board aanpassen om vroegtijdig te returnen als iemand het spel heeft gewonnen of een Square reeds opgevuld is:
 
 ```javascript{3-5}
@@ -800,8 +801,7 @@ Nu moeten we beslissen welk component de `history` state bevat.
 
 ### De staat verheffen (lifting state), nogmaals {#lifting-state-up-again}
 
-We willen dat het top-level Game component een lijst van vorige zetten toont.
-Hiervoor heeft het component toegang nodig tot `history` en dus zetten we de `history` state in het top-level Game component.
+We willen dat het top-level Game component een lijst van vorige zetten toont. Hiervoor heeft het component toegang nodig tot `history` en dus zetten we de `history` state in het top-level Game component.
 
 Het plaatsen van de `history` state in het Game component laat ons toe om de `squares` state te verwijderen van het child component, Board. Net [zoals we de state verheften ("lifted state up")](#lifting-state-up) van het Square component naar het Board component, gaan we het nu verheffen van het Board element naar het top-level Game component. Dit geeft het Game component volledige controle over de data van Board en laat het toe om het Board component vorige zetten te renderen.
 
@@ -835,8 +835,7 @@ class Game extends React.Component {
 }
 ```
 
-Vervolgens zullen we het Board component de props `squares` en `onClick` doorgeven vanuit het Game component.
-Aangezien we nu een enkelvoudige click handler hebben in Board voor de vele Squares, moeten we ook de locatie van elke Square doorgeven in de `onClick` handler, om aan te duiden welke Square aangeklikt werd. Hier zijn de nodige stappen om het Board component te veranderen:
+Vervolgens zullen we het Board component de props `squares` en `onClick` doorgeven vanuit het Game component. Aangezien we nu een enkelvoudige click handler hebben in Board voor de vele Squares, moeten we ook de locatie van elke Square doorgeven in de `onClick` handler, om aan te duiden welke Square aangeklikt werd. Hier zijn de nodige stappen om het Board component te veranderen:
 
 * Verwijder de `constructor` in Board.
 * Vervang `this.state.squares[i]` met `this.props.squares[i]` in  `renderSquare` van Board.
@@ -1072,8 +1071,8 @@ naar
 <li>Claudia: 8 tasks left</li>
 <li>Alexa: 5 tasks left</li>
 ```
-Naast de geupdate getallen, zou een mens die dit leest waarschijnlijk beweren dat we de rangschikking van Alexa en Ben veranderd hebben, en Claudia tussen Alexa en Ben hebben ingevoegd.
-Maar React is een computer programma en weet niet wat onze bedoeling is. Omdat React onze intenties niet kan weten, moeten we een *key* property definiëren voor elk element uit de lijst, om het van zijn siblings te kunnen onderscheiden. Een optie zou zijn om de strings `alexa`, `ben` en `claudia` te gebruiken. Indien we data uit een database gebruiken, dan kunnen we de database IDs gebruiken als keys.
+
+Naast de geupdate getallen, zou een mens die dit leest waarschijnlijk beweren dat we de rangschikking van Alexa en Ben veranderd hebben, en Claudia tussen Alexa en Ben hebben ingevoegd. Maar React is een computer programma en weet niet wat onze bedoeling is. Omdat React onze intenties niet kan weten, moeten we een *key* property definiëren voor elk element uit de lijst, om het van zijn siblings te kunnen onderscheiden. Een optie zou zijn om de strings `alexa`, `ben` en `claudia` te gebruiken. Indien we data uit een database gebruiken, dan kunnen we de database IDs gebruiken als keys.
 
 ```html
 <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
