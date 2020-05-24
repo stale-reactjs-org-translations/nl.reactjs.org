@@ -140,7 +140,7 @@ Experienced JavaScript developers might notice that the function passed to `useE
 
 >Tip
 >
->Unlike `componentDidMount` or `componentDidUpdate`, effects scheduled with `useEffect` don't block the browser from updating the screen. This makes your app feel more responsive. The majority of effects don't need to happen synchronously. In the uncommon cases where they do (such as measuring the layout), there is a separate [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) Hook with an API identical to `useEffect`.
+>Anders dan `componentDidMount` of `componentDidUpdate` blokkeren effecten die met `useEffect` ingesteld zijn de browser niet om het scherm bij te werken. Dit maakt dat je app sneller (responsive) aanvoelt. De meeste effecten hoeven niet synchroon te gebeuren. In de zeldzame gevallen dat dat wel moet (zoals het meten van de layout) is er een afzonderlijke [`useLayoutEffect`](/docs/hooks-reference.html#uselayouteffect) Hook met een identieke API als `useEffect`.
 
 ## Effects with Cleanup {#effects-with-cleanup}
 
@@ -453,7 +453,7 @@ In the example above, we pass `[count]` as the second argument. What does this m
 
 When we render with `count` updated to `6`, React will compare the items in the `[5]` array from the previous render to items in the `[6]` array from the next render. This time, React will re-apply the effect because `5 !== 6`. If there are multiple items in the array, React will re-run the effect even if just one of them is different.
 
-This also works for effects that have a cleanup phase:
+Dit werkt ook voor effecten die een cleanup fase hebben:
 
 ```js{10}
 useEffect(() => {
@@ -465,10 +465,10 @@ useEffect(() => {
   return () => {
     ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
   };
-}, [props.friend.id]); // Only re-subscribe if props.friend.id changes
+}, [props.friend.id]); // Alleen opnieuw subscriben als props.friend.id verandert
 ```
 
-In the future, the second argument might get added automatically by a build-time transformation.
+In de toekomst kan het tweede argument misschien automatisch toegevoegd worden door een build-time transformatie.
 
 >Opmerking
 >
