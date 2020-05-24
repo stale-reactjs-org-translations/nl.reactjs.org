@@ -6,9 +6,9 @@ next: hooks-rules.html
 prev: hooks-state.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Hooks* zijn een nieuwe toevoeging in React 16.8. Ze maken het mogelijk om state en andere React voorzieningen te gebruiken zonder dat je een class hoeft te schrijven.
 
-The *Effect Hook* lets you perform side effects in function components:
+De *Effect Hook* laat je neven effecten uitveoren in functie componenten:
 
 ```js{1,6-10}
 import React, { useState, useEffect } from 'react';
@@ -16,42 +16,42 @@ import React, { useState, useEffect } from 'react';
 function Example() {
   const [count, setCount] = useState(0);
 
-  // Similar to componentDidMount and componentDidUpdate:
+  // Vergelijkbaar met componentDidMount en componentDidUpdate:
   useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
+    // Wijzig de document title door de browser API te gebruiken
+    document.title = `Je klikte ${count} keer`;
   });
 
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p>Je klikte {count} keer</p>
       <button onClick={() => setCount(count + 1)}>
-        Click me
+        Klik me
       </button>
     </div>
   );
 }
 ```
 
-This snippet is based on the [counter example from the previous page](/docs/hooks-state.html), but we added a new feature to it: we set the document title to a custom message including the number of clicks.
+Dit stuk code is gebaseerd op het [counter voorbeeld van de vorige pagina](/docs/hooks-state.html), maar we hebben een nieuwe eigenschap toegevoegd: we stellen de document titel in op een aangepast bericht dat het aantal clicks bevat.
 
-Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects. Whether or not you're used to calling these operations "side effects" (or just "effects"), you've likely performed them in your components before.
+Data ophalen, het opzetten van een subscription, en het handmatig aanpassen van de DOM in React componenten zijn allemaal voorbeelden van neven effecten. Of je al of niet bekend bent met het aanroepen van deze operaties "neven effecten" (of gewoon "effecten"), je hebt ze waarschijnlijk al eens uitgevoerd in jou componenten.
 
 >Tip
 >
->If you're familiar with React class lifecycle methods, you can think of `useEffect` Hook as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` combined.
+>Als je bekend bent met de React class lifecycle methoden, kun je je `useEffect` Hook voorstellen als `componentDidMount`, `componentDidUpdate`, en `componentWillUnmount` gecombineerd.
 
-There are two common kinds of side effects in React components: those that don't require cleanup, and those that do. Let's look at this distinction in more detail.
+Er zijn twee veelvoorkomende typen van neven effecten in React componenten: effecten die geen opruim-code nodig hebben, en effecten die dat wèl nodig hebben. Laten we eens in meer detail naar dit onderscheid kijken.
 
-## Effects Without Cleanup {#effects-without-cleanup}
+## Effects Zonder Cleanup {#effects-without-cleanup}
 
-Sometimes, we want to **run some additional code after React has updated the DOM.** Network requests, manual DOM mutations, and logging are common examples of effects that don't require a cleanup. We say that because we can run them and immediately forget about them. Let's compare how classes and Hooks let us express such side effects.
+Soms willen we **wat extra code uitvoeren nadat React DOM heeft aangepast.** Netwerk requests,handmatige DOM wijzigingen, en logging zijn veelvoorkomende voorbeelden van effecten die geen cleanup nodig hebben. We bedoelen daarmee dat we ze kunnen uitvoeren en meteen kunnen vergeten. Laten we eens vergelijken hoe classes en Hooks ons hun neveneffecten laten uitdrukken.
 
-### Example Using Classes {#example-using-classes}
+### Voorbeeld Met Classes {#example-using-classes}
 
-In React class components, the `render` method itself shouldn't cause side effects. It would be too early -- we typically want to perform our effects *after* React has updated the DOM.
+In React class componenten zou `render` methode zelf geen neveneffecten moeten veroorzaken. Het zou te vroeg zijn -- normaal gesproken willen we onze effecten pas uitvoeren *nadat* React de DOM heeft aangepast.
 
-This is why in React classes, we put side effects into `componentDidMount` and `componentDidUpdate`. Coming back to our example, here is a React counter class component that updates the document title right after React makes changes to the DOM:
+Dat is waarom we in React classes de neveneffecten in `componentDidMount` en `componentDidUpdate` stoppen. Terugkomend op ons voorbeeld, hier is de React counter class component die de titel van het document aanpast, net nadat React de DOM bijwerkt:
 
 ```js{9-15}
 class Example extends React.Component {
@@ -63,19 +63,19 @@ class Example extends React.Component {
   }
 
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Je klikte ${this.state.count} keer`;
   }
 
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Je klikte ${this.state.count} keer`;
   }
 
   render() {
     return (
       <div>
-        <p>You clicked {this.state.count} times</p>
+        <p>Je klikte {this.state.count} keer</p>
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          Click me
+          Klik me
         </button>
       </div>
     );
@@ -83,15 +83,15 @@ class Example extends React.Component {
 }
 ```
 
-Note how **we have to duplicate the code between these two lifecycle methods in class.**
+Merk op dat **we de code moeten herhalen voor deze twee lifecycle methoden in de class.**
 
-This is because in many cases we want to perform the same side effect regardless of whether the component just mounted, or if it has been updated. Conceptually, we want it to happen after every render -- but React class components don't have a method like this. We could extract a separate method but we would still have to call it in two places.
+Dat is omdat we in veel gevallen hetzelfde neveneffect willen uitvoeren of het component nou gemount wordt, of dat er een aanpassing is geweest. Inhoudelijk willen we dat het gebeurt na iedere render -- maar React class componenten hebben niet zo een methode. We zouden er een aparte methode van kunnen maken, maar die zouden we dan nog steeds vanaf twee plaatsen moeten aanroepen.
 
-Now let's see how we can do the same with the `useEffect` Hook.
+Laten we eens kijken hoe we hetzelfde kunnen bereiken met de `useEffect` Hook.
 
-### Example Using Hooks {#example-using-hooks}
+### Voorbeeld Met Hooks {#example-using-hooks}
 
-We've already seen this example at the top of this page, but let's take a closer look at it:
+We hebben dit voorbeeld als gezien bovenaan de pagina, maar laten we het nog eens beter bekijken:
 
 ```js{1,6-8}
 import React, { useState, useEffect } from 'react';
@@ -100,36 +100,36 @@ function Example() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `Je klikte ${count} keer`;
   });
 
   return (
     <div>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>
-        Click me
+        Klik op me
       </button>
     </div>
   );
 }
 ```
 
-**What does `useEffect` do?** By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we'll refer to it as our "effect"), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.
+**Wat doet `useEffect`?** By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we'll refer to it as our "effect"), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.
 
-**Why is `useEffect` called inside a component?** Placing `useEffect` inside the component lets us access the `count` state variable (or any props) right from the effect. We don't need a special API to read it -- it's already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.
+**Waarom wordt `useEffect` aangeroepen binnen een component?** Placing `useEffect` inside the component lets us access the `count` state variable (or any props) right from the effect. We don't need a special API to read it -- it's already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.
 
-**Does `useEffect` run after every render?** Yes! By default, it runs both after the first render *and* after every update. (We will later talk about [how to customize this](#tip-optimizing-performance-by-skipping-effects).) Instead of thinking in terms of "mounting" and "updating", you might find it easier to think that effects happen "after render". React guarantees the DOM has been updated by the time it runs the effects.
+**Wordt `useEffect` uitgevoerd na iedere render?** Yes! By default, it runs both after the first render *and* after every update. (We will later talk about [how to customize this](#tip-optimizing-performance-by-skipping-effects).) Instead of thinking in terms of "mounting" and "updating", you might find it easier to think that effects happen "after render". React guarantees the DOM has been updated by the time it runs the effects.
 
-### Detailed Explanation {#detailed-explanation}
+### Uitgebreide Uitleg {#detailed-explanation}
 
-Now that we know more about effects, these lines should make sense:
+Nu we meer over effecten weten, zouden de volgende regels duidelijk moeten zijn:
 
 ```js
 function Example() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `Je klikte ${count} keer`;
   });
 }
 ```
@@ -146,7 +146,7 @@ Experienced JavaScript developers might notice that the function passed to `useE
 
 Earlier, we looked at how to express side effects that don't require any cleanup. However, some effects do. For example, **we might want to set up a subscription** to some external data source. In that case, it is important to clean up so that we don't introduce a memory leak! Let's compare how we can do it with classes and with Hooks.
 
-### Example Using Classes {#example-using-classes-1}
+### Voorbeeld Met Classes {#example-using-classes-1}
 
 In a React class, you would typically set up a subscription in `componentDidMount`, and clean it up in `componentWillUnmount`. For example, let's say we have a `ChatAPI` module that lets us subscribe to a friend's online status. Here's how we might subscribe and display that status using a class:
 
@@ -180,7 +180,7 @@ class FriendStatus extends React.Component {
 
   render() {
     if (this.state.isOnline === null) {
-      return 'Loading...';
+      return 'Bezig met laden...';
     }
     return this.state.isOnline ? 'Online' : 'Offline';
   }
@@ -189,11 +189,11 @@ class FriendStatus extends React.Component {
 
 Notice how `componentDidMount` and `componentWillUnmount` need to mirror each other. Lifecycle methods force us to split this logic even though conceptually code in both of them is related to the same effect.
 
->Note
+>Opmerking
 >
 >Eagle-eyed readers may notice that this example also needs a `componentDidUpdate` method to be fully correct. We'll ignore this for now but will come back to it in a [later section](#explanation-why-effects-run-on-each-update) of this page.
 
-### Example Using Hooks {#example-using-hooks-1}
+### Voorbeeld Met Hooks {#example-using-hooks-1}
 
 Let's see how we could write this component with Hooks.
 
@@ -224,15 +224,15 @@ function FriendStatus(props) {
 }
 ```
 
-**Why did we return a function from our effect?** This is the optional cleanup mechanism for effects. Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other. They're part of the same effect!
+**Waarom gaven we een functie terug van ons effect?** This is the optional cleanup mechanism for effects. Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other. They're part of the same effect!
 
-**When exactly does React clean up an effect?** React performs the cleanup when the component unmounts. However, as we learned earlier, effects run for every render and not just once. This is why React *also* cleans up effects from the previous render before running the effects next time. We'll discuss [why this helps avoid bugs](#explanation-why-effects-run-on-each-update) and [how to opt out of this behavior in case it creates performance issues](#tip-optimizing-performance-by-skipping-effects) later below.
+**Wanneer precies voert React het opschonen van een effect uit?** React performs the cleanup when the component unmounts. However, as we learned earlier, effects run for every render and not just once. This is why React *also* cleans up effects from the previous render before running the effects next time. We'll discuss [why this helps avoid bugs](#explanation-why-effects-run-on-each-update) and [how to opt out of this behavior in case it creates performance issues](#tip-optimizing-performance-by-skipping-effects) later below.
 
->Note
+>Opmerking
 >
 >We don't have to return a named function from the effect. We called it `cleanup` here to clarify its purpose, but you could return an arrow function or call it something different.
 
-## Recap {#recap}
+## Samenvatting {#recap}
 
 We've learned that `useEffect` lets us express different kinds of side effects after a component renders. Some effects might require cleanup so they return a function:
 
@@ -257,7 +257,7 @@ Other effects might not have a cleanup phase, and don't return anything.
   });
 ```
 
-The Effect Hook unifies both use cases with a single API.
+De Effect Hook voegt beide use cases samen in één enkele API.
 
 -------------
 
@@ -470,7 +470,7 @@ useEffect(() => {
 
 In the future, the second argument might get added automatically by a build-time transformation.
 
->Note
+>Opmerking
 >
 >If you use this optimization, make sure the array includes **all values from the component scope (such as props and state) that change over time and that are used by the effect**. Otherwise, your code will reference stale values from previous renders. Learn more about [how to deal with functions](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) and [what to do when the array changes too often](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often).
 >
@@ -480,10 +480,10 @@ In the future, the second argument might get added automatically by a build-time
 >
 >We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
 
-## Next Steps {#next-steps}
+## Volgende Stappen {#next-steps}
 
-Congratulations! This was a long page, but hopefully by the end most of your questions about effects were answered. You've learned both the State Hook and the Effect Hook, and there is a *lot* you can do with both of them combined. They cover most of the use cases for classes -- and where they don't, you might find the [additional Hooks](/docs/hooks-reference.html) helpful.
+Gefeliciteerd! Dit was een lange pagina, maar hopelijk waren tegen het einde ervan je meeste vragen over effecten beantwoord. Je nu over zowel de State Hook als de Effect Hook geleerd, en er is *veel* wat je kunt doen met die beide samen. Ze dekken de meeste use cases voor classes af -- en waar ze dat niet doen, vind je misschien de [overige Hooks](/docs/hooks-reference.html) behulpzaam.
 
-We're also starting to see how Hooks solve problems outlined in [Motivation](/docs/hooks-intro.html#motivation). We've seen how effect cleanup avoids duplication in `componentDidUpdate` and `componentWillUnmount`, brings related code closer together, and helps us avoid bugs. We've also seen how we can separate effects by their purpose, which is something we couldn't do in classes at all.
+We beginnen ook te zien hoe Hooks de problemen oplossen die we geschetst hebben in de [motivatie](/docs/hooks-intro.html#motivation). We hebben gezien hoe effect cleanup dubbele code voorkomt in `componentDidUpdate` en `componentWillUnmount`, gerelateerde code dichter bij elkaar brengt, en ons helpt bugs te voorkomen. We hebben ook gezien hoe we effecten uit elkaar kunnen halen door hun doel, wat iets is dat we met classes helemaal niet konden.
 
-At this point you might be questioning how Hooks work. How can React know which `useState` call corresponds to which state variable between re-renders? How does React "match up" previous and next effects on every update? **On the next page we will learn about the [Rules of Hooks](/docs/hooks-rules.html) -- they're essential to making Hooks work.**
+Op dit punt vraag je je misschien af hoe Hooks werken. Hoe kan React weten welke `useState` aanroep hoort bij welke state variabele tussen de re-renders door? Hoe "matched" React vorige en volgende effecten bij iedere update? **OP de volgene pagine zullen we leren over de [Rules of Hooks](/docs/hooks-rules.html) -- ze zijn essentieel om Hooks goed te laten werken.**
