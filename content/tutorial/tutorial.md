@@ -16,12 +16,7 @@ Deze tutorial vereist geen voorbestaande React kennis.
 
 ## Voordat we starten {#before-we-start-the-tutorial}
 
-<<<<<<< HEAD
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
-=======
-
-We zullen een klein spelletje bouwen tijdens deze tutorial. **Misschien ben je geneigd om dit over te slaan aangezien je geen games maakt -- maar geef het een kans.** De technieken die je zal leren in deze tutorial zijn fundamenteel om React applicaties te bouwen, en ze onder de knie krijgen zal je een diep begrip van React brengen. 
->>>>>>> translated tutorial to Dutch
+We zullen een klein spelletje bouwen tijdens deze tutorial. **Misschien ben je geneigd om dit over te slaan aangezien je geen games maakt -- maar geef het een kans.** De technieken die je zal leren in deze tutorial zijn fundamenteel om React applicaties te bouwen, en ze onder de knie krijgen zal je een diep begrip van React geven. 
 
 >Tip
 >
@@ -36,23 +31,13 @@ De tutorial is opgedeeld in verschillende onderdelen:
 
 Het is niet noodzakelijk om alle onderdelen in één keer te vervolledigen. Probeer zo ver mogelijk te geraken -- zelfs al is het een of twee onderdelen.
 
-<<<<<<< HEAD
-### What Are We Building? {#what-are-we-building}
-=======
-Je kan code copy-pasten terwijl je de tutorial volgt, maar we raden je aan om de code zelf uit te typen. Dit helpt je om gewoontes te creëren en geeft je een dieper inzicht. 
-
-### Wat gaan we maken? {#what-are-we-building}
->>>>>>> translated tutorial to Dutch
+### Wat gaan we bouwen? {#what-are-we-building}
 
 In deze tutorial, zullen we tonen hoe een interactieve tic-tac-toe (boter-kaas-eieren) spel maken met React.
 
 Je kan een kijkje nemen naar wat we zullen maken: **[Afgewerkt Resultaat](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Als de code nog geen steek houdt of je syntax nog niet kent, is dat geen probleem. Het doel van deze tutorial is je React en de syntax aan te leren.
 
-<<<<<<< HEAD
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
-=======
-We raden aan dat een kijkje neemt naar het tic-tac-toe spel voordat je verdergaat met de tutorial. Een van de eigenschappen dat je zal opmerken is dat er een genummerde lijst is aan de rechterkant van het spel. Deze lijst geeft je een geschiedenis van alle zetten die in het spel zijn voorgekomen, en deze wordt geupdate tijdens het spel.
->>>>>>> translated tutorial to Dutch
+We raden aan dat een kijkje neemt in het tic-tac-toe spel voordat je verdergaat met de tutorial. Een van de eigenschappen dat je zal opmerken is dat er een genummerde lijst is aan de rechterkant van het spelbord. Deze lijst geeft je een geschiedenis van alle zetten die in het spel zijn gebeurd zijn, en deze wordt geüpdate tijdens het spel.
 
 Eens je vertrouwd bent met het tic-tac-toe spel, kan je het afsluiten. We zullen vanuit een simpelere template starten voor deze tutorial. 
 Onze volgende stap is jouw setup in te stellen zodat je het spel kan beginnen te bouwen.
@@ -136,12 +121,7 @@ We raden [deze instructies](https://babeljs.io/docs/editors/) om de *syntax high
 
 ### Help, ik zit vast! {#help-im-stuck}
 
-<<<<<<< HEAD
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
-=======
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
-Als je vast zit, ga dan naar de [community support resources](/community/support.html).  [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) in het bijzonder is een geweldige manier om snel hulp te verkrijgen. Als je geen antwoord krijgt, of je vast blijft te zitten, open dan een *issue*, en we helpen je verder.
->>>>>>> translated tutorial to Dutch
+Als je vast zit, ga dan naar de [community support resources](/community/support.html).  [Reactiflux Chat](https://discord.gg/reactiflux) in het bijzonder is een geweldige manier om snel hulp te verkrijgen. Als je geen antwoord krijgt, of als je vast blijft te zitten, open dan een *issue*, en we helpen je verder.
 
 ## Overzicht {#overview}
 
@@ -211,13 +191,9 @@ Het Square component rendert een `<button>` en het Board component rendert 9 vie
 
 ### Data doorgeven door Props {#passing-data-through-props}
 
-<<<<<<< HEAD
-To get our feet wet, let's try passing some data from our Board component to our Square component.
-
-We strongly recommend typing code by hand as you're working through the tutorial and not using copy/paste. This will help you develop muscle memory and a stronger understanding.
-=======
 Om te beginnen, proberen we data van het Board component naar het Square component door te geven.
->>>>>>> translated tutorial to Dutch
+
+We raden sterk aan om de code met de hand in te typen terwijl je door de tutorial gaat een niet copy/paste gebruikt. Dit zal je helpen bij het ontwikkelen van spiergeheugen en een sterker begrip.
 
 Pas de code aan in de `renderSquare` methode van het Board component om een prop met de naam `value` door te geven aan Square.
 
@@ -273,11 +249,7 @@ class Square extends React.Component {
 }
 ```
 
-<<<<<<< HEAD
-If you click on a Square now, you should see an alert in your browser.
-=======
-Als we nu een Square aanklikken, dan krijgen we een alert in onze browser.
->>>>>>> translated tutorial to Dutch
+Als we nu op een Square klikt, zou je een alert moeten zien in je browser.
 
 >Nota
 >
@@ -372,11 +344,7 @@ De React Devtools extensie voor [Chrome](https://chrome.google.com/webstore/deta
 
 De React DevTools laat je toe om de props en state van je React componenten te controleren
 
-<<<<<<< HEAD
-After installing React DevTools, you can right-click on any element on the page, click "Inspect" to open the developer tools, and the React tabs ("⚛️ Components" and "⚛️ Profiler") will appear as the last tabs to the right. Use "⚛️ Components" to inspect the component tree.
-=======
-Na het installeren van React DevTools, kan je op elk element rechts klikken en met "Inspect" open je de developer tools. De React tab zal als de laatste rechts tevoorschijn komen.
->>>>>>> translated tutorial to Dutch
+Na het installeren van React DevTools, kan je op elk element rechts klikken en met "Inspect" open je de developer tools en de React tabs ("⚛️ Components" and "⚛️ Profiler") zullen als de laatste tabs aan de rechterkant tevoorschijn komen om de componenten hiërarchie te inspecteren.
 
 **Hoewel, let op, er zijn extra stappen nodig om dit in CodePen werkend te krijgen:**
 
@@ -417,11 +385,7 @@ class Board extends React.Component {
   }
 ```
 
-<<<<<<< HEAD
-When we fill the board in later, the `this.state.squares` array will look something like this:
-=======
-We vullen het bord later in, het bord zal er zo ongeveer uitzien:
->>>>>>> translated tutorial to Dutch
+Als we later het bord invullen zal de `this.state.squares` array er ongeveer zo uit zien:
 
 ```javascript
 [
@@ -498,27 +462,15 @@ class Square extends React.Component {
 
 Wanneer een Square aangeklikt wordt, wordt de functie `onClick`, die door Board bezorgd is opgeroepen. Hier is een overzicht van hoe dit wordt toegepast:
 
-<<<<<<< HEAD
-1. The `onClick` prop on the built-in DOM `<button>` component tells React to set up a click event listener.
-2. When the button is clicked, React will call the `onClick` event handler that is defined in Square's `render()` method.
-3. This event handler calls `this.props.onClick()`. The Square's `onClick` prop was specified by the Board.
-4. Since the Board passed `onClick={() => this.handleClick(i)}` to Square, the Square calls `this.handleClick(i)` when clicked.
-5. We have not defined the `handleClick()` method yet, so our code crashes. If you click a square now, you should see a red error screen saying something like "this.handleClick is not a function".
-=======
-1. De `onClick` prop in het ingebouwde DOM `<button>` component zegt aan React om een click event listener op te zetten.
-2. Wanneer de knop aangeklikt wordt, roept React de `onClick` event handler die gedefinieerd is in de `render()` methode van Square.
-3. Deze event handler roept `this.props.onClick()` op. De prop `onClick` prop van Square is gespecifieerd door Board.
-4. Aangezien Board `onClick={() => this.handleClick(i)}` aan Square doorgaf, roept Square `this.handleClick(i)` wanneer het aangeklikt wordt.
-5. We hebben de methode `handleClick()` nog niet gedefinieerd dus onze code crashed.
->>>>>>> translated tutorial to Dutch
+1. De `onClick` prop in de ingebouwde DOM `<button>` component vertelt aan React om een click event listener op te zetten.
+2. Wanneer de knop ingedrukt wordt, roept React de `onClick` event handler die gedefinieerd is in de `render()` methode van Square.
+3. Deze event handler roept `this.props.onClick()` aan. De prop `onClick` prop van Square is gespecifieerd door Board.
+4. Aangezien Board `onClick={() => this.handleClick(i)}` aan Square doorgaf, roept Square `this.handleClick(i)` aan wanneer er op geklikt wordt.
+5. We hebben de methode `handleClick()` nog niet gedefinieerd dus onze code crashed. Als je nu ook een hokje klikt zou je een rode foutmelding moeten zien die iets meldt als "this.handleClick is not a function".
 
->Nota
+>Opmerking
 >
-<<<<<<< HEAD
->The DOM `<button>` element's `onClick` attribute has a special meaning to React because it is a built-in component. For custom components like Square, the naming is up to you. We could give any name to the Square's `onClick` prop or Board's `handleClick` method, and the code would work the same. In React, it's conventional to use `on[Event]` names for props which represent events and `handle[Event]` for the methods which handle the events.
-=======
->Het DOM element `<button>` zijn `onClick` attribuut heeft een speciale betekenis voor React want het is een ingebouwd component. Voor custom componenten zoals Square, is het aan jou om dit te benoemen. We kunnen `onClick` van Square en `handleClick` van Board anders benoemen, maar in React is het de gewoonte om `on[Event]` te gebruiken voor props die events representeren en `handle[Event]` voor de methodes die events handhaven.
->>>>>>> translated tutorial to Dutch
+>Het DOM element `<button>` zijn `onClick` attribuut heeft een speciale betekenis voor React want het is een ingebouwd component. Voor custom componenten zoals Square, is het aan jou. We kunnen `onClick` van Square en `handleClick` van Board anders noemen, en de code zou hetzelfde werken. In React is het de conventie om `on[Event]` te gebruiken voor props die events representeren en `handle[Event]` voor de methodes die events uitvoeren.
 
 Wanneer we een Square proberen aan te klikken, krijgen we een error omdat we `handleClick` nog niet hebben gedefinieerd. We zullen nu `handleClick` aan de Board klasse toevoegen:
 
@@ -575,11 +527,7 @@ class Board extends React.Component {
 
 **[De volledige code tot zover](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)**
 
-<<<<<<< HEAD
-After these changes, we're again able to click on the Squares to fill them, the same as we had before. However, now the state is stored in the Board component instead of the individual Square components. When the Board's state changes, the Square components re-render automatically. Keeping the state of all squares in the Board component will allow it to determine the winner in the future.
-=======
-Na deze veranderingen zijn hebben we de mogelijkheid weer om de Square componenten aan te klikken om deze op te vullen. Maar nu is de state in het Board component opgeslagen in plaats van in de individuele Square componenten. Wanneer de state van Board verandert zullen de Square componenten automatisch her-renderen. Het opslaan van de state van alle Square componenten in het Board component staat toe om later een winner uit te roepen.
->>>>>>> translated tutorial to Dutch
+Na deze wijzigingen kunnen we weer op de Square klikken om deze in te vullen zoals we hiervoor ook was. Maar nu is de state in het Board component opgeslagen in plaats van in de individuele Square componenten. Wanneer de state van Board verandert zullen de Square componenten automatisch opnieuw renderen. Het opslaan van de state van alle Square componenten in het Board component stelt het in staat om later een winner uit te roepen.
 
 Aangezien de Square componenten niet langer de state bevatten, de Square componenten waardes ontvangen van het Board component en het Board component informeren wanneer ze aangeklikt worden. In de React terminologie, zijn deze nu **controlled components**. Het Board component heeft volledige controle over hen.
 
