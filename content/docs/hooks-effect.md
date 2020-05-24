@@ -114,11 +114,11 @@ function Example() {
 }
 ```
 
-**Wat doet `useEffect`?** By using this Hook, you tell React that your component needs to do something after render. React will remember the function you passed (we'll refer to it as our "effect"), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.
+**Wat doet `useEffect`?** Door deze Hook te gebruiken laat je React weten dat jouw component iets moet doen na een render. React zal de functie die je meegaf onthouden (we zullen die ons "effect" noemen), en die later aanroepen na de DOM wijzigingen te hebben uitgevoerd. In dit effect stellen we de document titel in, maar we zouden ook data kunnen ophalen of een andere imperatieve API aanroepen.
 
-**Waarom wordt `useEffect` aangeroepen binnen een component?** Placing `useEffect` inside the component lets us access the `count` state variable (or any props) right from the effect. We don't need a special API to read it -- it's already in the function scope. Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution.
+**Waarom wordt `useEffect` aangeroepen binnen een component?** Het plaatsen van `useEffect` binnen de component geeft ons toegang tot de `count` state variabele (en de props) rechtstreeks vanuit het effect. We hebben geen speciale API nodig om hem te lezen -- hij is al binnen de functie scope. Hooks omarmt JavaScript closures en voorkomt het introduceren van React-specifieke APIs waar JavaScript al in een oplossing voorziet.
 
-**Wordt `useEffect` uitgevoerd na iedere render?** Yes! By default, it runs both after the first render *and* after every update. (We will later talk about [how to customize this](#tip-optimizing-performance-by-skipping-effects).) Instead of thinking in terms of "mounting" and "updating", you might find it easier to think that effects happen "after render". React guarantees the DOM has been updated by the time it runs the effects.
+**Wordt `useEffect` uitgevoerd na iedere render?** Ja! Standaard wordt hij zowel na de eerste render *en* na elke update uitgevoerd. (We zullen er later over spreken [hoe je dit kunt aanpassen](#tip-optimizing-performance-by-skipping-effects).) In plaats van te denken in termen van "mounting" en "updating", vindt je het misschien eenvoudiger bedenken dat effecten gebeuren "na het renderen". React garandeert dat het DOM is bijgewerkt tegen de tijd dat het de effecten uitvoert.
 
 ### Uitgebreide Uitleg {#detailed-explanation}
 
