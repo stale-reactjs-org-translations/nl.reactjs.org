@@ -1208,5 +1208,4 @@ Als je nog extra tijd hebt of je React vaardigheden wat meer wil oefenen, zijn h
 5. Wanneer iemand wint, duid de vakken aan die de overwinning hebben gebracht.
 6. Wanneer er geen winnaar is, toon een boodschap die de een gelijkspel vermeld.
 
-
 In deze tutorial hebben we React concepten leren kennen, elements, components, props en state. Voor een meer gedetailleerde uitleg over elk van deze onderwerpen, lees dan [de rest van de documentatie](/docs/hello-world.html). Om meer te leren over het definiëren van componenten, lees de [`React.Component` API referentie](/docs/react-component.html).
