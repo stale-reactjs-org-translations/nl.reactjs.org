@@ -39,20 +39,18 @@ Je kan een kijkje nemen naar wat we zullen maken: **[Afgewerkt Resultaat](https:
 
 We raden aan dat een kijkje neemt in het tic-tac-toe spel voordat je verdergaat met de tutorial. Een van de eigenschappen dat je zal opmerken is dat er een genummerde lijst is aan de rechterkant van het spelbord. Deze lijst geeft je een geschiedenis van alle zetten die in het spel zijn gebeurd zijn, en deze wordt geüpdate tijdens het spel.
 
-Eens je vertrouwd bent met het tic-tac-toe spel, kan je het afsluiten. We zullen vanuit een simpelere template starten voor deze tutorial. 
-Onze volgende stap is jouw setup in te stellen zodat je het spel kan beginnen te bouwen.
+Eens je vertrouwd bent met het tic-tac-toe spel, kan je het afsluiten. We zullen vanuit een simpelere template starten voor deze tutorial. Onze volgende stap is jouw setup in te stellen zodat je het spel kan beginnen te bouwen.
 
 ### Vereisten {#prerequisites}
 
 We gaan ervanuit dat je enigzins vertrouwd bent met HTML en Javascript, maar het is mogelijk om deze tutorial te volgen, zelfs als je van een andere programmeer taal komt. We gaan er ook vanuit dat je vertrouwd bent met programmeer concepten zoals functies (functions), objecten (objects), arrays en in mindere mate met klasses (classes).
 
-Als je Javascript wil herhalen, raden we [deze handleiding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript).
-We gebruiken ook sommige functies van ES6 -- een recente versie van Javscript. In deze tutorial zullen we [arrow functies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), en [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements gebruiken.
+Als je Javascript wil herhalen, raden we [deze handleiding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). We gebruiken ook sommige functies van ES6 -- een recente versie van Javscript. In deze tutorial zullen we [arrow functies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), en [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements gebruiken.
 Je kan de [Babel REPL](babel://es5-syntax-example) gebruiken om de controleren hoe ES6 code compileert.
 
 ## Setup voor de Tutorial {#setup-for-the-tutorial}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+Er zijn twee manieren om deze tutorial te doen: of je schrijft de code in je browser of je zet een lokale ontwikkel omgeving op je computer.
 
 ### Setup Optie 1: Schrijf de Code in de Browser{#setup-option-1-write-code-in-the-browser}
 
