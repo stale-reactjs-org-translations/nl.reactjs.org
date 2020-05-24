@@ -224,8 +224,7 @@ Na: Je zal normaal een nummer in elk vierant van de gerenderde output zien.
 
 **[De volledige code tot zover](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Gefeliciteerd, je het zojuist een prop van de parent Board doorgegeven aan het child Square component door gegeven. 
-Props doorgeven is hoe informatie vloeit in React applicaties, van parents naar children.
+Gefeliciteerd, je het zojuist een prop van de parent Board doorgegeven aan het child Square component door gegeven. Props doorgeven is hoe informatie vloeit in React applicaties, van parents naar children.
 
 ### Interactieve Componenten maken {#making-an-interactive-component}
 
