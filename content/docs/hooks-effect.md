@@ -261,17 +261,17 @@ De Effect Hook voegt beide use cases samen in één enkele API.
 
 -------------
 
-**If you feel like you have a decent grasp on how the Effect Hook works, or if you feel overwhelmed, you can jump to the [next page about Rules of Hooks](/docs/hooks-rules.html) now.**
+**Als je nu het gevoel hebt een behoorlijk idee hebt hoe de Effect Hook werkt, of als je je overweldigt voelt, kan je nu naar de [volgende pagina over Regels van Hooks](/docs/hooks-rules.html) gaan.**
 
 -------------
 
 ## Tips voor het Gebruik van Effecten {#tips-for-using-effects}
 
-We'll continue this page with an in-depth look at some aspects of `useEffect` that experienced React users will likely be curious about. Don't feel obligated to dig into them now. You can always come back to this page to learn more details about the Effect Hook.
+We zullen nu doorgaan met een diepgaande blik op enkele aspecten `useEffect` waar ervaren React-gebruikers waarschijnlijk nieuwsgierig naar zijn. Voel je niet verplicht om daar nu in te duiken. Je kunt altijd terugkomen naar deze pagina om verdere details over de Effect Hook te leren.
 
 ### Tip: Gebruik Meerdere Effecten om Zaken te Scheiden {#tip-use-multiple-effects-to-separate-concerns}
 
-One of the problems we outlined in the [Motivation](/docs/hooks-intro.html#complex-components-become-hard-to-understand) for Hooks is that class lifecycle methods often contain unrelated logic, but related logic gets broken up into several methods. Here is a component that combines the counter and the friend status indicator logic from the previous examples:
+Eén van de problemen die we hebben beschreven in de [Motivatie](/docs/hooks-intro.html#complex-components-become-hard-to-understand) voor Hooks is dat class lifecycle methoden vaak niet-gerlateerde logica bevatten, en gerelateerde logica wordt opgesplitst in verschillende methoden. Hier is een component die de logica van de teller en de status indicator uit de vorige voorbeelden combineert:
 
 ```js
 class FriendStatusWithCounter extends React.Component {
@@ -282,7 +282,7 @@ class FriendStatusWithCounter extends React.Component {
   }
 
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Je klikte ${this.state.count} keer`;
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -290,7 +290,7 @@ class FriendStatusWithCounter extends React.Component {
   }
 
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Je klikte ${this.state.count} keer`;
   }
 
   componentWillUnmount() {
@@ -308,7 +308,7 @@ class FriendStatusWithCounter extends React.Component {
   // ...
 ```
 
-Note how the logic that sets `document.title` is split between `componentDidMount` and `componentDidUpdate`. The subscription logic is also spread between `componentDidMount` and `componentWillUnmount`. And `componentDidMount` contains code for both tasks.
+Merk op hoe de logica die de `document.title` instelt is verdeeld over `componentDidMount` en `componentDidUpdate`. De subscription logica is ook verspreid over `componentDidMount` anden `componentWillUnmount`. En `componentDidMount` bevat code voor beide taken.
 
 So, how can Hooks solve this problem? Just like [you can use the *State* Hook more than once](/docs/hooks-state.html#tip-using-multiple-state-variables), you can also use several effects. This lets us separate unrelated logic into different effects:
 
