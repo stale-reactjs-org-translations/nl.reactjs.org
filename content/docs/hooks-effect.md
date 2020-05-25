@@ -148,7 +148,7 @@ Eerder hebben we bekeken hoe je neveneffecten kunt beschrijven die niet hoeven t
 
 ### Voorbeeld met Classes {#example-using-classes-1}
 
-In een React class zou je gewoonlijk een subscription opzetten in `componentDidMount` en die opschonen in `componentWillUnmount`. Bijvoorbeeld, laten we zeggen dat we een `ChatAPI` module hebben waarmee we ons kunnen abonneren (subscribe) op een vriend zijn online status. Hier is hoe we kunnen abonneren en de status weergeven met een class:
+In een React class zou je gewoonlijk een subscription opzetten in `componentDidMount` en die opschonen in `componentWillUnmount`. Bijvoorbeeld, laten we zeggen dat we een `ChatAPI` module hebben waarmee we ons kunnen aanmelden (subscribe) op een vriend zijn online status. Hier is hoe we kunnen aanmelden en de status weergeven met een class:
 
 ```js{8-26}
 class FriendStatus extends React.Component {
@@ -310,13 +310,13 @@ class FriendStatusWithCounter extends React.Component {
 
 Merk op hoe de logica die de `document.title` instelt is verdeeld over `componentDidMount` en `componentDidUpdate`. De subscription logica is ook verspreid over `componentDidMount` anden `componentWillUnmount`. En `componentDidMount` bevat code voor beide taken.
 
-So, how can Hooks solve this problem? Just like [you can use the *State* Hook more than once](/docs/hooks-state.html#tip-using-multiple-state-variables), you can also use several effects. This lets us separate unrelated logic into different effects:
+Dus hoe kunnen we dit probleem oplossen met Hooks? Net zoals [je de *State* Hook meer dan één keer kun gebruiken](/docs/hooks-state.html#tip-using-multiple-state-variables), kun je ook meerdere effecten gebruiken. Dit stelt ons in staat niet-gerelateerde logica te scheiden in twee aparte effecten:
 
 ```js{3,8}
 function FriendStatusWithCounter(props) {
   const [count, setCount] = useState(0);
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    document.title = `Je klikte ${count} keer`;
   });
 
   const [isOnline, setIsOnline] = useState(null);
@@ -334,13 +334,13 @@ function FriendStatusWithCounter(props) {
 }
 ```
 
-**Hooks let us split the code based on what it is doing** rather than a lifecycle method name. React will apply *every* effect used by the component, in the order they were specified.
+**Hooks maken het ons mogelijk de code te splitsen gebaseerd op wat het doet** in plaats van op basis van de naam van een lifecycle methode. React zal *elk* effect toepassen dat wordt gebruikt door de component in de volgorde waarin ze zijn gespecificeerd.
 
-### Explanation: Why Effects Run on Each Update {#explanation-why-effects-run-on-each-update}
+### Uitleg: Waarom Effecten Uitgevoerd Worden bij Elke Update {#explanation-why-effects-run-on-each-update}
 
-If you're used to classes, you might be wondering why the effect cleanup phase happens after every re-render, and not just once during unmounting. Let's look at a practical example to see why this design helps us create components with fewer bugs.
+Als je gewend bent aan classes vraag je je misschien af waarom de cleanup een effect na iedere render gebeurt en niet maar één keer tijden het unmounten. Laten we eens kijken naar een praktisch voorbeeld om te begrijpen waarom dit opzet ons helpt componenten te maken met minder bugs.
 
-[Earlier on this page](#example-using-classes-1), we introduced an example `FriendStatus` component that displays whether a friend is online or not. Our class reads `friend.id` from `this.props`, subscribes to the friend status after the component mounts, and unsubscribes during unmounting:
+[Eerder op deze pagina](#example-using-classes-1) introduceerden we een `FriendStatus` component voorbeeld dat weergeeft of een vriend online is of niet. Onze class leest `friend.id` uit `this.props`, meldt zich aan voor status updates van de vriend nadat de component mount, meldt zich af tijdens het unmounten:
 
 ```js
   componentDidMount() {
@@ -358,9 +358,9 @@ If you're used to classes, you might be wondering why the effect cleanup phase h
   }
 ```
 
-**But what happens if the `friend` prop changes** while the component is on the screen? Our component would continue displaying the online status of a different friend. This is a bug. We would also cause a memory leak or crash when unmounting since the unsubscribe call would use the wrong friend ID.
+**Maar wat gebeurt er als de `friend` prop wijzigt** terwijl de component op het scherm staat? Ons component zou de online status van een andere vriend blijven weergeven. Dit is een bug. We zouden ook een geheugenlek veroorzaken of een crash tijdens het unmounten omdat de unsubscribe aanroep het verkeerde vriend-ID zou gebruiken.
 
-In a class component, we would need to add `componentDidUpdate` to handle this case:
+In een class component, zouden we een `componentDidUpdate` moeten toevoegen om dit juist af te handelen:
 
 ```js{8-19}
   componentDidMount() {
@@ -371,12 +371,12 @@ In a class component, we would need to add `componentDidUpdate` to handle this c
   }
 
   componentDidUpdate(prevProps) {
-    // Unsubscribe from the previous friend.id
+    // Unsubscribe van de vorige friend.id
     ChatAPI.unsubscribeFromFriendStatus(
       prevProps.friend.id,
       this.handleStatusChange
     );
-    // Subscribe to the next friend.id
+    // Subscribe op de volgende friend.id
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -391,9 +391,9 @@ In a class component, we would need to add `componentDidUpdate` to handle this c
   }
 ```
 
-Forgetting to handle `componentDidUpdate` properly is a common source of bugs in React applications.
+Vergeten om `componentDidUpdate` correct af te handelen is een veelvoorkomende bron van fouten in React-applications.
 
-Now consider the version of this component that uses Hooks:
+Beschouw nu de versie van deze component die Hooks gebruikt:
 
 ```js
 function FriendStatus(props) {
@@ -407,29 +407,29 @@ function FriendStatus(props) {
   });
 ```
 
-It doesn't suffer from this bug. (But we also didn't make any changes to it.)
+De bug doet zich hier niet voor. (Maar we hebben er ook geen wijzigingen in aangebracht.)
 
-There is no special code for handling updates because `useEffect` handles them *by default*. It cleans up the previous effects before applying the next effects. To illustrate this, here is a sequence of subscribe and unsubscribe calls that this component could produce over time:
+Er is geen aparte code voor het afhandelen van updates omdat `useEffect` deze *standaard* afhandelt. Het schoont de vorige effecten op voordat de volgende effecten worden toegepast. Om dit te illustreren is hier een opeenvolging van aan- en afmeldingsaanroepen die deze component in de loop van de tijd zou kunnen produceren:
 
 ```js
-// Mount with { friend: { id: 100 } } props
-ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // Run first effect
+// Mount met { friend: { id: 100 } } props
+ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // Uitvoeren eerste effect
 
-// Update with { friend: { id: 200 } } props
-ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Clean up previous effect
-ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Run next effect
+// Update met { friend: { id: 200 } } props
+ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Cleanup vorige effect
+ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Uitvoeren volgende effect
 
 // Update with { friend: { id: 300 } } props
-ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Clean up previous effect
-ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Run next effect
+ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Cleanup vorige effect
+ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Uitvoeren volgende effect
 
 // Unmount
-ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last effect
+ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Cleanup laatste effect
 ```
 
-This behavior ensures consistency by default and prevents bugs that are common in class components due to missing update logic.
+Dit gedrag zorgt standaard voor consistentie en voorkomt bugs die veel voorkomen in class componenten vanwege ontbrekende updatelogica.
 
-### Tip: Optimizing Performance by Skipping Effects {#tip-optimizing-performance-by-skipping-effects}
+### Tip: Perstatie Optimaliseren door het Overslaan van Effecten {#tip-optimizing-performance-by-skipping-effects}
 
 In some cases, cleaning up or applying the effect after every render might create a performance problem. In class components, we can solve this by writing an extra comparison with `prevProps` or `prevState` inside `componentDidUpdate`:
 
