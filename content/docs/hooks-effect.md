@@ -226,11 +226,11 @@ function FriendStatus(props) {
 
 **Waarom gaven we een functie terug van ons effect?** Dit is het optionele cleanup mechanisme voor effecten. Ieder effect kan een functie teruggeven die achter hem opruimd. Dit maakt het mogelijk om de logica voor het toevoegen en verwijderen van subscriptions dicht bi elkaar te houden. Ze zijn onderdeel van één en hetzelfde effect!
 
-**Wanneer precies voert React het opschonen van een effect uit?** React performs the cleanup when the component unmounts. However, as we learned earlier, effects run for every render and not just once. This is why React *also* cleans up effects from the previous render before running the effects next time. We'll discuss [why this helps avoid bugs](#explanation-why-effects-run-on-each-update) and [how to opt out of this behavior in case it creates performance issues](#tip-optimizing-performance-by-skipping-effects) later below.
+**Wanneer precies voert React het opschonen van een effect uit?** React voert de cleanup uit wanneer de component unmount. Maar - zoals we eerder zagen - worden effecten uitgevoerd bij iedere render en niet maar één keer. Dat is waarom React *ook* de cleanup van effecten van de vorige redener doet voordat de effecten nog een keer worden uitgevoerd. We zullen hieronder later bespreken [waarom dit helpt bugs te voorkomen](#explanation-why-effects-run-on-each-update) en [hoe je dit gedrag kunt voorkomen indien het prestatieproblemen veroorzaakt](#tip-optimizing-performance-by-skipping-effects) later below.
 
 >Opmerking
 >
->We don't have to return a named function from the effect. We called it `cleanup` here to clarify its purpose, but you could return an arrow function or call it something different.
+>We hoeven de funtie die het effect teruggeeft geen naam te geven. We hebben hem `cleanup` genoemd om zijn doel te verduidelijken, maar je zou ook een arrow funcite kunnen teruggeven of hem anders kunnen noemen.
 
 ## Samenvatting {#recap}
 
@@ -265,11 +265,11 @@ De Effect Hook voegt beide use cases samen in één enkele API.
 
 -------------
 
-## Tips for Using Effects {#tips-for-using-effects}
+## Tips voor het Gebruik van Effecten {#tips-for-using-effects}
 
 We'll continue this page with an in-depth look at some aspects of `useEffect` that experienced React users will likely be curious about. Don't feel obligated to dig into them now. You can always come back to this page to learn more details about the Effect Hook.
 
-### Tip: Use Multiple Effects to Separate Concerns {#tip-use-multiple-effects-to-separate-concerns}
+### Tip: Gebruik Meerdere Effecten om Zaken te Scheiden {#tip-use-multiple-effects-to-separate-concerns}
 
 One of the problems we outlined in the [Motivation](/docs/hooks-intro.html#complex-components-become-hard-to-understand) for Hooks is that class lifecycle methods often contain unrelated logic, but related logic gets broken up into several methods. Here is a component that combines the counter and the friend status indicator logic from the previous examples:
 
