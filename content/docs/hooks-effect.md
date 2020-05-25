@@ -371,12 +371,12 @@ In een class component, zouden we een `componentDidUpdate` moeten toevoegen om d
   }
 
   componentDidUpdate(prevProps) {
-    // Unsubscribe van de vorige friend.id
+    // Afmelden van de vorige friend.id
     ChatAPI.unsubscribeFromFriendStatus(
       prevProps.friend.id,
       this.handleStatusChange
     );
-    // Subscribe op de volgende friend.id
+    // Aanmelden op de volgende friend.id
     ChatAPI.subscribeToFriendStatus(
       this.props.friend.id,
       this.handleStatusChange
@@ -431,12 +431,12 @@ Dit gedrag zorgt standaard voor consistentie en voorkomt bugs die veel voorkomen
 
 ### Tip: Perstatie Optimaliseren door het Overslaan van Effecten {#tip-optimizing-performance-by-skipping-effects}
 
-In some cases, cleaning up or applying the effect after every render might create a performance problem. In class components, we can solve this by writing an extra comparison with `prevProps` or `prevState` inside `componentDidUpdate`:
+In sommige gevallen kan opschonen of toepassen van effecten na iedere render een prestatieprobleem veroorzaken. In class componenten kunnen we dat oplossen door het schrijven van een extra vergelijking met `prevProps` of `prevState` binnen `componentDidUpdate`:
 
 ```js
 componentDidUpdate(prevProps, prevState) {
   if (prevState.count !== this.state.count) {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Je klikte ${this.state.count} keer`;
   }
 }
 ```
@@ -465,7 +465,7 @@ useEffect(() => {
   return () => {
     ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
   };
-}, [props.friend.id]); // Alleen opnieuw subscriben als props.friend.id verandert
+}, [props.friend.id]); // Alleen opnieuw aanmelden als props.friend.id verandert
 ```
 
 In de toekomst kan het tweede argument misschien automatisch toegevoegd worden door een build-time transformatie.
@@ -478,7 +478,7 @@ In de toekomst kan het tweede argument misschien automatisch toegevoegd worden d
 >
 >If you pass an empty array (`[]`), the props and state inside the effect will always have their initial values. While passing `[]` as the second argument is closer to the familiar `componentDidMount` and `componentWillUnmount` mental model, there are usually [better](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [solutions](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) to avoid re-running effects too often. Also, don't forget that React defers running `useEffect` until after the browser has painted, so doing extra work is less of a problem.
 >
->We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
+>We raden aan de [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) regel te gebruiken als onderdeel van ons [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. Die waarschuwt als dependencies niet correct zijn gespecificeerd en stelt een  oplossing voor.
 
 ## Volgende Stappen {#next-steps}
 
