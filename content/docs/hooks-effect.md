@@ -441,17 +441,17 @@ componentDidUpdate(prevProps, prevState) {
 }
 ```
 
-This requirement is common enough that it is built into the `useEffect` Hook API. You can tell React to *skip* applying an effect if certain values haven't changed between re-renders. To do so, pass an array as an optional second argument to `useEffect`:
+Deze vereiste is gebruikelijk genoeg dat het ingebouwd is in de `useEffect` Hook API. Je kunt React aangeven om een het toepassen van effect *over te slaan* wanneer bepaalde waarden niet zijn veranderd tussen renders. Om dat te doen geef je een array door als een tweede optioneel argument naar `useEffect`:
 
 ```js{3}
 useEffect(() => {
-  document.title = `You clicked ${count} times`;
-}, [count]); // Only re-run the effect if count changes
+  document.title = `Je klikte ${count} keer`;
+}, [count]); // Alleen opnieuw uitvoeren als count wijzigt
 ```
 
-In the example above, we pass `[count]` as the second argument. What does this mean? If the `count` is `5`, and then our component re-renders with `count` still equal to `5`, React will compare `[5]` from the previous render and `[5]` from the next render. Because all items in the array are the same (`5 === 5`), React would skip the effect. That's our optimization.
+In het bovenstaande voorbeeld geven we `[count]` als tweede argument mee. Wat betekent dat? Als `count` `5` is en ons component rendert opnieuw met `count` nog steeds gelijk aan `5`, zal React de `[5]` van de vorige render vergelijken met `[5]` van de volgende render. Omdat alle elementen in de array hetzelfde zijn (`5 === 5`) zou React het effect overslaan. Dat is onze optimalisatie.
 
-When we render with `count` updated to `6`, React will compare the items in the `[5]` array from the previous render to items in the `[6]` array from the next render. This time, React will re-apply the effect because `5 !== 6`. If there are multiple items in the array, React will re-run the effect even if just one of them is different.
+Wanneer we renderen met `count` gewijzigd naar `6` zal React de elementen van de `[5]` array van de vorige render vergelijken met de `[6]` array van de volgende render. Dit keer zal React het effect opnieuw toepassen omdat `5 !== 6`. Als er meerdere elementen in de array zitten zal React het effect opnieuw uitvoeren als er ook maar één van hen afwijkt.
 
 Dit werkt ook voor effecten die een cleanup fase hebben:
 
@@ -472,11 +472,11 @@ In de toekomst kan het tweede argument misschien automatisch toegevoegd worden d
 
 >Opmerking
 >
->If you use this optimization, make sure the array includes **all values from the component scope (such as props and state) that change over time and that are used by the effect**. Otherwise, your code will reference stale values from previous renders. Learn more about [how to deal with functions](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) and [what to do when the array changes too often](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often).
+>Zorg ervoor, als je deze optimalisatie gebruikt, dat de array **alle waarden uit de scope van de component (zoals props en state) bevat die in de loop van de tijd wijzigen en worden gebruikt door het effect**. Ander zal je code verwijzen naar waarden die verouderd (stale) zijn. Leer meer over [hoe om te gaan met functies](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) en [wat te doen als de array te vaak wijzigt](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often).
 >
->If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array (`[]`) as a second argument. This tells React that your effect doesn't depend on *any* values from props or state, so it never needs to re-run. This isn't handled as a special case -- it follows directly from how the dependencies array always works.
+>Als je een effect maar één keer wilt uitvoeren en weer opschonen (bij mounten en unmounten) kun je een legere array (`[]`) als het tweede argument doorgeven. Dat laat React weten dat je effect van *geen enkele* waarde uit props of state afhankelijk is en het dus nooit opnieuw uitgevoerd hoeft te worden. Dit wordt niet behandeld als een speciaal geval -- het volgt rechtstreeks uit hoe de dependency-array altijd werkt.
 >
->If you pass an empty array (`[]`), the props and state inside the effect will always have their initial values. While passing `[]` as the second argument is closer to the familiar `componentDidMount` and `componentWillUnmount` mental model, there are usually [better](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [solutions](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) to avoid re-running effects too often. Also, don't forget that React defers running `useEffect` until after the browser has painted, so doing extra work is less of a problem.
+>Als je een lege array (`[]`) meegeeft zullen de props en de state binnen het effect altijd hun initiele waarden hebbens. Hoewel het meegeven van `[]` als de tweede parameter dichterbij het bekende `componentDidMount` en `componentWillUnmount` mentale model ligt zijn er gewoonlijk [betere](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [oplossingrn](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) om te voorkomen dat effecten te vaak opnieuw uitgevoerd worden. Vergeet ook niet dat React het uitvoeren van `useEffect` tot nadat de browser  until after the browser has painted, so doing extra work is less of a problem.
 >
 >We raden aan de [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) regel te gebruiken als onderdeel van ons [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. Die waarschuwt als dependencies niet correct zijn gespecificeerd en stelt een  oplossing voor.
 
