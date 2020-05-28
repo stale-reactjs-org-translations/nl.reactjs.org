@@ -6,10 +6,10 @@ prev: conditional-rendering.html
 next: forms.html
 ---
 
-Laten we beginnen met te bekijken hoe je lijsten transformeert in JavaScript.
+Laten we allereerst bekijken hoe je lijsten transformeert in JavaScript.
 
 In de code hieronder gebruiken we de [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie op een array van `numbers` waarmee hun waarde wordt verdubbeld.
-We wijzen de array die door `map()` wordt teruggegeven toe aan de variabele `doubled` en loggen deze:
+De nieuwe array die door `map()` wordt teruggegeven wijzen we toe aan de variabele `doubled` waarna deze wordt gelogd:
 
 ```javascript{2}
 const numbers = [1, 2, 3, 4, 5];
@@ -17,15 +17,15 @@ const doubled = numbers.map((number) => number * 2);
 console.log(doubled);
 ```
 
-Deze code logt `[2, 4, 6, 8, 10]` in de console.
+Deze code logt `[2, 4, 6, 8, 10]` naar de console.
 
-Het transformeren van arrays naar lijsten van [elementen](/docs/rendering-elements.html) in React is bijna identiek.
+In React is het transformeren van arrays naar lijsten van [elementen](/docs/rendering-elements.html) bijna identiek aan het voorgaande.
 
 ### Meerdere Componenten Renderen {#rendering-multiple-components}
 
 Je kunt collecties van elementen opbouwen en [in JSX gebruiken](/docs/introducing-jsx.html#embedding-expressions-in-jsx) met behulp van accolades `{}`.
 
-In het voorbeeld hieronder doorlopen we de `numbers` array met de JavaScript [`map()`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie.
+Hieronder doorlopen we de array van `numbers` gebruik makende van de JavaScript [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie.
 Voor ieder item geven we een `<li>` element terug.
 Ten slotte wijzen we de array van elementen toe aan `listItems`:
 
@@ -47,13 +47,13 @@ ReactDOM.render(
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
 
-Deze code toont een lijst met nummers van 1 tot en met 5.
+Deze code toont een lijst met opsommingstekens met nummers van 1 tot en met 5.
 
 ### Eenvoudige Lijst Component {#basic-list-component}
 
-Gewoonlijk render je lijsten in een [component](/docs/components-and-props.html).
+Het is gebruikelijk om je lijsten in een [component](/docs/components-and-props.html) te renderen.
 
-We kunnen het eerdere voorbeeld ombouwen naar een component die een array van `numbers` ontvangt en een lijst van elementen weergeeft.
+We kunnen het vorige voorbeeld omschrijven naar een component die een array van `numbers` aanneemt en een lijst van elementen teruggeeft.
 
 ```javascript{3-5,7,13}
 function NumberList(props) {
@@ -73,8 +73,8 @@ ReactDOM.render(
 );
 ```
 
-Als je deze code start, krijg je een waarschuwing dat er een "key" nodig is voor de lijst items.
-Een "key" is een speciaal string attribuut dat je moet toevoegen als je lijsten van elementen maakt.
+Als je deze code uitvoert, krijg je een waarschuwing dat een "key" nodig is voor lijst elementen.
+Een "key" is een speciaal text attribuut dat je moet toevoegen als je lijsten van elementen maakt.
 In de volgende sectie zullen we uitleggen waarom dat belangrijk is.
 
 Laten we een `key` toevoegen aan onze lijst items in `numbers.map()` en daarmee het probleem van de missende keys oplossen.
@@ -103,8 +103,8 @@ ReactDOM.render(
 
 ## Keys {#keys}
 
-Keys helpen React om items, die veranderd, toegevoegd of verwijderd zijn, te identificeren.
-De elementen in een array moeten keys krijgen om ze een stabiele identiteit te geven:
+Keys helpen React om te identificeren welke elementen zijn veranderd, zijn toegevoegd of zijn verwijderd.
+De elementen in een array zullen keys moeten krijgen om ze een stabiele identiteit te geven:
 
 ```js{3}
 const numbers = [1, 2, 3, 4, 5];
@@ -126,7 +126,7 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-Als je geen stabiele IDs hebt voor gerenderde items, kun je als laatste redmiddel ook de item index als key gebruiken:
+Als je geen stabiele IDs hebt voor gerenderde items, kun je als laatste redmiddel ook de index van het element in de lijst als key gebruiken:
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
@@ -137,10 +137,10 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-We raden het af om indices als keys te gebruiken als de volgorde van items kan veranderen. 
-Dit heeft een negatieve invloed op de performance en kan problemen met de component state veroorzaken.
+We raden het af om indices als keys te gebruiken als de volgorde van elementen kan veranderen. 
+, omdat dit een negatieve invloed heeft op de performance en problemen met de component state kan veroorzaken.
 Lees Robin Pokornys artikel voor een [diepgaande uitleg van de negatieve effecten van het gebruik van een index als key (Engels)](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318).
-Als je er voor kiest om geen expliciete key aan lijst items te geven, zal React standaard indices gebruiken als keys.
+Als je er voor kiest om geen expliciete key aan lijst elementen te geven gebruikt React standaard de indices als keys.
 
 Als je er meer over wilt leren, vind je hier een [diepgaande uitleg waarom keys nodig zijn](/docs/reconciliation.html#recursing-on-children).
 
@@ -261,8 +261,8 @@ ReactDOM.render(
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
-Keys geven een hint aan React maar ze worden niet doorgegeven aan je componenten.
-Als je de waarde nodig hebt in je component, moet je deze expliciet als een prop met een andere naam doorgeven.
+Keys dienen als hint aan React maar ze worden niet doorgegeven aan je componenten.
+Als je dezelfde waarde nodig hebt in je component, moet je deze expliciet als een prop met een andere naam doorgeven.
 
 ```js{3,4}
 const content = posts.map((post) =>
@@ -294,7 +294,7 @@ function NumberList(props) {
 }
 ```
 
-JSX staat toe dat we [elke expressie gebruiken](/docs/introducing-jsx.html#embedding-expressions-in-jsx) tussen accolades, dus  we zouden het `map()` resultaat ook direct kunnen gebruiken:
+JSX staat [elke expressie](/docs/introducing-jsx.html#embedding-expressions-in-jsx) toe tussen accolades, dus we zouden het `map()` resultaat ook direct kunnen gebruiken:
 
 ```js{5-8}
 function NumberList(props) {
@@ -312,6 +312,6 @@ function NumberList(props) {
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
-Soms levert dit beter leesbare code, maar deze manier kan ook misbruikt worden.
+Soms levert dit beter leesbare code op, maar deze stijl kan ook misbruikt worden.
 Net als in JavaScript is het aan jou om te bepalen of het loont om een variabele te gebruiken voor de leesbaarheid.
-Het kan een goed idee zijn om [een component op te splitsen](/docs/components-and-props.html#extracting-components)  als de `map()` body te diep genest is.
+Het kan een goed idee zijn om [een component te extraheren](/docs/components-and-props.html#extracting-components)  als de expressie in `map()` te diep genest is.
