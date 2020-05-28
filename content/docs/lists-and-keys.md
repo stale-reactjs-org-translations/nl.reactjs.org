@@ -1,6 +1,6 @@
 ---
 id: lists-and-keys
-title: Lijsten En Keys
+title: Lijsten en Keys
 permalink: docs/lists-and-keys.html
 prev: conditional-rendering.html
 next: forms.html
@@ -22,7 +22,7 @@ In React is het transformeren van arrays naar lijsten van [elementen](/docs/rend
 
 ### Meerdere Componenten Renderen {#rendering-multiple-components}
 
-Je kunt collecties van elementen opbouwen en [in JSX gebruiken](/docs/introducing-jsx.html#embedding-expressions-in-jsx) met behulp van accolades `{}`.
+Je kunt collecties van elementen maken en [in JSX opnemen](/docs/introducing-jsx.html#embedding-expressions-in-jsx) met behulp van accolades `{}`.
 
 Hieronder doorlopen we de array van `numbers` gebruik makende van de JavaScript [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie. Voor ieder item geven we een `<li>` element terug. Ten slotte wijzen we de array van elementen toe aan `listItems`:
 
@@ -33,7 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-We gebruiken de hele `listItems` array in een `<ul>` element en [renderen het naar het DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+We nemen de hele `listItems` array op in een `<ul>` element en [renderen het naar het DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
 ReactDOM.render(
@@ -72,7 +72,7 @@ ReactDOM.render(
 
 Als je deze code uitvoert, krijg je een waarschuwing dat een "key" nodig is voor lijst elementen. Een "key" is een speciaal text attribuut dat je moet toevoegen als je lijsten van elementen maakt. In de volgende sectie zullen we uitleggen waarom dat belangrijk is.
 
-Laten we een `key` toevoegen aan onze lijst items in `numbers.map()` en daarmee het probleem van de missende keys oplossen.
+Laten we een `key` toevoegen aan onze lijst elementen in `numbers.map()` en daarmee het probleem dat deze ontbreken oplossen.
 
 ```javascript{4}
 function NumberList(props) {
@@ -134,13 +134,13 @@ We raden het af om indices als keys te gebruiken als de volgorde van elementen k
 
 Als je er meer over wilt leren, vind je hier een [diepgaande uitleg waarom keys nodig zijn](/docs/reconciliation.html#recursing-on-children).
 
-### Componenten Met Keys Opsplitsen {#extracting-components-with-keys}
+### Componenten met Keys Extraheren {#extracting-components-with-keys}
 
 Keys zijn alleen logisch in de context van de omliggende array.
 
 Als je bijvoorbeeld een `ListItem` component wilt [extraheren](/docs/components-and-props.html#extracting-components), moet je de key op de `<ListItem />` elementen in de array houden en niet op het `<li>` element in het `ListItem` zelf.
 
-**Voorbeeld: Foutief Gebruik Van Keys**
+**Voorbeeld: Foutief Gebruik van Keys**
 
 ```javascript{4,5,14,15}
 function ListItem(props) {
@@ -173,7 +173,7 @@ ReactDOM.render(
 );
 ```
 
-**Voorbeeld: Correct Gebruik Van Keys**
+**Voorbeeld: Correct Gebruik van Keys**
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
