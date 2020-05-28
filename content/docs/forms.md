@@ -76,15 +76,7 @@ class NameForm extends React.Component {
 Aangezien het `value` attribuut gezet is op ons form element, zal de weergegeven waarde altijd `this.state.value` zijn, waarbij de React state de enkele bron van waarheid is.
 Aangezien `handleChange` loopt bij elke toetsaanslag om de React state bij te werken, zal de weergegeven waarde bijgewerkt worden wanneer de gebruiker typt.
 
-Met een gecontroleerd component zal elke verandering van state een geassocieerde handler functie hebben.
-Dit maakt het heel eenvoudig om gebruikersinput te veranderen of te valideren.
-Bijvoorbeeld, als we willen afdwingen dat namen geschreven worden met alleen hoofdletters, kunnen we `handleChange` als volgt schrijven:
-
-```javascript{2}
-handleChange(event) {
-  this.setState({value: event.target.value.toUpperCase()});
-}
-```
+Met een gecontroleerd component wordt de waarde van de input altijd gestuurd door de React state. Hoewel dit inhoudt dat je iets meer code moet intypen kun je de waarde ook naar andere UI elementen sturen of deze resetten vanuit andere event handler. 
 
 ## De textarea Tag {#the-textarea-tag}
 
@@ -236,7 +228,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.name === 'isGoing' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
