@@ -17,7 +17,7 @@ redirect_from:
 
 ## Overzicht {#overview}
 
-### Components {#components}
+### Componenten {#components}
 
 Met React componenten kun je de UI opsplitsen in onafhankelijke, herbruikbare stukken, en over elk stuk afzonderlijk nadenken. React componenten kunnen worden gedefinieerd door subclasses van `React.Component` of `React.PureComponent` te maken.
 
@@ -41,7 +41,7 @@ Zie [React zonder JSX gebruiken](/docs/react-without-jsx.html) voor meer informa
 
 ### Elementen Transformeren {#transforming-elements}
 
-`React` biedt provides een aantal APIs om elementen te manipuleren:
+`React` biedt een aantal APIs om elementen te manipuleren:
 
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
@@ -67,7 +67,7 @@ Suspense laat componenten op iets "wachten" voor het renderen. Op dit moment ond
 
 ### Hooks {#hooks}
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class. Hooks have a [dedicated docs section](/docs/hooks-intro.html) and a separate API reference:
+*Hooks* zijn nieuw toevoegd in React 16.8. Ze laten ons state en andere React eigenschappen gebruiken zonder class te schrijven. Hooks hebben een [speciale sectie in de docs](/docs/hooks-intro.html) en een separate API reference:
 
 - [Basis Hooks](/docs/hooks-reference.html#basic-hooks)
   - [`useState`](/docs/hooks-reference.html#usestate)
@@ -88,7 +88,7 @@ Suspense laat componenten op iets "wachten" voor het renderen. Op dit moment ond
 
 ### `React.Component` {#reactcomponent}
 
-`React.Component` is de base class voor React componenten als ze gedefinieerd worden met [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
+`React.Component` is de basis class voor React componenten als ze gedefinieerd worden met [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
 
 ```javascript
 class Greeting extends React.Component {
@@ -106,7 +106,7 @@ Bekijk de [React.Component API Reference](/docs/react-component.html) voor een l
 
 `React.PureComponent` is vergelijkbaar met [`React.Component`](#reactcomponent). Het verschil tussen de twee is dat [`React.Component`](#reactcomponent) [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) niet implementeert, maar `React.PureComponent` het implementeert met een ondiepe (shallow) prop and state vergelijking.
 
-If your React component's `render()` function renders the same result given the same props and state, you can use `React.PureComponent` for a performance boost in some cases.
+Als jouw React compnent zijn `render()` functie hetzelfde resultaat rendert voor een gegeven props en state kun je `React.PureComponent` gebruiken, voor een prestatieboost in sommige gevallen.
 
 > Opmerking
 >
@@ -124,11 +124,11 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-`React.memo` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
+`React.memo` is een [hogere orde component](/docs/higher-order-components.html). Het is vergelijkbaar met [`React.PureComponent`](#reactpurecomponent) maar dan voor functie componenten in plaats van voor class componenten.
 
-If your function component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+Als je functie component hetzelde resultaat rendert gegeven dezelfde props, kun je deze inpakken met een aanroep naar `React.memo` om in sommige gevallen een prestatieboost te bereiken door het resultaat te memoriseren. Dat betekent dat React het renderen van de component zal overslaan en het laatst gerenderde resultaat zal gebruikten.
 
-`React.memo` only checks for prop changes. If your function component wrapped in `React.memo` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
+`React.memo` controleert alleen op prop veranderingen. Als je functie component ingepakt in in `React.memo` een [`useState`](/docs/hooks-state.html) of een [`useContext`](/docs/hooks-reference.html#usecontext) Hook heeft in zijn implementatie zal het nog steeds opnieuw renderen als de state of de context veranderen.
 
 By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
 
@@ -148,7 +148,7 @@ export default React.memo(MyComponent, areEqual);
 
 This method only exists as a **[performance optimization](/docs/optimizing-performance.html).** Do not rely on it to "prevent" a render, as this can lead to bugs.
 
-> Note
+> Opmerking
 >
 > Unlike the [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) method on class components, the `areEqual` function returns `true` if the props are equal and `false` if the props are not equal. This is the inverse from `shouldComponentUpdate`.
 
