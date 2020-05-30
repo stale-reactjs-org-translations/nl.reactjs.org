@@ -110,7 +110,7 @@ Als jouw React compnent zijn `render()` functie hetzelfde resultaat rendert voor
 
 > Opmerking
 >
-> `React.PureComponent`'s `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences. Only extend `PureComponent` when you expect to have simple props and state, or use [`forceUpdate()`](/docs/react-component.html#forceupdate) when you know deep data structures have changed. Or, consider using [immutable objects](https://facebook.github.io/immutable-js/) to facilitate fast comparisons of nested data.
+> `React.PureComponent` zijn `shouldComponentUpdate()` vergelijkt de objecten alleen oppervlakkig. Als ze complexe datastructuren bevatten kan dat vals-negatieven opleveren voor diepere verschillen. Breid `PureComponent` alleen uit als je verwacht dat je eenvoudige props en state zult hebben, of gebruik [`forceUpdate()`](/docs/react-component.html#forceupdate) als je weet dat diepe datastructuren veranderd zijn. Of overweeg [immutable objects](https://facebook.github.io/immutable-js/) te gebruiken om snelle vergelijkingen van geneste data te faciliteren.
 >
 > Daarbovenop, slaat `React.PureComponent` zijn `shouldComponentUpdate()` prop aanpassingen over voor de gehele componenten subtree. Zorg ervoor dat alle child componenten ook "puur" zijn.
 
@@ -120,7 +120,7 @@ Als jouw React compnent zijn `render()` functie hetzelfde resultaat rendert voor
 
 ```javascript
 const MyComponent = React.memo(function MyComponent(props) {
-  /* render using props */
+  /* render met props */
 });
 ```
 
@@ -130,27 +130,28 @@ Als je functie component hetzelde resultaat rendert gegeven dezelfde props, kun 
 
 `React.memo` controleert alleen op prop veranderingen. Als je functie component ingepakt in in `React.memo` een [`useState`](/docs/hooks-state.html) of een [`useContext`](/docs/hooks-reference.html#usecontext) Hook heeft in zijn implementatie zal het nog steeds opnieuw renderen als de state of de context veranderen.
 
-By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
+Standaard zal het complexe objecten in het props object alleen oppervlakkig vergelijken. Als je controle wilt over de vergelijking kun je ook een aangepaste vergelijkingsfunctie meegegeven als het tweede argument.
 
 ```javascript
 function MyComponent(props) {
-  /* render using props */
+  /* render met props */
 }
 function areEqual(prevProps, nextProps) {
   /*
-  return true if passing nextProps to render would return
-  the same result as passing prevProps to render,
-  otherwise return false
+  geef `true` terug als nextProps doorgeven aan
+  render hetzelfde resultaat zou geven als het 
+  doorgeven van prevProps aan render,
+  geef `false` als dat niet zo is.
   */
 }
 export default React.memo(MyComponent, areEqual);
 ```
 
-This method only exists as a **[performance optimization](/docs/optimizing-performance.html).** Do not rely on it to "prevent" a render, as this can lead to bugs.
+Deze methode bestaat alleen als een **[prestatieoptimalisatie](/docs/optimizing-performance.html).** Vertrouw hier niet op om een render te voorkomen, omdat dit fouten kan veroorzaken.
 
 > Opmerking
 >
-> Unlike the [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) method on class components, the `areEqual` function returns `true` if the props are equal and `false` if the props are not equal. This is the inverse from `shouldComponentUpdate`.
+> In tegenstelling tot de [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) methode op class componenten, geeft de `areEqual` functie `true` terug als de props gelijk zijn en `false` als de props gelijk zijn. Dit is het omgekeerde van bij `shouldComponentUpdate`.
 
 * * *
 
