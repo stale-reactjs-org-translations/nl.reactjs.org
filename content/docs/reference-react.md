@@ -165,9 +165,9 @@ React.createElement(
 )
 ```
 
-Create and return a new [React element](/docs/rendering-elements.html) of the given type. The type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Creëert en retourneert een nieuw [React element](/docs/rendering-elements.html) van het gegeven type. Het type argument kan ofwel de naam van een tag zijn (zoals `'div'` of `'span'`), een [React component](/docs/components-and-props.html)-type (een class of een functie), of een [React fragment](#reactfragment)-type.
 
-Code written with [JSX](/docs/introducing-jsx.html) will be converted to use `React.createElement()`. You will not typically invoke `React.createElement()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+Code geschreven met [JSX](/docs/introducing-jsx.html) wordt omgezet zodat het `React.createElement()` gebruikt. Normaal gesproken roep je `React.createElement()` niet direct aan als je JSX gebruikt. Zie [React zonder JSX](/docs/react-without-jsx.html) om hier meer over te leren.
 
 * * *
 
@@ -183,7 +183,7 @@ React.cloneElement(
 
 Clone and return a new React element using `element` as the starting point. The resulting element will have the original element's props with the new props merged in shallowly. New children will replace existing children. `key` and `ref` from the original element will be preserved.
 
-`React.cloneElement()` is almost equivalent to:
+`React.cloneElement()` is bijna equivalent aan:
 
 ```js
 <element.type {...element.props} {...props}>{children}</element.type>
@@ -191,7 +191,7 @@ Clone and return a new React element using `element` as the starting point. The 
 
 However, it also preserves `ref`s. This means that if you get a child with a `ref` on it, you won't accidentally steal it from your ancestor. You will get the same `ref` attached to your new element.
 
-This API was introduced as a replacement of the deprecated `React.addons.cloneWithProps()`.
+Deze API werd geïntroduceerd als een vervanging van het verouderde `React.addons.cloneWithProps()`.
 
 * * *
 
@@ -203,9 +203,9 @@ React.createFactory(type)
 
 Return a function that produces React elements of a given type. Like [`React.createElement()`](#createelement), the type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
 
-This helper is considered legacy, and we encourage you to either use JSX or use `React.createElement()` directly instead.
+Deze helper wordt als erfenis beschouwd en we raden je aan om in plaats hiervan ofwel JSX danwel rechtstreeks `React.createElement()` te gebruiken.
 
-You will not typically invoke `React.createFactory()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+Je zal, normaal gesproken, `React.createFactory()` niet direct aanroepen als je JSX gebruikt. Zie [React zonder JSX](/docs/react-without-jsx.html) voor meer informatie.
 
 * * *
 
@@ -271,7 +271,7 @@ React.Children.toArray(children)
 
 Returns the `children` opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of children in your render methods, especially if you want to reorder or slice `this.props.children` before passing it down.
 
-> Note:
+> Opmerking:
 >
 > `React.Children.toArray()` changes keys to preserve the semantics of nested arrays when flattening lists of children. That is, `toArray` prefixes each key in the returned array so that each element's key is scoped to the input array containing it.
 
@@ -279,20 +279,20 @@ Returns the `children` opaque data structure as a flat array with keys assigned 
 
 ### `React.Fragment` {#reactfragment}
 
-The `React.Fragment` component lets you return multiple elements in a `render()` method without creating an additional DOM element:
+De `React.Fragment` component maakt het mogelijk dat je meerdere elementen kunt retourneren vanuit een `render()` methode, zonder een extra DOM-element te maken:
 
 ```javascript
 render() {
   return (
     <React.Fragment>
-      Some text.
-      <h2>A heading</h2>
+      Wat tekst.
+      <h2>Een kop</h2>
     </React.Fragment>
   );
 }
 ```
 
-You can also use it with the shorthand `<></>` syntax. For more information, see [React v16.2.0: Improved Support for Fragments](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
+Je kunt het ook gebruiken met kortschrift syntax `<></>`. Voor meer informatie, zie [React v16.2.0: Improved Support for Fragments](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
 
 
 ### `React.createRef` {#reactcreateref}
@@ -315,36 +315,36 @@ In the above example, React passes a `ref` given to `<FancyButton ref={ref}>` el
 
 As a result, after React attaches the ref, `ref.current` will point directly to the `<button>` DOM element instance.
 
-For more information, see [forwarding refs](/docs/forwarding-refs.html).
+Voor meer informatie, zie [forwarding refs](/docs/forwarding-refs.html).
 
 ### `React.lazy` {#reactlazy}
 
 `React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during the initial render.
 
-You can learn how to use it from our [code splitting documentation](/docs/code-splitting.html#reactlazy). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
+You can learn how to use it from our [code-split documentatie](/docs/code-splitting.html#reactlazy). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
 
 ```js
-// This component is loaded dynamically
+// Deze component wordt dynamisch geladen
 const SomeComponent = React.lazy(() => import('./SomeComponent'));
 ```
 
 Note that rendering `lazy` components requires that there's a `<React.Suspense>` component higher in the rendering tree. This is how you specify a loading indicator.
 
-> **Note**
+> **Opmerking**
 >
-> Using `React.lazy`with dynamic import requires Promises to be available in the JS environment. This requires a polyfill on IE11 and below.
+> `React.lazy` gebruiken met dynamische import vereist het dat Promises beschikbaar zijn in de JS omgeving. Dit vereist een polyfill op IE11 en lager.
 
 ### `React.Suspense` {#reactsuspense}
 
-`React.Suspense` lets you specify the loading indicator in case some components in the tree below it are not yet ready to render. Today, lazy loading components is the **only** use case supported by `<React.Suspense>`:
+`React.Suspense` maakt laat je loading-indicator specificeren voor het geval dat sommige componenten in de hiërarchie nog niet klaar zijn om gerenderd te worden. Op dit moment is het lazy-loaden van componenten de **enige** use case die ondersteund wordt door `<React.Suspense>`:
 
 ```js
-// This component is loaded dynamically
+// Deze component wordt dynamisch ingeladen
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
 function MyComponent() {
   return (
-    // Displays <Spinner> until OtherComponent loads
+    // Toont <Spinner> totdat OtherComponent geladen is
     <React.Suspense fallback={<Spinner />}>
       <div>
         <OtherComponent />
@@ -354,10 +354,10 @@ function MyComponent() {
 }
 ```
 
-It is documented in our [code splitting guide](/docs/code-splitting.html#reactlazy). Note that `lazy` components can be deep inside the `Suspense` tree -- it doesn't have to wrap every one of them. The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use `lazy()` wherever you want to do code splitting.
+Het is gedocumenteerd in onze [code-splits-gids](/docs/code-splitting.html#reactlazy). Merk op dat `lazy` componenten diep binnen de `Suspense`-tree kunnen zitten -- hij hoeft niet om elke component apart heen. De beste werkwijze is om `<Suspense>` te plaatsen waar je een loading-indicator wilt zien, maar gebruik `lazy()` wanneer je code overal waar je code wilt splitsen.
 
-While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](/blog/2018/11/27/react-16-roadmap.html).
+Hoewel is nu nog niet ondesteund wordt hebben we het plan om in de toekomst `Suspense` meer scenarios te laten afhandelen, zoals data-fetching. Je kunt hierover lezen in [onze roadmap](/blog/2018/11/27/react-16-roadmap.html).
 
->Note:
+>Opmerking:
 >
->`React.lazy()` and `<React.Suspense>` are not yet supported by `ReactDOMServer`. This is a known limitation that will be resolved in the future.
+>`React.lazy()` en `<React.Suspense>` worden nog niet ondersteund door `ReactDOMServer`. Deze tekortkoming is bekend en zal in de toekomst opgelost worden
