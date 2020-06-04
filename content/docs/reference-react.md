@@ -231,9 +231,9 @@ React.Children.map(children, function[(thisArg)])
 
 Invokes a function on every immediate child contained within `children` with `this` set to `thisArg`. If `children` is an array it will be traversed and the function will be called for each child in the array. If children is `null` or `undefined`, this method will return `null` or `undefined` rather than an array.
 
-> Note
+> Opmerking
 >
-> If `children` is a `Fragment` it will be treated as a single child and not traversed.
+> Als `children` een `Fragment` is zal het als een enkel child worden behandeld en niet doorlopen worden.
 
 #### `React.Children.forEach` {#reactchildrenforeach}
 
@@ -241,7 +241,7 @@ Invokes a function on every immediate child contained within `children` with `th
 React.Children.forEach(children, function[(thisArg)])
 ```
 
-Like [`React.Children.map()`](#reactchildrenmap) but does not return an array.
+Hetzelfde als [`React.Children.map()`](#reactchildrenmap) maar geeft geen array terug.
 
 #### `React.Children.count` {#reactchildrencount}
 
@@ -249,7 +249,7 @@ Like [`React.Children.map()`](#reactchildrenmap) but does not return an array.
 React.Children.count(children)
 ```
 
-Returns the total number of components in `children`, equal to the number of times that a callback passed to `map` or `forEach` would be invoked.
+Geeft het totale aantal componenten in `children`, gelijk aan het aantal keren dat een callback die aan `map` of `forEach` zou worden aangeroepen.
 
 #### `React.Children.only` {#reactchildrenonly}
 
@@ -257,11 +257,11 @@ Returns the total number of components in `children`, equal to the number of tim
 React.Children.only(children)
 ```
 
-Verifies that `children` has only one child (a React element) and returns it. Otherwise this method throws an error.
+Controleert dat `children` maar één child heeft (een React element) en geeft dat terug. Zo niet wordt er een fout gegenereerd.
 
-> Note:
+> Opmerking:
 >
->`React.Children.only()` does not accept the return value of [`React.Children.map()`](#reactchildrenmap) because it is an array rather than a React element.
+>`React.Children.only()` accepteert niet we waarde teruggegeven door [`React.Children.map()`](#reactchildrenmap) omdat dat een array is in plaats van een React element.
 
 #### `React.Children.toArray` {#reactchildrentoarray}
 
@@ -269,11 +269,11 @@ Verifies that `children` has only one child (a React element) and returns it. Ot
 React.Children.toArray(children)
 ```
 
-Returns the `children` opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of children in your render methods, especially if you want to reorder or slice `this.props.children` before passing it down.
+Geeft de ondoorzichtige datastructuur `children` door als een platte array met sleutels toegewezen aan elk child. Handig als je collecties van children wilt manipuleren in je render-methoden, in het bijzonder als je `this.props.children` opnieuw wilt ordenen of ze op wilt delen voor je ze naar beneden doorgeeft.
 
 > Opmerking:
 >
-> `React.Children.toArray()` changes keys to preserve the semantics of nested arrays when flattening lists of children. That is, `toArray` prefixes each key in the returned array so that each element's key is scoped to the input array containing it.
+> `React.Children.toArray()` wijzigt sleutels om de semantiek te behouden van geneste arrays terwijl de lijst van children plat wordt gemaakt. Dat wil zeggen, `toArray` voegt een prefix toe aan elke sleutel in de geretourneerde array, zodat de sleutel van elk element zich uitstrekt tot de invoerarray die deze bevat.
 
 * * *
 
@@ -297,38 +297,38 @@ Je kunt het ook gebruiken met kortschrift syntax `<></>`. Voor meer informatie, 
 
 ### `React.createRef` {#reactcreateref}
 
-`React.createRef` creates a [ref](/docs/refs-and-the-dom.html) that can be attached to React elements via the ref attribute.
+`React.createRef` creëert een [ref](/docs/refs-and-the-dom.html) die verbonden kan worden met React elementen via het ref attribuut.
 `embed:16-3-release-blog-post/create-ref-example.js`
 
 ### `React.forwardRef` {#reactforwardref}
 
-`React.forwardRef` creates a React component that forwards the [ref](/docs/refs-and-the-dom.html) attribute it receives to another component below in the tree. This technique is not very common but is particularly useful in two scenarios:
+`React.forwardRef` creëert een React component die het [ref](/docs/refs-and-the-dom.html) attribuut doorstuurd die het ontvangt naar een ander component eronder in de hiërarchie. Deze techniek wordt niet vaak gebruikt maar is bepaald handig in twee scenarios:
 
-* [Forwarding refs to DOM components](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
-* [Forwarding refs in higher-order-components](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
+* [Doorsturen van refs naar DOM-componenten](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
+* [Doorsuren van refs in higher-order-componenten](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
 
-`React.forwardRef` accepts a rendering function as an argument. React will call this function with `props` and `ref` as two arguments. This function should return a React node.
+`React.forwardRef` accepteert een render-functie als argument. React zal deze functie aanroepen met `props` en `ref` als de twee argumenten. De functie zou een React-node terug moeten geven.
 
 `embed:reference-react-forward-ref.js`
 
-In the above example, React passes a `ref` given to `<FancyButton ref={ref}>` element as a second argument to the rendering function inside the `React.forwardRef` call. This rendering function passes the `ref` to the `<button ref={ref}>` element.
+In het bovenstaande voorbeeld geeft React een `ref` dat gegeven is aan het `<FancyButton ref={ref}>` element door als een tweede argument naar de render-function binnen de `React.forwardRef` aanroep. Deze render-functie geeft de `ref` door aan het `<button ref={ref}>` element.
 
-As a result, after React attaches the ref, `ref.current` will point directly to the `<button>` DOM element instance.
+Als resultaat - nadat React de ref verbindt - zal `ref.current` direct wijzen naar de `<button>`-DOM-element instantie.
 
 Voor meer informatie, zie [forwarding refs](/docs/forwarding-refs.html).
 
 ### `React.lazy` {#reactlazy}
 
-`React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during the initial render.
+`React.lazy()` laat je een component definiëren dat dynamisch wordt geladen. Dit helpt de bundel-grootte te te reduceren door het laden van componenten uit te stellen die niet gebruikt worden tijdens de initiële render.
 
-You can learn how to use it from our [code-split documentatie](/docs/code-splitting.html#reactlazy). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
+Je kunt leren hoe het te gebruiken in onze [code-split documentatie](/docs/code-splitting.html#reactlazy). Misschien wil je ook [dit artikel](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) bekijken dat in meer detail uitlegt hoe het te gebruiken.
 
 ```js
 // Deze component wordt dynamisch geladen
 const SomeComponent = React.lazy(() => import('./SomeComponent'));
 ```
 
-Note that rendering `lazy` components requires that there's a `<React.Suspense>` component higher in the rendering tree. This is how you specify a loading indicator.
+Merk op dat het renderen van `lazy` componenten vereist dat er een `<React.Suspense>` component hoger in de render-hiërarchie is. Dat is hoe je een loading-indicator specificeert.
 
 > **Opmerking**
 >
