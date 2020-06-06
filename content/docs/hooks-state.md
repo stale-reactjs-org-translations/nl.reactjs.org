@@ -14,7 +14,7 @@ De [introductiepagina](/docs/hooks-intro.html) gebruikte dit voorbeeld om vertro
 import React, { useState } from 'react';
 
 function Example() {
-  // Declareer een nieuwe state variabele, de we "count" zullen noemen
+  // Declareer een nieuwe state variabele, die we "count" zullen noemen
   const [count, setCount] = useState(0);
 
   return (
@@ -56,7 +56,7 @@ class Example extends React.Component {
 }
 ```
 
-De state begint als `{ count: 0 }`, en we verhogen `state.count` als de gebruiker op een knop druk door `this.setState()` aan te roepen. We zullen stukjes van deze class gebruiken over de hele pagina verspreid.
+De state begint als `{ count: 0 }`, en we verhogen `state.count` als de gebruiker op een knop druk door `this.setState()` aan te roepen. We zullen stukjes van deze class her en der in de pagina gebruiken.
 
 >Opmerking
 >
