@@ -37,7 +37,7 @@ Deze extra methoden zijn afhankelijk van een package (`stream`) die **alleen bes
 ReactDOMServer.renderToString(element)
 ```
 
-Render een React element naar zijn initiële HTML. React zal een HTML-string terug geven. Je kunt deze methode gebruiken om HTML te genereren op de server en deze markup versturen bij het eerste verzoek voor het sneller laden van de pagina en om searchengines je pagina te kunnen laten crawlen voor SEO-doeleinden.
+Rendert een React-element naar zijn initiële HTML. React zal een HTML-string terug geven. Je kunt deze methode gebruiken om HTML te genereren op de server en deze markup versturen bij het eerste verzoek voor het sneller laden van de pagina en om searchengines je pagina te kunnen laten crawlen voor SEO-doeleinden.
 
 Als je [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) aanroept op een node die deze server-rendered markup al heeft zal React deze behouden en alleen event-handlers koppelen, wat je de mogelijkheid geeft zeer snelle first-load ervaringen te krijgen.
 
@@ -49,9 +49,9 @@ Als je [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) aanroept op een node
 ReactDOMServer.renderToStaticMarkup(element)
 ```
 
-Similar to [`renderToString`](#rendertostring), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
+Vergelijkbaar met [`renderToString`](#rendertostring) behalve dat er geen extra DOM-attributen worden gegenereerd die React intern gebruikt zoals `data-reactroot`. Dit is handig, als je React wilt gebruiken als een eenvoudige generator van statische pagina's omdat het weghalen van de extra attributen wat bytes kan schelen.
 
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToString`](#rendertostring) on the server and [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on the client.
+Gebruik deze methode niet als je van plan bent React op de client te gebruiken om de markup interactief te maken. Gebruik in plaats daarvan [`renderToString`](#rendertostring) op de server en [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) op de client.
 
 * * *
 
@@ -61,15 +61,15 @@ If you plan to use React on the client to make the markup interactive, do not us
 ReactDOMServer.renderToNodeStream(element)
 ```
 
-Render a React element to its initial HTML. Returns a [Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) that outputs an HTML string. The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToString`](#rendertostring) would return. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
+Rendert een React-element naar zijn initiële HTML. Geeft een [Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) terug die een HTML-string geeft. De HTML-uitvoer van deze stream is exact hetzelfde als die [`ReactDOMServer.renderToString`](#rendertostring) terug zou geven. Je kunt deze methode gebruiken om HTML te generenen op de server en deze markup versturen bij het eerste verzoek voor het sneller laden van de pagina en om searchengines je pagina te kunnen laten crawlen voor SEO-doeleinden.
 
-If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
+Als je [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) aanroept op een node die deze server-rendered markup al heeft zal React deze behouden en alleen event-handlers koppelen, wat je de mogelijkheid geeft zeer snelle first-load ervaringen te krijgen.
 
 > Opmerking:
 >
 > Server-only. Deze API is niet beschikbaar in de browser.
 >
-> De stream die teruggegeven wordt door deze methode geeft een byte-stream gencodeerd in utf-8. Als je een andere encoding nodig hebt, bekijk dan een project zoals [iconv-lite](https://www.npmjs.com/package/iconv-lite), dat voorziet in transformatie-streams voor het transcoden van tekst.
+> De stream die teruggegeven wordt door deze methode geeft een byte-stream gecodeerd in utf-8. Als je een andere encoding nodig hebt, bekijk dan een project zoals [iconv-lite](https://www.npmjs.com/package/iconv-lite), dat voorziet in transformatie-streams voor het transcoderen van tekst.
 
 * * *
 
@@ -79,14 +79,14 @@ If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that 
 ReactDOMServer.renderToStaticNodeStream(element)
 ```
 
-Similar to [`renderToNodeStream`](#rendertonodestream), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
+Vergelijkbaar met [`renderToNodeStream`](#rendertonodestream) behalve dat er geen extra DOM-attributen worden gegenereerd die React intern gebruikt zoals `data-reactroot`. Dit is handig, als je React wilt gebruiken als een eenvoudige generator van statische pagina's omdat het weghalen van de extra attributen wat bytes kan schelen.
 
-The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) would return.
+De HTML-uitvoer van deze stream is exact hetzelfde als die [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) terug zou geven.
 
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToNodeStream`](#rendertonodestream) on the server and [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on the client.
+Gebruik deze methode niet als je van plan bent React op de client te gebruiken om de markup interactief te maken. Gebruik in plaats daarvan [`renderToNodeStream`](#rendertonodestream) op de server en [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) op de client.
 
 > Opmerking:
 >
 > Server-only. Deze API is niet beschikbaar in de browser.
 >
-> De stream die teruggegeven wordt door deze methode geeft een byte-stream gencodeerd in utf-8. Als je een andere encoding nodig hebt, bekijk dan een project zoals [iconv-lite](https://www.npmjs.com/package/iconv-lite), dat voorziet in transformatie-streams voor het transcoden van tekst.
+> De stream die teruggegeven wordt door deze methode geeft een byte-stream gecodeerd in utf-8. Als je een andere encoding nodig hebt, bekijk dan een project zoals [iconv-lite](https://www.npmjs.com/package/iconv-lite) dat voorziet in transformatie-streams voor het transcoderen van tekst.
