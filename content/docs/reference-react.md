@@ -181,7 +181,7 @@ React.cloneElement(
 )
 ```
 
-Clone and return a new React element using `element` as the starting point. The resulting element will have the original element's props with the new props merged in shallowly. New children will replace existing children. `key` and `ref` from the original element will be preserved.
+Clone en geef een nieuw React-element terug waarbij `element` als het beginpunt wordt gebruikt. Het resulterende element zal de props van het origineel krijgen met de nieuwe props daarin oppervlakkig samengevoegd (shallowly merged). Nieuwe children zullen de bestaande children vervangen. `key` en `ref` van het originaal blijven behouden.
 
 `React.cloneElement()` is bijna equivalent aan:
 
@@ -189,7 +189,7 @@ Clone and return a new React element using `element` as the starting point. The 
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
-However, it also preserves `ref`s. This means that if you get a child with a `ref` on it, you won't accidentally steal it from your ancestor. You will get the same `ref` attached to your new element.
+Echt, dit behoudt ook `ref` referenties. Dat betekent dat als je een child met een `ref` krijgt, je deze niet per ongeluk zal stelen van je ancestor. Je zal dezelfde `ref` krijgen gekoppeld aan je nieuwe element.
 
 Deze API werd geïntroduceerd als een vervanging van het verouderde `React.addons.cloneWithProps()`.
 
@@ -201,7 +201,7 @@ Deze API werd geïntroduceerd als een vervanging van het verouderde `React.addon
 React.createFactory(type)
 ```
 
-Return a function that produces React elements of a given type. Like [`React.createElement()`](#createelement), the type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Geeft een functie terug die React-elementen produceert van een gegeven type. Net als bij [`React.createElement()`](#createelement) kan de parameter `type` een tag-naam (zoals`'div'` of `'span'`) zijn, een [React component](/docs/components-and-props.html)-type (een class of een functie), of een [React fragment](#reactfragment)-type.
 
 Deze helper wordt als erfenis beschouwd en we raden je aan om in plaats hiervan ofwel JSX danwel rechtstreeks `React.createElement()` te gebruiken.
 
@@ -215,13 +215,13 @@ Je zal, normaal gesproken, `React.createFactory()` niet direct aanroepen als je 
 React.isValidElement(object)
 ```
 
-Verifies the object is a React element. Returns `true` or `false`.
+Verifieert of een object een React-element is. Geeft `true` of `false` terug.
 
 * * *
 
 ### `React.Children` {#reactchildren}
 
-`React.Children` provides utilities for dealing with the `this.props.children` opaque data structure.
+`React.Children` voorziet in gereedschappen om met de ondoorzichtige datastructuur `this.props.children` om te gaan.
 
 #### `React.Children.map` {#reactchildrenmap}
 
@@ -229,7 +229,7 @@ Verifies the object is a React element. Returns `true` or `false`.
 React.Children.map(children, function[(thisArg)])
 ```
 
-Invokes a function on every immediate child contained within `children` with `this` set to `thisArg`. If `children` is an array it will be traversed and the function will be called for each child in the array. If children is `null` or `undefined`, this method will return `null` or `undefined` rather than an array.
+Roept een functie aan voor elke child die `children` bevat met `thisArg` op ingesteld `this`. Als `children` een array is zal het doorlopen worden en zal de functie aangeroepen worden voor elke child in de array. Als children `null` of `undefined` is zal deze methode `null` of `undefined` teruggeven in plaats van een array.
 
 > Opmerking
 >
