@@ -112,7 +112,7 @@ Over het algemeen wil je React componenten op meerdere plaatsen op de HTML pagin
 
 Voordat je je website naar productie deployed, wees je er van bewust van niet gecomprimeerde JavaScript de pagina aanzienlijk kan vertragen voor je gebruikers.
 
-Wanneer je je applicatie script al comprimeerd, **is je site productie klaar** wanneer je er voor zorgt dat de gedeployde HTML de versies van React inlaadt die eindigen op `production.min.js`:
+Wanneer je je applicatie script al comprimeerd, **is je site productie-rijp** wanneer je er voor zorgt dat de gedeployde HTML de versies van React inlaadt die eindigen op `production.min.js`:
 
 ```js
 <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
@@ -176,7 +176,7 @@ Ga naar je project map in de terminal and plak deze twee opdrachten:
 >
 >We gebruiken **gebruiken npm hier alleen om de JSX preprocessor te installeren;** je hebt het nergens anders voor nodig. Zowel React als de applicatie code kunnen in de `<script>` tags blijven staan, zonder wijzigingen.
 
-Gefeliciteerd! Je hebt zojuist een **productieklare JSX instelling** toegevoegd aan je project.
+Gefeliciteerd! Je hebt zojuist een **productie-rijpe JSX opzet** toegevoegd aan je project.
 
 ### Uitvoeren van een JSX Preprocessor {#run-jsx-preprocessor}
 
