@@ -24,7 +24,7 @@ In React is het transformeren van arrays naar lijsten van [elementen](/docs/rend
 
 Je kunt collecties van elementen maken en [in JSX opnemen](/docs/introducing-jsx.html#embedding-expressions-in-jsx) met behulp van accolades `{}`.
 
-Hieronder doorlopen we de array van `numbers` gebruik makende van de JavaScript [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie. Voor ieder item geven we een `<li>` element terug. Ten slotte wijzen we de array van elementen toe aan `listItems`:
+Hieronder doorlopen we de array van `numbers` gebruik makende van de JavaScript [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie. Voor ieder item geven we een `<li>`-element terug. Ten slotte wijzen we de array van elementen toe aan `listItems`:
 
 ```javascript{2-4}
 const numbers = [1, 2, 3, 4, 5];
@@ -33,7 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-We nemen de hele `listItems` array op in een `<ul>` element en [renderen het naar het DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+We nemen de hele `listItems` array op in een `<ul>`-element en [renderen het naar het DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
 ReactDOM.render(
@@ -48,7 +48,7 @@ Deze code toont een lijst met opsommingstekens met nummers van 1 tot en met 5.
 
 ### Eenvoudige Lijst Component {#basic-list-component}
 
-Het is gebruikelijk om je lijsten in een [component](/docs/components-and-props.html) te renderen.
+Het is gebruikelijk om lijsten in een [component](/docs/components-and-props.html) te renderen.
 
 We kunnen het vorige voorbeeld omschrijven naar een component die een array van `numbers` aanneemt en een lijst van elementen teruggeeft.
 
@@ -98,7 +98,7 @@ ReactDOM.render(
 
 ## Keys {#keys}
 
-Keys helpen React om te identificeren welke elementen zijn veranderd, zijn toegevoegd of zijn verwijderd. De elementen in een array zullen keys moeten krijgen om ze een stabiele identiteit te geven:
+Keys helpen React om te identificeren welke elementen zijn veranderd, toegevoegd of verwijderd. Aan de elementen in een array zullen keys toegewezen moeten worden om ze een stabiele identiteit te geven:
 
 ```js{3}
 const numbers = [1, 2, 3, 4, 5];
@@ -123,7 +123,7 @@ Als je geen stabiele IDs hebt voor gerenderde items, kun je als laatste redmidde
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
-  // Only do this if items have no stable IDs
+  // Doe dit aleen als je geen stabiele IDs hebt
   <li key={index}>
     {todo.text}
   </li>
@@ -146,7 +146,7 @@ Als je bijvoorbeeld een `ListItem` component wilt [extraheren](/docs/components-
 function ListItem(props) {
   const value = props.value;
   return (
-    // Wrong! There is no need to specify the key here:
+    // Fout! Het is niet nodig om hier een key te specificeren:
     <li key={value.toString()}>
       {value}
     </li>
@@ -156,7 +156,7 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Wrong! The key should have been specified here:
+    // Fout! De key had hier gespecificeerd moeten worden:
     <ListItem value={number} />
   );
   return (
@@ -177,14 +177,14 @@ ReactDOM.render(
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
-  // Correct! There is no need to specify the key here:
+  // Correct! Hier hoeft geen key gespecificeerd te worden:
   return <li>{props.value}</li>;
 }
 
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Correct! Key should be specified inside the array.
+    // Correct! De key moet in de array worden gespecificeerd.
     <ListItem key={number.toString()} value={number} />
   );
   return (
@@ -205,7 +205,7 @@ ReactDOM.render(
 
 Een goede vuistregel is dat de elementen binnen een `map()` aanroep keys nodig hebben.
 
-### Keys Moeten Alleen Uniek Zijn Ten Opzichte Van Siblings {#keys-must-only-be-unique-among-siblings}
+### Keys Moeten Alleen Uniek Zijn ten Opzichte van Siblings {#keys-must-only-be-unique-among-siblings}
 
 Keys die in arrays gebruikt worden moeten uniek zijn ten op zichte van hun siblings. Ze hoeven echter niet uniek te zijn in de hele applicatie. We kunnen dezelfde keys gebruiken als we twee verschillende arrays maken:
 
@@ -236,8 +236,8 @@ function Blog(props) {
 }
 
 const posts = [
-  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+  {id: 1, title: 'Hallo Wereld', content: 'Welkom bij het leren van React!'},
+  {id: 2, title: 'Installatie', content: 'Je kunt React installeren met npm.'}
 ];
 ReactDOM.render(
   <Blog posts={posts} />,
@@ -279,7 +279,7 @@ function NumberList(props) {
 }
 ```
 
-JSX staat [elke expressie](/docs/introducing-jsx.html#embedding-expressions-in-jsx) toe tussen accolades, dus we zouden het `map()` resultaat ook direct kunnen gebruiken:
+JSX staat [het inbedden van elke expressie](/docs/introducing-jsx.html#embedding-expressions-in-jsx) toe tussen accolades, dus we zouden het `map()` resultaat ook direct kunnen gebruiken:
 
 ```js{5-8}
 function NumberList(props) {
