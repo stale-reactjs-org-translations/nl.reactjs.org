@@ -9,14 +9,11 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
-Vaak moeten verschillende componenten dezelfde veranderende gegevens weergeven.
-We raden aan de gedeelde staat op te heffen tot aan hun meest nabije gemeenschappelijke voorvader.
-Laten we eens kijken hoe dit in actie werkt.
+Vaak moeten verschillende componenten dezelfde veranderende gegevens weergeven. We raden aan de gedeelde state omhoog te tillen tot aan zijn dichtstbijzijnde gemeenschappelijke ancestor. Laten we eens kijken hoe dit in actie werkt.
 
 In dit gedeelte zullen we een temperatuurcalculator maken die berekent of water bij een bepaalde temperatuur kookt.
 
-We zullen beginnen met een component genaamd `BiolingVerdict`.
-Het accepteert de `Celsius` temperatuur als een prop en drukt in de console af of het voldoende is om water te koken:
+We zullen beginnen met een component genaamd `BiolingVerdict`. Het accepteert de temperatuur `celsius` als een prop en drukt af of die voldoende is om water te laten koken:
 
 ```js{3,5}
 function BoilingVerdict(props) {
@@ -66,7 +63,7 @@ class Calculator extends React.Component {
 
 Onze nieuwe vereiste is dat we, naast een Celsius input, ook een Fahrenheit input voorzien en deze worden gesynchroniseerd.
 
-We kunnen beginnen met een `TemperatureInput` component uit de `Calculator` af te zonderen.
+We kunnen beginnen met een `TemperatureInput` component uit de `Calculator` te halen.
 We zullen er een `scale` prop aan toevoegen die ofwel`"c"` ofwel `"f"` kan zijn.
 
 ```js{1-4,19,22}
@@ -118,7 +115,7 @@ class Calculator extends React.Component {
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/jGBryx?editors=0010)
 
 We hebben nu twee inputs, maar wanneer je een temperatuur ingeeft in één van beide, wordt de andere niet bijgewerkt.
-Dit is in tegenspraak met onze vereiste: we willen ze gesynchroniseerd houden.
+Dit is in tegenspraak met ons vereiste: we willen ze gesynchroniseerd houden.
 
 We kunnen ook de `BiolingVerdict` van `Calculator` niet weergeven.
 De `Calculator` kent de huidige temperatuur niet omdat deze verborgen is in `TemperatureInput`.
@@ -137,9 +134,9 @@ function toFahrenheit(celsius) {
 }
 ```
 
-Deze twee functies converteren nummers.
-We zullen een andere functie schrijven die een string `temperature` en een conversiefunctie als argumenten heeft en een string teruggeeft.
-We zullen deze gebruiken om de waarde van een input te berekenen op basis van een andere input.
+Deze twee functies converteren getallen.
+We zullen nog een functie schrijven die een string `temperature` en een conversiefunctie als argumenten heeft en een string teruggeeft.
+We zullen deze gebruiken om de waarde van een input te berekenen op basis van de andere input.
 
 De functie geeft een lege string terug bij een ongeldige `temperature` en ze houdt de output afgerond tot de derde decimaal na de komma.
 
@@ -179,20 +176,20 @@ class TemperatureInput extends React.Component {
 ```
 
 We willen echter deze twee inputs met elkaar gesynchroniseerd houden.
-Wanneer we de Celsius input bijwerken, moet de Fahrenheit input de geconverteerde temperatuur weerspiegelen en vice versa.
+Wanneer we de Celsius input bijwerken, moet de Fahrenheit input de geconverteerde temperatuur weergeven en vice versa.
 
 In React wordt staat gedeeld door deze te verplaatsen naar de meest nabije gemeenschappelijke voorvader van de componenten die ze nodig hebben.
 Dit wordt "staat omhoog tillen" genoemd.
 We zullen de lokale staat van de `TemperatureInput` verwijderen en ze verplaatsen naar de `Calculator`.
 
-Als de `Calculator` een gedeelde staat heeft, wordt het de "enige bron van waarheid" voor de huidige temperatuur voor beide inputs.
+Als de `Calculator` een gedeelde state heeft, wordt het de "enige bron van waarheid" voor de huidige temperatuur voor beide inputs.
 Het kan er voor zorgen dat beiden waarden hebben die consistent zijn met elkaar.
 Omdat de props van beide `TemperatureInput` componenten van dezelfde ouder `Calculator` afkomstig zijn, zullen de twee inputs altijd gesynchroniseerd zijn.
 
-Laten we eens kijken dit werkt stap voor stap.
+Laten we eens stap voor stap kijken hoe dit werkt.
 
 Eerst zullen we `this.state.temperature` vervangen door `this.props.temperature` in de `TemperatureInput` component.
-Laten we voorlopig doen alsof `this.props.temperature` al bestaat, hoewel we het in de toekomst zullen moeten doorgeven aan de `Calculator`.
+Laten we voorlopig doen alsof `this.props.temperature` al bestaat, hoewel we die in de toekomst zullen moeten doorgeven aan de `Calculator`.
 
 ```js{3}
   render() {
@@ -202,10 +199,10 @@ Laten we voorlopig doen alsof `this.props.temperature` al bestaat, hoewel we het
 ```
 
 We weten dat [props read-only zijn](/doccs/components-and-props.html#props-are-read-only).
-Wanneer de `temperature` in de lokale staat zat, kon de `TemperatureInput` gewoon `this.setState()` aanroepen om ze te veranderen.
+Toen de `temperature` in de lokale state zat, kon de `TemperatureInput` gewoon `this.setState()` aanroepen om ze te veranderen.
 Echter, nu dat de `temperature` afkomstig is uit de ouder als een prop, heeft de `TemperatureInput` er geen controle meer over.
 
-In React wordt dit doorgaans opgelost door de component "aangestuurd" te maken.
+In React wordt dit doorgaans opgelost door de component "controlled" te maken.
 Net zoals het DOM `<input>` zowel een `value` als een `onChange` prop accepteert, kan de `TemperatureInput` zowel een `temperature` als een `onTemperatureChange` prop accepteren van zijn ouder `Calculator`.
 
 Wanneer de `TemperatureInput` nu zijn temperatuur wil bijwerken, roept het `this.props.onTemperatureChange` aan:
@@ -221,7 +218,7 @@ Wanneer de `TemperatureInput` nu zijn temperatuur wil bijwerken, roept het `this
 >
 >Er is geen speciale betekenis voor de namen van de `temperature` en `onTemperatureChange` props in aangepaste componenten. We hadden ze een andere naam kunnen geven, zoals `value` en `onChange`, wat een veel voorkomende conventie is.
 
-De `onTemperatureChange` prop zal samen met de `temperature` prop door de ouder `Calculator` worden voorzien.
+De `onTemperatureChange` prop zal samen met de `temperature` prop door de ouder `Calculator` worden verzorgd.
 Het zal de wijziging afhandelen door de eigen lokale staat aan te passen, waardoor beide inputs opnieuw worden weergegeven met de nieuwe waarden.
 We zullen zeer binnenkort naar de nieuwe `Calculator`-implementatie kijken.
 
@@ -256,11 +253,11 @@ class TemperatureInput extends React.Component {
 
 Laten we nu kijken naar de `Calculator` component.
 
-We zullen de `temperature` en `scale` van de huidige input bijhouden in de lokale staat.
-Dit is de staat die we "omhoog getild" hebben uit de inputs en deze zal dienen als de "bron van waarheid" voor beiden.
-Het is de minimale representatie van alle gegevens die we moeten kennen om beide ingangen weer te geven.
+We zullen de `temperature` en `scale` van de huidige input bijhouden in de lokale state.
+Dit is de state die we "omhoog getild" hebben uit de inputs en deze zal dienen als de "bron van waarheid" voor beiden.
+Het is de minimale representatie van alle gegevens die we moeten kennen om beide inputs weer te geven.
 
-Als we bijvoorbeeld 37 invoeren in de Celsius input, is de staat van de `Calculator` component:
+Als we bijvoorbeeld 37 invoeren in de Celsius input, is de state van de `Calculator` component:
 
 ```js
 {
@@ -269,7 +266,7 @@ Als we bijvoorbeeld 37 invoeren in de Celsius input, is de staat van de `Calcula
 }
 ```
 
-Als we later het Fahrenheit veld veranderen in 212, is de staat van de `Calculator`:
+Als we later het Fahrenheit veld veranderen in 212, is de state van de `Calculator`:
 
 ```js
 {
@@ -278,9 +275,9 @@ Als we later het Fahrenheit veld veranderen in 212, is de staat van de `Calculat
 }
 ```
 
-We hadden de waarde van beide inputs kunnen opslaan, maar dat blijkt overbodig. Het is voldoende om de waarde van de meest recent gewijzigde input en de schaal die deze vertegenwoordigt op te slaan. We kunnen dan de waarde van de andere input afleiden uit de huidige `temperature` en `scale`.
+We hadden de waarde van beide inputs kunnen opslaan, maar dat blijkt overbodig. Het is voldoende om de waarde van de meest recent gewijzigde input en de schaalverdeling die deze vertegenwoordigt op te slaan. We kunnen dan de waarde van de andere input afleiden uit de huidige `temperature` en `scale`.
 
-De inputs blijven gesynchroniseerd omdat hun waarden worden berekend uit dezelfde staat:
+De inputs blijven gesynchroniseerd omdat hun waarden worden berekend uit dezelfde state:
 
 ```js{6,10,14,18-21,27-28,31-32,34}
 class Calculator extends React.Component {
@@ -326,14 +323,14 @@ class Calculator extends React.Component {
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/WZpxpz?editors=0010)
 
 Nu worden, ongeacht welke input je bewerkt, `this.state.temperature` en `this.state.scale` in de `Calculator` bijgewerkt.
-Eén van de inputs krijgt de waarde zoals deze is, dus elke gebruikersinvoer wordt behouden en de andere input waarde wordt altijd opnieuw berekend op basis van deze invoer.
+Eén van de inputs krijgt de waarde zoals deze is, zodat elke gebruikersinvoer wordt behouden en de andere input waarde wordt altijd opnieuw berekend op basis van deze invoer.
 
 Laten we samenvatten wat er gebeurt als je een input bewerkt:
 
 * React roept de functie aan die is gespecificeerd als `onChange` op de DOM `<input>`. In ons geval is dit de `handleChange` methode in de component `TemperatureInput`.
 * De `handleChange` methode in de `TemperatureInput` component roept `this.props.onTemperatureChange()` aan met de nieuwe gewenste waarde. De props, waaronder `onTemperatureChange`, werden voorzien door de bovenliggende component, de `Calculator`.
 * Toen het eerder werd gerenderd, heeft de `Calculator` gespecificeerd dat `onTemperatureChange` van de Celsius `TemperatureInput` de `Calculator`'s `handleCelsiusChange` methode is en `onTemperatureChange` van de Fahrenheit `TemperatureInput` de `Calculator`'s `handleFahrenheitChange` methode. Dus één van beide methoden wordt aangeroepen afhankelijk van welke input bewerkt wordt.
-* Binnen deze methoden vraagt de `Calculator` component React om zichzelf opnieuw te renderen door `this.setState()` aan te roepen met de nieuwe input waarde en de huidige schaal van de input die we zojuist hebben bewerkt.
+* Binnen deze methoden vraagt de `Calculator` component React om zichzelf opnieuw te renderen door `this.setState()` aan te roepen met de nieuwe input waarde en de huidige schaalverdeling die hoort bij de input die we zojuist hebben bewerkt.
 * React roept de `render` methode van `Calculator` aan om te leren hoe de gebruiksersinterface eruit moet zien. De waarden van beide inputs worden opnieuw berekend op basis van de huidige temperatuur en de actieve schaal. De temperatuurconversie wordt hier uitgevoerd.
 * React roept de `render` methoden aan van de individuele `TemperatureInput` componenten met hun nieuwe props gespecificeerd door de `Calculator`. Het leert hoe hun gebruikersinterface eruit moet zien.
 * React roept de `render` methode van de `BoilingVerdict` component aan, waarbij de temperatuur in Celsius als prop wordt doorgegeven.
@@ -341,21 +338,21 @@ Laten we samenvatten wat er gebeurt als je een input bewerkt:
 
 Elke update gaat door deze zelfde stappen zodat de inputs gesynchroniseerd blijven.
 
-## Les Geleerd {#lessons-learned}
+## Geleerde Lessen {#lessons-learned}
 
-Er moet een enkele "bron van waarheid" zijn voor alle gegevens die veranderen in een React applicatie.
-Gewoonlijk wordt de staat eerst toegevoegd aan de component die deze nodig heeft voor zijn weergave.
-Als dan andere componenten ze ook nodig hebben, kan je ze omhoog tillen naar hun meest nabije gemeenschappelijke voorvader.
-In plaats van de staat tussen verschillende componenten proberen te synchroniseren, zou je moeten vertrouwen op de [top-down data flow](/docs/state-and-lifecycle.html#the-data-flows-down).
+Er moet één enkele "bron van waarheid" zijn voor alle gegevens die veranderen in een React applicatie.
+Gewoonlijk wordt de state eerst toegevoegd aan de component die deze nodig heeft voor zijn weergave.
+Als dan andere componenten hem ook nodig hebben, kan je hem omhoog tillen naar hun dichtstbijzijnde gemeenschappelijke ancestor.
+In plaats van de state tussen verschillende componenten proberen te synchroniseren, zou je moeten vertrouwen op de [top-down data flow](/docs/state-and-lifecycle.html#the-data-flows-down).
 
-Het tillen van staat houdt het schrijven van meer "boilerplate" code in dan bidirectionele bindingsbenaderingen, maar als voordeel, kost het minder moeite om bugs to vinden en te isoleren.
-Aangezien elke staat in een bepaalde component "leeft" en alleen die component ze kan veranderen, wordt de kans op fouten aanzienlijk verminderd.
-Bovendien kun je aangepaste logica implementeren om gebruikersinvoer te weigeren of te transformeren.
+Het omhoog tillen van state brengt met zich mee dat er meer "boilerplate" code geschreven moet worden dan bij benaderingen met bidirectionele bindings, maar het voordeel is dat  het minder moeite kost om bugs to vinden en te isoleren.
+Aangezien elke state in een bepaalde component "leeft" en alleen die component hem kan veranderen, wordt de kans op fouten aanzienlijk verminderd.
+Bovendien kun je willekeurige aangepaste logica implementeren om gebruikersinvoer te weigeren of te transformeren.
 
-Als iets kan afgeleid worden van props of state, zou het waarschijnlijk niet thuis horen in de state.
+Als iets afgeleid kan worden van props of state, hoort het waarschijnlijk niet thuis in de state.
 Bijvoorbeeld, in plaats van zowel `celsiusValue` als `fahrenheitValue` op te slaan, houden we enkel de laatst bewerkte `temperature` en de daarbij horende `scale` bij.
-De waarde van de andere input kan altijd worden berekend met de `render()` methode.
-Dit laat ons toe om afronding op het andere veld aan en uit te zetten zonder enige precisie van de gebruikersinvoer te verliezen.
+De waarde van de andere input kan altijd worden berekend in de `render()` methode.
+Dit laat ons afronding op het andere veld aan en uit te zetten zonder enige precisie van de gebruikersinvoer te verliezen.
 
 Wanneer je iets verkeerd ziet in de gebruikersinterface, kun je [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) gebruiken om props te inspecteren en omhoog te gaan doorheen de boomstructuur totdat je de component vindt die verantwoordelijk is voor het bijwerken van de staat. Hiermee kun je de bugs naar hun bron traceren:
 
