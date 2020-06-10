@@ -18,9 +18,9 @@ We zullen beginnen met een component genaamd `BiolingVerdict`. Het accepteert de
 ```js{3,5}
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
-    return <p>The water would boil.</p>;
+    return <p>Het water zou koken.</p>;
   }
-  return <p>The water would not boil.</p>;
+  return <p>Het water zou niet koken.</p>;
 }
 ```
 
@@ -44,7 +44,7 @@ class Calculator extends React.Component {
     const temperature = this.state.temperature;
     return (
       <fieldset>
-        <legend>Enter temperature in Celsius:</legend>
+        <legend>Voer temperatuur in graden Celsius in:</legend>
         <input
           value={temperature}
           onChange={this.handleChange} />
@@ -86,7 +86,7 @@ class TemperatureInput extends React.Component {
     const scale = this.props.scale;
     return (
       <fieldset>
-        <legend>Enter temperature in {scaleNames[scale]}:</legend>
+        <legend>Voor temperatuur in graden {scaleNames[scale]} in:</legend>
         <input value={temperature}
                onChange={this.handleChange} />
       </fieldset>
@@ -181,7 +181,7 @@ Eerst zullen we `this.state.temperature` vervangen door `this.props.temperature`
 
 ```js{3}
   render() {
-    // Before: const temperature = this.state.temperature;
+    // Was eerst: const temperature = this.state.temperature;
     const temperature = this.props.temperature;
     // ...
 ```
@@ -194,7 +194,7 @@ Wanneer de `TemperatureInput` nu zijn temperatuur wil bijwerken, roept het `this
 
 ```js{3}
   handleChange(e) {
-    // Before: this.setState({temperature: e.target.value});
+    // Was eerst: this.setState({temperature: e.target.value});
     this.props.onTemperatureChange(e.target.value);
     // ...
 ```
