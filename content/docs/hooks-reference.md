@@ -6,17 +6,17 @@ prev: hooks-custom.html
 next: hooks-faq.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Hooks* zijn een nieuwe toevoeging in React 16.8. Ze maken het mogelijk om state en andere React voorzieningen te gebruiken zonder dat je een class hoeft te schrijven.
 
-This page describes the APIs for the built-in Hooks in React.
+Deze pagina beschrijft de APIs voor de ingebouwde Hooks in React.
 
-If you're new to Hooks, you might want to check out [the overview](/docs/hooks-overview.html) first. You may also find useful information in the [frequently asked questions](/docs/hooks-faq.html) section.
+Als Hooks nieuw voor je zijn, wil je misschien liever eerst [het overzicht](/docs/hooks-overview.html) bekijken. Je kunt ook nuttige informatie vinden in het hoofdstuk [veel gestelde vragen](/docs/hooks-faq.html).
 
-- [Basic Hooks](#basic-hooks)
+- [Basis Hooks](#basic-hooks)
   - [`useState`](#usestate)
   - [`useEffect`](#useeffect)
   - [`useContext`](#usecontext)
-- [Additional Hooks](#additional-hooks)
+- [Overige Hooks](#additional-hooks)
   - [`useReducer`](#usereducer)
   - [`useCallback`](#usecallback)
   - [`useMemo`](#usememo)
@@ -25,7 +25,7 @@ If you're new to Hooks, you might want to check out [the overview](/docs/hooks-o
   - [`useLayoutEffect`](#uselayouteffect)
   - [`useDebugValue`](#usedebugvalue)
 
-## Basic Hooks {#basic-hooks}
+## Basis Hooks {#basic-hooks}
 
 ### `useState` {#usestate}
 
@@ -33,25 +33,25 @@ If you're new to Hooks, you might want to check out [the overview](/docs/hooks-o
 const [state, setState] = useState(initialState);
 ```
 
-Returns a stateful value, and a function to update it.
+Retourneert een toestandswaarde, en een funtie om deze te wijzigen.
 
-During the initial render, the returned state (`state`) is the same as the value passed as the first argument (`initialState`).
+Tijdens de eerste render, heeft de teruggegeven state (`state`) dezelfde waarde als die is meegegeven als het eerste argument (`initialState`).
 
-The `setState` function is used to update the state. It accepts a new state value and enqueues a re-render of the component.
+De `setState` functie wordt gebruikt om state aan te passen. Hij accepteert een nieuwe state waarde en plaatst een re-render opdracht van het component in de wachtrij.
 
 ```js
 setState(newState);
 ```
 
-During subsequent re-renders, the first value returned by `useState` will always be the most recent state after applying updates.
+Tijdens daarop volgende re-renders, zal de eerste waarde die wordt teruggegeven door `useState` altijd de meest recente state zijn na het uitvoeren van wijzigingen.
 
 >Note
 >
 >React guarantees that `setState` function identity is stable and won't change on re-renders. This is why it's safe to omit from the `useEffect` or `useCallback` dependency list.
 
-#### Functional updates {#functional-updates}
+#### Functie wijziginen {#functional-updates}
 
-If the new state is computed using the previous state, you can pass a function to `setState`. The function will receive the previous value, and return an updated value. Here's an example of a counter component that uses both forms of `setState`:
+Als de nieuwe state wordt berekend waarbij de vorige state gebruikt, kun je een funtie doorgeven aan `setState`. De functie zal de vorige waarde ontvangen, en de gewijzigde waarde terug geven. Hier is een voorbeeld van een counter component die beide vormen van `setState` gebruikt:
 
 ```js
 function Counter({initialCount}) {
@@ -67,26 +67,26 @@ function Counter({initialCount}) {
 }
 ```
 
-The "+" and "-" buttons use the functional form, because the updated value is based on the previous value. But the "Reset" button uses the normal form, because it always sets the count back to the initial value.
+De "+" and "-" knoppen gebruiken de funtie vorm, omdat de gewijzigde waarde gebaseerd is op de vorige waarde. Maar de "Reset" knop gebruikt de normale vorm, omdat die altijd count terug op 0 zet.
 
 If your update function returns the exact same value as the current state, the subsequent rerender will be skipped completely.
 
-> Note
+> Opmerking
 >
-> Unlike the `setState` method found in class components, `useState` does not automatically merge update objects. You can replicate this behavior by combining the function updater form with object spread syntax:
+> In tegenstelling tot de `setState` methode in class componenten, `useState` does not automatically merge update objects. You can replicate this behavior by combining the function updater form with object spread syntax:
 >
 > ```js
 > setState(prevState => {
->   // Object.assign would also work
+>   // Object.assign zou ook werken
 >   return {...prevState, ...updatedValues};
 > });
 > ```
 >
-> Another option is `useReducer`, which is more suited for managing state objects that contain multiple sub-values.
+> Een andere mogelijkheid is `useReducer`, die is beter geschikt om state objecten te beheren die meerdere sub-waarden bevatten.
 
-#### Lazy initial state {#lazy-initial-state}
+#### Lazy initiele state {#lazy-initial-state}
 
-The `initialState` argument is the state used during the initial render. In subsequent renders, it is disregarded. If the initial state is the result of an expensive computation, you may provide a function instead, which will be executed only on the initial render:
+Het `initialState` argument is de state die tijdens de initiele render gebruikt wordt. In daarop volgende renders, wordt het genegeerd. Als de initiele state het resultaat is van een dure berekening, kan je in plaats van de waarde, een functie meegeven, die zal alleen gedurende de initiele render worden uitgevoerd:
 
 ```js
 const [state, setState] = useState(() => {
@@ -95,9 +95,9 @@ const [state, setState] = useState(() => {
 });
 ```
 
-#### Bailing out of a state update {#bailing-out-of-a-state-update}
+#### Afbreken van een state wijziging {#bailing-out-of-a-state-update}
 
-If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects. (React uses the [`Object.is` comparison algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
+Als je een wijzigt State Hook naar dezelfde waarde als de huidige state, zal React afbreken zonder de children te renderen of effects af te vuren. (React gebruikt het [`Object.is` vergelijkings algoritme](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
 
 Note that React may still need to render that specific component again before bailing out. That shouldn't be a concern because React won't unnecessarily go "deeper" into the tree. If you're doing expensive calculations while rendering, you can optimize them with `useMemo`.
 
@@ -107,45 +107,45 @@ Note that React may still need to render that specific component again before ba
 useEffect(didUpdate);
 ```
 
-Accepts a function that contains imperative, possibly effectful code.
+Accepteert een functie die imperatieve, mogelijk effectvolle code bevat.
 
-Mutations, subscriptions, timers, logging, and other side effects are not allowed inside the main body of a function component (referred to as React's _render phase_). Doing so will lead to confusing bugs and inconsistencies in the UI.
+Mutaties, subscriptions, timers, logging, en andere neveneffecten zijn niet toegestaan binnen de main body van een functie component (ook wel React's _render phase_). Als je dat wel doet, zal dat leiden tot verwarrende bugs en inconsistenties in de UI.
 
-Instead, use `useEffect`. The function passed to `useEffect` will run after the render is committed to the screen. Think of effects as an escape hatch from React's purely functional world into the imperative world.
+In plaats daarvan, gebruik je `useEffect`. De functie meegegeven naar `useEffect` zal uitgevoerd worden nadat de render naar het scherm is gestuurd. Denk aan effecten als een ontsnappingsluik uit Reacts pure functionele wereld naar de imperatieve wereld.
 
-By default, effects run after every completed render, but you can choose to fire them [only when certain values have changed](#conditionally-firing-an-effect).
+Standaard, worden effecten uitgevoerd na elke afgeronde render, maar je kunt ervoor kiezen ze alleen af te vuren [als er bepaalde waarden wijzigen](#conditionally-firing-an-effect).
 
-#### Cleaning up an effect {#cleaning-up-an-effect}
+#### Een effect opruimen {#cleaning-up-an-effect}
 
-Often, effects create resources that need to be cleaned up before the component leaves the screen, such as a subscription or timer ID. To do this, the function passed to `useEffect` may return a clean-up function. For example, to create a subscription:
+Vaak creëeren effecten resources die opgeruimd moeten worden voordat het component het scherm verlaat, zoals een subscription of een timer ID. Om dit te doen kan de functie die naar  `useEffect` gestuurd wordt een opruim-functie teruggeven. Bijvoorbeeld, om een subscription te creëeren:
 
 ```js
 useEffect(() => {
   const subscription = props.source.subscribe();
   return () => {
-    // Clean up the subscription
+    // De subscription opruimen
     subscription.unsubscribe();
   };
 });
 ```
 
-The clean-up function runs before the component is removed from the UI to prevent memory leaks. Additionally, if a component renders multiple times (as they typically do), the **previous effect is cleaned up before executing the next effect**. In our example, this means a new subscription is created on every update. To avoid firing an effect on every update, refer to the next section.
+De opruim-functie wordt uitgevoerd voordat het component wordt verwijderd uit de UI om geheugen lekken te voorkomen. Daarnaast, als een component meerdere keren rendert (zoals ze vaak doen), wordt het **vorige effect opgeruimd voor het uitvoeren van het volgende effect**. In ons voorbeeld, betekent dit, dat er een nieuwe subscription wordt aangemaakt bij iedere wijziging. Om te voorkomen dat een effect wordt afgevuurd bij iedere wijziging, lees het volgende hoofdstuk.
 
-#### Timing of effects {#timing-of-effects}
+#### Timing van effecten {#timing-of-effects}
 
-Unlike `componentDidMount` and `componentDidUpdate`, the function passed to `useEffect` fires **after** layout and paint, during a deferred event. This makes it suitable for the many common side effects, like setting up subscriptions and event handlers, because most types of work shouldn't block the browser from updating the screen.
+In tegenstelling tot `componentDidMount` en `componentDidUpdate`, wordt de functie meegegeven naar `useEffect` afgevuurd **na** layout en paint, tijdens een uitgesteld event. Dit maakt het geschikt voor veel veelvoorkomende neven effecten, zoals het opzetten van subscriptions en event handlers, omdat de meeste typen werk de browser niet zouden moeten blokkeren het scherm bij te werken.
 
-However, not all effects can be deferred. For example, a DOM mutation that is visible to the user must fire synchronously before the next paint so that the user does not perceive a visual inconsistency. (The distinction is conceptually similar to passive versus active event listeners.) For these types of effects, React provides one additional Hook called [`useLayoutEffect`](#uselayouteffect). It has the same signature as `useEffect`, and only differs in when it is fired.
+Hoewel, niet alle effecten kunnen worden uitgesteld. Bijvoorbeeld, een DOM wijziging die zichtbaar is voor de gebruiker moet synchroon uitgevoerd worden voor de volgende paint, zodat de gebruiker geen visuele inconsistentie waarneemt. (Het verschil is conceptueel vergelijkbaar met passieve versus actieve event listeners.) Voor deze typen van effecten, voorziet React een aanvullende Hook [`useLayoutEffect`](#uselayouteffect). Het heeft dezelfde signature als `useEffect`, en verschilt alleen in wanneer het wordt afgevuurd.
 
-Although `useEffect` is deferred until after the browser has painted, it's guaranteed to fire before any new renders. React will always flush a previous render's effects before starting a new update.
+Hoewel `useEffect` wordt uitgesteld tot nadat de browser heeft gepaint, wordt ze gegarandeerd uitgevoerd vóór een eventuele nieuwe render. React zal altijd vorige render effecten opruimen voordat een nieuwe update wordt gestart.
 
-#### Conditionally firing an effect {#conditionally-firing-an-effect}
+#### Conditioneel afvuren van effecten {#conditionally-firing-an-effect}
 
-The default behavior for effects is to fire the effect after every completed render. That way an effect is always recreated if one of its dependencies changes.
+Het standaard gedrag van effecten is om afgevuurd te worden na elke afgeronde render. Op die manier wordt een effect altijd opnieuw gemaakt als een van zijn dependencies wijzigt.
 
-However, this may be overkill in some cases, like the subscription example from the previous section. We don't need to create a new subscription on every update, only if the `source` prop has changed.
+Dit kan echter in sommige gevallen een overkill zijn, zoals in het subscription voorbeeld uit het vorige hoofdstuk. We hoeven geen nieuwe subscription aan te maken bij elke wijziging, alleen wanneer de `source` props wijzigt.
 
-To implement this, pass a second argument to `useEffect` that is the array of values that the effect depends on. Our updated example now looks like this:
+Om dit te realiseren, geef je een tweede argument mee aan `useEffect` dat is de array van waarden waarvan het effect afhangt. Ons aangepaste voorbeeld ziet er nu zo uit:
 
 ```js
 useEffect(
@@ -159,7 +159,7 @@ useEffect(
 );
 ```
 
-Now the subscription will only be recreated when `props.source` changes.
+Nu wordt de subscription alleen opnieuw aangemaakt als `props.source` wijzigt.
 
 >Note
 >
@@ -172,7 +172,7 @@ Now the subscription will only be recreated when `props.source` changes.
 >
 >We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
 
-The array of dependencies is not passed as arguments to the effect function. Conceptually, though, that's what they represent: every value referenced inside the effect function should also appear in the dependencies array. In the future, a sufficiently advanced compiler could create this array automatically.
+De array van dependencies wordt niet als argument doorgegeven aan de effect functie. Conceptueel, echter, is dat wèl wat ze voorstellen: iedere waarde waarnaar wordt gerefereerd binnenin de effect functie zou ook moeten voorkomen in de dependencies array. In de toekomst zou een geavanceerde compiler deze array automatisch kunnen genereren.
 
 ### `useContext` {#usecontext}
 
@@ -180,7 +180,7 @@ The array of dependencies is not passed as arguments to the effect function. Con
 const value = useContext(MyContext);
 ```
 
-Accepts a context object (the value returned from `React.createContext`) and returns the current context value for that context. The current context value is determined by the `value` prop of the nearest `<MyContext.Provider>` above the calling component in the tree.
+Accepteert een context object (een value verkregen van `React.createContext`) en geeft de huidige context waarde voor die context. De huidige waarde wordt bepaald door de `value` prop van de dichtstbijzijnde `<MyContext.Provider>` boven de aanroepende component in de hiërarchie.
 
 When the nearest `<MyContext.Provider>` above the component updates, this Hook will trigger a rerender with the latest context `value` passed to that `MyContext` provider. Even if an ancestor uses [`React.memo`](/docs/react-api.html#reactmemo) or [`shouldComponentUpdate`](/docs/react-component.html#shouldcomponentupdate), a rerender will still happen starting at the component itself using `useContext`.
 
@@ -241,10 +241,9 @@ function ThemedButton() {
 ```
 This example is modified for hooks from a previous example in the [Context Advanced Guide](/docs/context.html), where you can find more information about when and how to use Context.
 
+## Overige Hooks {#additional-hooks}
 
-## Additional Hooks {#additional-hooks}
-
-The following Hooks are either variants of the basic ones from the previous section, or only needed for specific edge cases. Don't stress about learning them up front.
+De volgende Hooks zijn ofwel varianten op de basis Hooks uit het vorige hoofdstuk, of zijn alleen in heel specifieke gevallen nodig. Don't stress about learning them up front. Doe niet te veel moeit om ze meteen al te leren.
 
 ### `useReducer` {#usereducer}
 
@@ -252,11 +251,11 @@ The following Hooks are either variants of the basic ones from the previous sect
 const [state, dispatch] = useReducer(reducer, initialArg, init);
 ```
 
-An alternative to [`useState`](#usestate). Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a `dispatch` method. (If you're familiar with Redux, you already know how this works.)
+Een alternatief voor [`useState`](#usestate). Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a `dispatch` method. (If you're familiar with Redux, you already know how this works.)
 
 `useReducer` is usually preferable to `useState` when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. `useReducer` also lets you optimize performance for components that trigger deep updates because [you can pass `dispatch` down instead of callbacks](/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down).
 
-Here's the counter example from the [`useState`](#usestate) section, rewritten to use a reducer:
+Hier is het counter voorbeeld uit het [`useState`](#usestate) hoofdstuk, herschreven om een reducer te gebruiken:
 
 ```js
 const initialState = {count: 0};
@@ -288,9 +287,9 @@ function Counter() {
 >
 >React guarantees that `dispatch` function identity is stable and won't change on re-renders. This is why it's safe to omit from the `useEffect` or `useCallback` dependency list.
 
-#### Specifying the initial state {#specifying-the-initial-state}
+#### Initiele state {#specifying-the-initial-state}
 
-There are two different ways to initialize `useReducer` state. You may choose either one depending on the use case. The simplest way is to pass the initial state as a second argument:
+Er zijn twee verschillende manieren om de `useReducer` state te initialiseren. Je kan uit beide kiezen afhangend van de use case. De simpelste manier is om de initiele state door te geven als het tweede argument:
 
 ```js{3}
   const [state, dispatch] = useReducer(
@@ -299,9 +298,9 @@ There are two different ways to initialize `useReducer` state. You may choose ei
   );
 ```
 
->Note
+>Opmerking
 >
->React doesn’t use the `state = initialState` argument convention popularized by Redux. The initial value sometimes needs to depend on props and so is specified from the Hook call instead. If you feel strongly about this, you can call `useReducer(reducer, undefined, reducer)` to emulate the Redux behavior, but it's not encouraged.
+>React doesn’t use the `state = initialState` argument convention popularized by Redux. The initial value sometimes needs to depend on props and so is specified from the Hook call instead. If you feel strongly about this, you can call `useReducer(reducer, undefined, reducer)` to emulate the Redux behavior, maar het wordt niet aangemoedigd.
 
 #### Lazy initialization {#lazy-initialization}
 
@@ -474,9 +473,9 @@ Prefer the standard `useEffect` when possible to avoid blocking visual updates.
 useDebugValue(value)
 ```
 
-`useDebugValue` can be used to display a label for custom hooks in React DevTools.
+`useDebugValue` kan gebruikt worden om een label weer te geven voor custom hooks in React DevTools.
 
-For example, consider the `useFriendStatus` custom Hook described in ["Building Your Own Hooks"](/docs/hooks-custom.html):
+Bijvoorbeeld, neem de `useFriendStatus` custom Hook beshreven in ["Bouw Je Eigen Hooks"](/docs/hooks-custom.html):
 
 ```js{6-8}
 function useFriendStatus(friendID) {
@@ -484,7 +483,7 @@ function useFriendStatus(friendID) {
 
   // ...
 
-  // Show a label in DevTools next to this Hook
+  // Toon een label in DevTools naast deze Hook
   // e.g. "FriendStatus: Online"
   useDebugValue(isOnline ? 'Online' : 'Offline');
 
@@ -494,15 +493,15 @@ function useFriendStatus(friendID) {
 
 > Tip
 >
-> We don't recommend adding debug values to every custom Hook. It's most valuable for custom Hooks that are part of shared libraries.
+> We don't recommend adding debug values to every custom Hook. It's most valuable for custom Hooks that are part of gedeelde bibliotheken.
 
-#### Defer formatting debug values {#defer-formatting-debug-values}
+#### Uitgestelde formattering debug waarden {#defer-formatting-debug-values}
 
-In some cases formatting a value for display might be an expensive operation. It's also unnecessary unless a Hook is actually inspected.
+In sommige gevallen kan het formatteren van een waarde een dure operatie zijn. Het is ook onnodig tenzij een Hook ook echt wordt geïnspecteerd.
 
-For this reason `useDebugValue` accepts a formatting function as an optional second parameter. This function is only called if the Hooks are inspected. It receives the debug value as a parameter and should return a formatted display value.
+Om deze reden accepteerd `useDebugValue` een formatting function als een optionele tweede parameter. Deze functie wordt alleen aangeroepen wanneer de Hooks worden geïnspecteerd. De functie ontvangt de debug waarde als een parameter en zou de geformatteerde weergave waarde moeten teruggeven.
 
-For example a custom Hook that returned a `Date` value could avoid calling the `toDateString` function unnecessarily by passing the following formatter:
+Bijvoorbeeld een custom Hook die een `Date` waarde terug geeft kan voorkomen dat de `toDateString` functie onnodig wordt aangeroepen door de volgende formatter mee te geven:
 
 ```js
 useDebugValue(date, date => date.toDateString());
