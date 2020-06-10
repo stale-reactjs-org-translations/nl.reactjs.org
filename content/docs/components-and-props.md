@@ -233,7 +233,7 @@ function Comment(props) {
 
 [Probeer het op CodePen](codepen://components-and-props/extracting-components-continued)
 
-Componenten extraheren lijkt misschien zwaar werk in het begin, maar een palet van herbruikbare componenten is de moeite waard in grotere applicaties. Een goede vuistregel is: als een deel van je UI vaker gebruikt wordt (`Button`, `Panel`, `Avatar`) of complex genoeg is van zichzelf (`App`, `FeedStory`, `Comment`), dan is het een goede kandidaat voor een herbruikbare component.
+Componenten extraheren lijkt misschien zwaar werk in het begin, maar een palet van herbruikbare componenten is de moeite waard in grotere applicaties. Een goede vuistregel is: als een deel van je UI vaker gebruikt wordt (`Button`, `Panel`, `Avatar`) of complex genoeg is van zichzelf (`App`, `FeedStory`, `Comment`), dan is het een goede kandidaat om te extraheren naar een herbruikbare component.
 
 ## Props Zijn Read-Only {#props-are-read-only}
 
