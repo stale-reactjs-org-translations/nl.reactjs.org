@@ -330,21 +330,14 @@ Eén van de inputs krijgt de waarde zoals deze is, dus elke gebruikersinvoer wor
 
 Laten we samenvatten wat er gebeurt als je een input bewerkt:
 
-* React roept de functie aan die is gespecificeerd als `onChange` op de DOM `<input>`.
-In ons geval is dit de `handleChange` methode in de component `TemperatureInput`.
-* De `handleChange` methode in de `TemperatureInput` component roept `this.props.onTemperatureChange()` aan met de nieuwe gewenste waarde.
-De props, waaronder `onTemperatureChange`, werden voorzien door de bovenliggende component, de `Calculator`.
-* Toen het eerder werd gerenderd, heeft de `Calculator` gespecificeerd dat `onTemperatureChange` van de Celsius `TemperatureInput` de `Calculator`'s `handleCelsiusChange` methode is en `onTemperatureChange` van de Fahrenheit `TemperatureInput` de `Calculator`'s `handleFahrenheitChange` methode.
-Dus één van beide methoden wordt aangeroepen afhankelijk van welke input bewerkt wordt.
+* React roept de functie aan die is gespecificeerd als `onChange` op de DOM `<input>`. In ons geval is dit de `handleChange` methode in de component `TemperatureInput`.
+* De `handleChange` methode in de `TemperatureInput` component roept `this.props.onTemperatureChange()` aan met de nieuwe gewenste waarde. De props, waaronder `onTemperatureChange`, werden voorzien door de bovenliggende component, de `Calculator`.
+* Toen het eerder werd gerenderd, heeft de `Calculator` gespecificeerd dat `onTemperatureChange` van de Celsius `TemperatureInput` de `Calculator`'s `handleCelsiusChange` methode is en `onTemperatureChange` van de Fahrenheit `TemperatureInput` de `Calculator`'s `handleFahrenheitChange` methode. Dus één van beide methoden wordt aangeroepen afhankelijk van welke input bewerkt wordt.
 * Binnen deze methoden vraagt de `Calculator` component React om zichzelf opnieuw te renderen door `this.setState()` aan te roepen met de nieuwe input waarde en de huidige schaal van de input die we zojuist hebben bewerkt.
-* React roept de `render` methode van `Calculator` aan om te leren hoe de gebruiksersinterface eruit moet zien.
-De waarden van beide inputs worden opnieuw berekend op basis van de huidige temperatuur en de actieve schaal.
-De temperatuurconversie wordt hier uitgevoerd.
-* React roept de `render` methoden aan van de individuele `TemperatureInput` componenten met hun nieuwe props gespecificeerd door de `Calculator`.
-Het leert hoe hun gebruikersinterface eruit moet zien.
+* React roept de `render` methode van `Calculator` aan om te leren hoe de gebruiksersinterface eruit moet zien. De waarden van beide inputs worden opnieuw berekend op basis van de huidige temperatuur en de actieve schaal. De temperatuurconversie wordt hier uitgevoerd.
+* React roept de `render` methoden aan van de individuele `TemperatureInput` componenten met hun nieuwe props gespecificeerd door de `Calculator`. Het leert hoe hun gebruikersinterface eruit moet zien.
 * React roept de `render` methode van de `BoilingVerdict` component aan, waarbij de temperatuur in Celsius als prop wordt doorgegeven.
-* React DOM werkt de DOM bij met het boiling verdict en zodat de gewenste input waarden getoond worden.
-De input die we zojuist hebben bewerkt, ontvangt de huidige waarde en de andere input wordt bijgewerkt naar de temperatuur na de conversie.
+* React DOM werkt de DOM bij met het boiling verdict en zodat de gewenste input waarden getoond worden. De input die we zojuist hebben bewerkt, ontvangt de huidige waarde en de andere input wordt bijgewerkt naar de temperatuur na de conversie.
 
 Elke update gaat door deze zelfde stappen zodat de inputs gesynchroniseerd blijven.
 
@@ -364,7 +357,6 @@ Bijvoorbeeld, in plaats van zowel `celsiusValue` als `fahrenheitValue` op te sla
 De waarde van de andere input kan altijd worden berekend met de `render()` methode.
 Dit laat ons toe om afronding op het andere veld aan en uit te zetten zonder enige precisie van de gebruikersinvoer te verliezen.
 
-Wanneer je iets verkeerd ziet in de gebruikersinterface, kun je [React Developer Tools](https://github.com/facebook/react-devtools) gebruiken om props te inspecteren en omhoog te gaan doorheen de boomstructuur totdat je de component vindt die verantwoordelijk is voor het bijwerken van de staat.
-Hiermee kun je de bugs naar hun bron traceren:
+Wanneer je iets verkeerd ziet in de gebruikersinterface, kun je [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) gebruiken om props te inspecteren en omhoog te gaan doorheen de boomstructuur totdat je de component vindt die verantwoordelijk is voor het bijwerken van de staat. Hiermee kun je de bugs naar hun bron traceren:
 
 <img src="../images/docs/react-devtools-state.gif" alt="Staat Controleren in React DevTools" max-width="100%" height="100%">
