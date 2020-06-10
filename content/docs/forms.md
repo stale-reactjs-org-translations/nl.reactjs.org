@@ -68,7 +68,7 @@ class NameForm extends React.Component {
 
 Aangezien het `value` attribuut gezet is op ons form element, zal de weergegeven waarde altijd `this.state.value` zijn, waarbij de React state de enkele bron van waarheid is. Aangezien `handleChange` loopt bij elke toetsaanslag om de React state bij te werken, zal de weergegeven waarde bijgewerkt worden wanneer de gebruiker typt.
 
-Met een controlled component wordt de waarde van de input altijd aangestuurd door de React state. Hoewel het inhoudt dat je wat meer code in moet typen, kun je de waarde nu ook aan andere UI-elementen doorgeven, of hem resetten vanuit andere event handlers.
+Met een controlled component wordt de waarde van de input altijd aangestuurd door de React state. Hoewel het inhoudt dat je iets meer code moet intypen, kun je de waarde nu ook aan andere UI-elementen doorgeven, of hem resetten vanuit andere event handlers.
 
 ## De textarea Tag {#the-textarea-tag}
 
