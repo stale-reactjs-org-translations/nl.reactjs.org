@@ -47,9 +47,9 @@ function WelcomeDialog() {
 
 **[Probeer het op CodePen](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
 
-Eender wat binnen de `<FancyBorder>` JSX tag staat zal doorgegevn worden in de `FancyBorder` component als een `children` prop. Aangezien `FancyBorder` `{props.children}` rendert binnen een `<div>` zullen de doorgegevn elementen verschijnen in de finale uitvoer.
+Iets wat binnen de `<FancyBorder>` JSX tag staat wordt doorgegeven aan het `FancyBorder` component als een `children` prop. Aangezien `FancyBorder` `{props.children}` rendert binnen een `<div>`, zullen de doorgegeven elementen verschijnen in de uiteindelijke uitvoer.
 
-Alhoewel het minder gebruikelijk is, soms moet je meerdere "gaten" in een component hebben. In zulke gevallen mag je je eigen conventie hanteren in de plaats van `children`:
+Alhoewel het minder gebruikelijk is, kan je soms meerdere "gaten" in een component nodig hebben. In zulke gevallen mag je je eigen conventie bedenken in de plaats van `children`:
 
 ```js{5,8,18,21}
 function SplitPane(props) {
@@ -80,7 +80,7 @@ function App() {
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
 
-React elementen zoals `<Contacts />` en `<Chat />` zijn maar objecten, dus je kan ze als props doorgeven zoals alle andere gegevens. Deze aanpak kan je van in andere bibliotheken bekend voorkomen als "slots" maar in React zijn er geen beperkingen met betrekking tot wat je als props kunt doorgeven.
+React elementen zoals `<Contacts />` en `<Chat />` zijn maar objecten, dus je kunt ze als props doorgeven zoals willekeurige andere gegevens. Deze aanpak kan je bekend voorkomen uit andere bibliotheken als "slots", maar in React zijn er geen beperkingen met betrekking tot wat je als props kunt doorgeven.
 
 ## Specializatie {#specialization}
 
