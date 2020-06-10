@@ -24,8 +24,7 @@ function BoilingVerdict(props) {
 }
 ```
 
-Vervolgens zullen we een component genaamd `Calculator` maken.
-Het rendert een `<input>` waar je de temperatuur kunt invoeren en houdt deze waarde bij in `this.state.temperature`.
+Vervolgens zullen we een component genaamd `Calculator` maken. Het rendert een `<input>` waar je de temperatuur kunt invoeren en houdt deze waarde bij in `this.state.temperature`.
 
 Daarnaast rendert het de `BiolingVerdict` voor de huidige invoerwaarde.
 
