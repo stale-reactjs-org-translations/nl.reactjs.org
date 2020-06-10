@@ -112,7 +112,7 @@
     - id: hooks-intro
       title: Introductie tot Hooks
     - id: hooks-overview
-      title: Hooks at a Glance
+      title: Hooks een Overzicht
     - id: hooks-state
       title: Using the State Hook
     - id: hooks-effect
