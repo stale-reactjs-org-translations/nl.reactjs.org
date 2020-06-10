@@ -132,7 +132,7 @@ const todoItems = todos.map((todo, index) =>
 
 We raden het af om indices als keys te gebruiken als de volgorde van elementen kan veranderen, omdat dit een negatieve invloed heeft op de performance en problemen met de component state kan veroorzaken. Lees Robin Pokornys artikel voor een [diepgaande uitleg van de negatieve effecten van het gebruik van een index als key (Engels)](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318). Als je er voor kiest om geen expliciete key aan lijst elementen te geven gebruikt React standaard de indices als keys.
 
-Als je er meer over wilt leren, vind je hier een [diepgaande uitleg waarom keys nodig zijn](/docs/reconciliation.html#recursing-on-children).
+Als je er meer over wilt leren, vind je hier een [diepgaande uitleg waarom keys nodig zijn (Engels)](/docs/reconciliation.html#recursing-on-children).
 
 ### Componenten met Keys Extraheren {#extracting-components-with-keys}
 
