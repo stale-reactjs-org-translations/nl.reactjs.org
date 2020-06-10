@@ -8,7 +8,7 @@ next: forms.html
 
 Laten we allereerst bekijken hoe je lijsten transformeert in JavaScript.
 
-In de code hieronder gebruiken we de [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie op een array van `numbers` waarmee hun waarde wordt verdubbeld. De nieuwe array die door `map()` wordt teruggegeven wijzen we toe aan de variabele `doubled` waarna deze wordt gelogd:
+In de code hieronder gebruiken we de functie [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) op een lijst van `numbers` waarmee hun waarde wordt verdubbeld. De nieuwe lijst, die door `map()` wordt teruggegeven, wijzen we toe aan de variabele `doubled` waarna deze wordt gelogd:
 
 ```javascript{2}
 const numbers = [1, 2, 3, 4, 5];
@@ -24,7 +24,7 @@ In React is het transformeren van arrays naar lijsten van [elementen](/docs/rend
 
 Je kunt collecties van elementen maken en [in JSX opnemen](/docs/introducing-jsx.html#embedding-expressions-in-jsx) met behulp van accolades `{}`.
 
-Hieronder doorlopen we de array van `numbers` gebruik makende van de JavaScript [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map) functie. Voor ieder item geven we een `<li>`-element terug. Ten slotte wijzen we de array van elementen toe aan `listItems`:
+Hieronder doorlopen we de lijst met `numbers` gebruik makende van de JavaScript funtie [`map()` (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/map). Voor ieder item geven we een `<li>`-element terug. Ten slotte wijzen we de lijst van elementen toe aan `listItems`:
 
 ```javascript{2-4}
 const numbers = [1, 2, 3, 4, 5];
@@ -33,7 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-We nemen de hele `listItems` array op in een `<ul>`-element en [renderen het naar het DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+We nemen de hele `listItems`-lijst op in een `<ul>`-element en [renderen het naar het DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
 ReactDOM.render(
@@ -50,7 +50,7 @@ Deze code toont een lijst met opsommingstekens met nummers van 1 tot en met 5.
 
 Het is gebruikelijk om lijsten in een [component](/docs/components-and-props.html) te renderen.
 
-We kunnen het vorige voorbeeld omschrijven naar een component die een array van `numbers` aanneemt en een lijst van elementen teruggeeft.
+We kunnen het vorige voorbeeld omschrijven naar een component die een lijst van `numbers` aanneemt en een lijst van elementen teruggeeft.
 
 ```javascript{3-5,7,13}
 function NumberList(props) {
@@ -70,7 +70,7 @@ ReactDOM.render(
 );
 ```
 
-Als je deze code uitvoert, krijg je een waarschuwing dat een "key" nodig is voor lijst elementen. Een "key" is een speciaal text attribuut dat je moet toevoegen als je lijsten van elementen maakt. In de volgende sectie zullen we uitleggen waarom dat belangrijk is.
+Als je deze code uitvoert, krijg je een waarschuwing dat een sleutel ("key") nodig is voor lijst elementen. Een "key" is een speciaal tekst-attribuut dat je moet toevoegen als je lijsten van elementen maakt. In de volgende sectie zullen we uitleggen waarom dat belangrijk is.
 
 Laten we een `key` toevoegen aan onze lijst elementen in `numbers.map()` en daarmee het probleem dat deze ontbreken oplossen.
 
@@ -98,7 +98,7 @@ ReactDOM.render(
 
 ## Keys {#keys}
 
-Keys helpen React om te identificeren welke elementen zijn veranderd, toegevoegd of verwijderd. Aan de elementen in een array zullen keys toegewezen moeten worden om ze een stabiele identiteit te geven:
+Keys helpen React om te identificeren welke elementen zijn veranderd, toegevoegd of verwijderd. Aan de elementen in een lijst zullen keys toegewezen moeten worden om ze een stabiele identiteit te geven:
 
 ```js{3}
 const numbers = [1, 2, 3, 4, 5];
@@ -109,7 +109,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-De beste keuze voor een key is een string die het item op unieke wijze identificeert in de lijst. Meestal zul je hier IDs uit je data voor gebruiken:
+De beste keuze voor een key is een `string` die het item op unieke wijze identificeert in de lijst. Meestal zul je hier ID's uit je data voor gebruiken:
 
 ```js{2}
 const todoItems = todos.map((todo) =>
@@ -119,7 +119,7 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-Als je geen stabiele IDs hebt voor gerenderde items, kun je als laatste redmiddel ook de index van het element in de lijst als key gebruiken:
+Als je geen stabiele ID's hebt voor gerenderde items, kun je als laatste redmiddel ook de index van het element in de lijst als key gebruiken:
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
@@ -136,9 +136,9 @@ Als je er meer over wilt leren, vind je hier een [diepgaande uitleg waarom keys 
 
 ### Componenten met Keys Extraheren {#extracting-components-with-keys}
 
-Keys zijn alleen logisch in de context van de omliggende array.
+Keys zijn alleen logisch in de context van de omliggende lijst.
 
-Als je bijvoorbeeld een `ListItem` component wilt [extraheren](/docs/components-and-props.html#extracting-components), moet je de key op de `<ListItem />` elementen in de array houden en niet op het `<li>` element in het `ListItem` zelf.
+Als je bijvoorbeeld een `ListItem`-component wilt [extraheren](/docs/components-and-props.html#extracting-components), moet je de key op de `<ListItem />`-elementen in de lijst zetten en niet op het `<li>`-element in het `ListItem` zelf.
 
 **Voorbeeld: Foutief Gebruik van Keys**
 
@@ -207,7 +207,7 @@ Een goede vuistregel is dat de elementen binnen een `map()` aanroep keys nodig h
 
 ### Keys Moeten Alleen Uniek Zijn ten Opzichte van Siblings {#keys-must-only-be-unique-among-siblings}
 
-Keys die in arrays gebruikt worden moeten uniek zijn ten op zichte van hun siblings. Ze hoeven echter niet uniek te zijn in de hele applicatie. We kunnen dezelfde keys gebruiken als we twee verschillende arrays maken:
+Keys die in lijsten gebruikt worden moeten uniek zijn ten op zichte van hun siblings. Ze hoeven echter niet uniek te zijn in de hele applicatie. We kunnen dezelfde keys gebruiken als we twee verschillende lijsten maken:
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -258,11 +258,11 @@ const content = posts.map((post) =>
 );
 ```
 
-In het voorbeeld hierboven kan de `Post` component `props.id` lezen, maar `props.key` niet.
+In het voorbeeld hierboven kan de `Post`-component `props.id` lezen, maar `props.key` niet.
 
 ### Map() Gebruiken in JSX {#embedding-map-in-jsx}
 
-In de eerdere voorbeelden maakten we een aparte `listItems` variabele die we in JSX gebruikten:
+In de eerdere voorbeelden maakten we een aparte `listItems`-variabele die we in JSX gebruikten:
 
 ```js{3-6}
 function NumberList(props) {
@@ -279,7 +279,7 @@ function NumberList(props) {
 }
 ```
 
-JSX staat [het inbedden van elke expressie](/docs/introducing-jsx.html#embedding-expressions-in-jsx) toe tussen accolades, dus we zouden het `map()` resultaat ook direct kunnen gebruiken:
+JSX staat [het inbedden van elke expressie](/docs/introducing-jsx.html#embedding-expressions-in-jsx) toe tussen accolades, dus we zouden het `map()`-resultaat ook direct kunnen gebruiken:
 
 ```js{5-8}
 function NumberList(props) {
