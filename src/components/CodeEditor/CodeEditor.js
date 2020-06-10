@@ -62,12 +62,12 @@ class CodeEditor extends Component {
     if (showBabelErrorMessage) {
       errorMessage = (
         <span>
-          Babel could not be loaded.
+          Babel kon niet worden geladen.
           <br />
           <br />
-          This can be caused by an ad blocker. If you're using one, consider
-          adding reactjs.org to the whitelist so the live code examples will
-          work.
+          Dit kan worden veroorzaakt door een ad blocker. Als je er een
+          gebruikt, overweeg dan reactjs.org toe te voegen aan de whitelist
+          zodat de live code voorbeelden zullen werken.
         </span>
       );
     } else if (error != null) {
@@ -175,7 +175,7 @@ class CodeEditor extends Component {
                   cssProps={{
                     color: colors.white,
                   }}>
-                  Error
+                  Fout
                 </MetaTitle>
               </div>
               <pre
@@ -206,7 +206,7 @@ class CodeEditor extends Component {
                   padding: '0 10px',
                   backgroundColor: colors.divider,
                 }}>
-                <MetaTitle>Result</MetaTitle>
+                <MetaTitle>Resultaat</MetaTitle>
               </div>
               <div
                 id={containerNodeID}
