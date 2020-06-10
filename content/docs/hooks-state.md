@@ -275,3 +275,7 @@ We geven meer aanbevelingen over het splitsen van onafhankelijke state variabele
 ## Volgende Stappen {#next-steps}
 
 Op deze pagina hebben we geleerd over een van de Hooks die React bied: `useState`. We zullen er soms ook naar verwijzen als de "State Hook". Het laat ons lokale state toevoegen aan React functie componenten -- wat we nu voor de eerste keer gedaan hebben!
+
+We hebben ook een beetje meer geleerd over wat Hooks zijn. Hooks zijn functies die je laten "aanhaken" ("hook into") op React voorzieningen van functie componenten. Hun namen beginnen altijd met `use`, en er zijn meer Hooks die we nog niet hebben gezien.	
+
+**Laten we doorgaan door [de volgende Hook te leren: `useEffect`.](/docs/hooks-effect.html)** Het laat je neveneffecten uitvoeren in componenten en is vergelijkbaar met lifecycle methoden in classes.
