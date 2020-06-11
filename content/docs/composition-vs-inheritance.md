@@ -8,15 +8,15 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
-React heeft een krachtig compositie model, en we bevelen aan om compositie te gebruiken in plaats van overerving om code voor meer componenten te hergebruiken.
+React heeft een krachtig compositie-model, en we bevelen aan om compositie te gebruiken in plaats van overerving om code voor meer componenten te hergebruiken.
 
-In dit hoofdstuk zullen we een paar problemen beschouwen waarbij ontwikkelaars die beginnend zijn met React vaak grijpen naar overerving, en laten we zien hoe we ze kunnen oplossen met compositie.
+In dit hoofdstuk zullen we een paar problemen beschouwen waarbij ontwikkelaars, die beginnend zijn met React, vaak grijpen naar overerving, en laten we zien hoe we ze kunnen oplossen met compositie.
 
 ## Insluiting {#containment}
 
 Sommige componenten weten niet op voorhand wie hun kinderen worden. Dit is vooral gebruikelijk bij componenten zoals `Sidebar` of `Dialog` die generieke "boxes" vertegenwoordigen.
 
-We raden aan dat zulke componenten de speciale `children` prop gebruiken om child elementen rechtstreeks naar hun uitvoer door te geven:
+We raden aan dat zulke componenten de speciale `children` prop gebruiken om child-elementen rechtstreeks naar hun uitvoer door te geven:
 
 ```js{4}
 function FancyBorder(props) {
@@ -35,10 +35,10 @@ function WelcomeDialog() {
   return (
     <FancyBorder color="blue">
       <h1 className="Dialog-title">
-        Welcome
+        Welkom
       </h1>
       <p className="Dialog-message">
-        Thank you for visiting our spacecraft!
+        Bedankt voor uw bezoek aan ons ruimteschip!
       </p>
     </FancyBorder>
   );
@@ -47,7 +47,7 @@ function WelcomeDialog() {
 
 **[Probeer het op CodePen](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
 
-Eender wat binnen de `<FancyBorder>` JSX tag staat zal doorgegevn worden in de `FancyBorder` component als een `children` prop. Aangezien `FancyBorder` `{props.children}` rendert binnen een `<div>` zullen de doorgegevn elementen verschijnen in de finale uitvoer.
+Wat er ook binnen de `<FancyBorder>`-JSX-tag staat, het zal doorgegeven worden aan de `FancyBorder`-component als een `children`-prop. Aangezien `FancyBorder` `{props.children}` rendert binnen een `<div>` zullen de doorgegeven elementen verschijnen in de uiteindelijke uitvoer.
 
 Alhoewel het minder gebruikelijk is, soms moet je meerdere "gaten" in een component hebben. In zulke gevallen mag je je eigen conventie hanteren in de plaats van `children`:
 
@@ -80,9 +80,9 @@ function App() {
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
 
-React elementen zoals `<Contacts />` en `<Chat />` zijn maar objecten, dus je kan ze als props doorgeven zoals alle andere gegevens. Deze aanpak kan je van in andere bibliotheken bekend voorkomen als "slots" maar in React zijn er geen beperkingen met betrekking tot wat je als props kunt doorgeven.
+React elementen zoals `<Contacts />` en `<Chat />` zijn gewoon objecten, dus je kan ze als props doorgeven zoals alle andere gegevens. Deze aanpak kan je van in andere bibliotheken bekend voorkomen als "slots", maar in React zijn er geen beperkingen met betrekking tot wat je als props kunt doorgeven.
 
-## Specializatie {#specialization}
+## Specialisatie {#specialization}
 
 Soms denken we over componenten als "speciale gevallen" van andere componenten. Bijvoorbeeld, we zouden kunnen zeggen dat een `WelcomeDialog` een speciaal geval van `Dialog` is.
 
@@ -105,8 +105,8 @@ function Dialog(props) {
 function WelcomeDialog() {
   return (
     <Dialog
-      title="Welcome"
-      message="Thank you for visiting our spacecraft!" />
+      title="Welkom"
+      message="Bedankt voor uw bezoek aan ons ruimteschip!" />
   );
 }
 ```
@@ -140,12 +140,12 @@ class SignUpDialog extends React.Component {
 
   render() {
     return (
-      <Dialog title="Mars Exploration Program"
-              message="How should we refer to you?">
+      <Dialog title="Mars Verkenningsprogramma"
+              message="Hoe moeten we u noemen?">
         <input value={this.state.login}
                onChange={this.handleChange} />
         <button onClick={this.handleSignUp}>
-          Sign Me Up!
+          Meld Me Aan!
         </button>
       </Dialog>
     );
@@ -156,17 +156,17 @@ class SignUpDialog extends React.Component {
   }
 
   handleSignUp() {
-    alert(`Welcome aboard, ${this.state.login}!`);
+    alert(`Welkom aan boord, ${this.state.login}!`);
   }
 }
 ```
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
-## Dus Hoe Zit Het Met Overerving? {#so-what-about-inheritance}
+## Dus Hoe Zit het met Overerving? {#so-what-about-inheritance}
 
-Bij Facebook gebruiken we React in duizenden componenten en we hebben nog geen enkel geval gevonden waar we zouden aanraden om een componenten hierarchie met overerving te gebruiken.
+Bij Facebook gebruiken we React in duizenden componenten en we hebben nog geen enkel geval gevonden waar we zouden aanraden om een componenten hiërarchie met overerving te gebruiken.
 
 Props en compositie geven je alle flexibiliteit die je nodig hebt om het uiterlijk en het gedrag van een component aan te passen op een expliciete en veilige manier. Onthoud dat componenten willekeurige props kunnen aannemen, waaronder primitieve waarden, React elementen of functies.
 
-Als je niet-UI-functionaliteit wil herbruiken voor meer componenten, raden we aan om die er uit te halen naar een aparte JavaScript module. De componenten kunnen de functie, object of class importeren en gebruiken, zonder hem uit te breiden.
+Als je niet-UI-functionaliteit wil herbruiken voor meer componenten, raden we aan om die er uit te halen naar een aparte JavaScript module. De componenten kunnen de functie, het object of de class importeren en gebruiken zonder hem uit te breiden.
