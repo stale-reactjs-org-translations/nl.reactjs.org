@@ -122,7 +122,11 @@ Hoewel het verklaren van een variabele en het gebruiken van een `if` instructie 
 
 ### Inline If Met Logische && Operator {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten. Hieronder valt ook de logische `&&`-operator uit JavaScript, waarmee je handig een element conditioneel kunt renderen.
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> 1becaff62ae228d909b83ef6d08f48c01660300f
 
 ```js{6-10}
 function Mailbox(props) {
