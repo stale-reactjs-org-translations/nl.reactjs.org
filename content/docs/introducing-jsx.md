@@ -181,4 +181,8 @@ We zullen het renderen van React elementen naar het DOM in het [volgende hoofdst
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> ed88a240d9c97822cc2f02074306965a1a4f4ac4
