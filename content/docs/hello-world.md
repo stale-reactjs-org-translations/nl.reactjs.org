@@ -40,8 +40,12 @@ React is een JavaScript library en dus zullen we aannemen dat je een basisbegrip
 
 >Opmerking
 >
+<<<<<<< HEAD
 >Deze gids gebruikt af en toe wat van de nieuwere JavaScript syntax in de voorbeelden.
 Als je in de laatste paar jaar niet met JavaScript hebt gewerkt, zouden [deze drie aandachtspunten (Engels)](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) je op weg moeten helpen.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> a11c2534062bd79cc1e6e34db0e149f928df35bb
 
 ## Laten We Beginnen! {#lets-get-started}
 
