@@ -29,32 +29,40 @@ verschilt lichtelijk in React:
 </button>
 ```
 
+<<<<<<< HEAD
 Een ander verschil is dat je `false` niet kan teruggeven om standaard gedrag te voorkomen in React. Je moet `preventDefault` expliciet aanroepen. In eenvoudige HTML kun je bijvoorbeeld, om de standaard manier waarop links in een nieuwe pagina worden geopend te voorkomen, schrijven:
+=======
+Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default form behavior of submitting, you can write:
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 ```html
-<a href="#" onclick="console.log('The link was clicked.'); return false">
-  Click me
-</a>
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
 ```
 
 In React zou dit het volgende kunnen zijn:
 
-```js{2-5,8}
-function ActionLink() {
-  function handleClick(e) {
+```js{3}
+function Form() {
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
+    console.log('You clicked submit.');
   }
 
   return (
-    <a href="#" onClick={handleClick}>
-      Click me
-    </a>
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 ```
 
+<<<<<<< HEAD
 Hier is `e` een synthetisch event. React definieert deze synthetische events volgens de [W3C-specificatie (Engels)](https://www.w3.org/TR/DOM-Level-3-Events/), zodat je je geen zorgen hoeft te maken over cross-browser compatibiliteit. Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie.
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 Wanneer je React gebruikt, hoef je over het algemeen `addEventListener` niet aan te roepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt. Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
 
@@ -71,8 +79,8 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
     }));
   }
 

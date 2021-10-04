@@ -98,7 +98,11 @@ We weten dat React developers gefocused zijn op producten maken en niet de tijd 
 
 We begrijpen ook dat de lat voor het toevoegen van een nieuw principe aan React extreem hoog ligt. Voor nieuwsgierige lezers hebben we een [uitgebreide RFC (Engels)](https://github.com/reactjs/rfcs/pull/68) gemaakt die in meer detail duikt in de motivatie, en extra perspectief biedt op de specifieke ontwerpbeslissingen en stand van de techniek.
 
+<<<<<<< HEAD
 **Belangrijker, Hooks werken zij-aan-zij met bestaande code, dus kun je ze geleidelijk adopteren.** Er is geen haast om te mirgeren naar Hooks. We raden aan om "groot herschrijven" te voorkomen, vooral voor bestaande, complexe class componenten. Er is een kleine omslag nodig om te gaan "denken in Hooks". Onze ervaring leert, dat de beste manier is om Hooks eerst te gebruiken in niet-kritische componenten, en zeker te stellen dat iedereen in je team zich er comfortabel mee voelt. Voel je vrij om, nadat je Hooks hebt uitgeprobeert, [ons feedback te sturen (Engels)](https://github.com/facebook/react/issues/new), positief of negatief.
+=======
+**Crucially, Hooks work side-by-side with existing code so you can adopt them gradually.** There is no rush to migrate to Hooks. We recommend avoiding any "big rewrites", especially for existing, complex class components. It takes a bit of a mind shift to start "thinking in Hooks". In our experience, it's best to practice using Hooks in new and non-critical components first, and ensure that everybody on your team feels comfortable with them. After you give Hooks a try, please feel free to [send us feedback](https://github.com/facebook/react/issues/new), positive or negative.
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 Onze intentie is dat Hooks alle bestaande use cases van classes overlappen, maar **we zullen class componenten blijven ondersteunen in de voorzienbare toekomst.** Bij Facebook, hebben we tienduizenden componenten geschreven als classes, en we hebben absoluut geen plannen die te herschrijven. In plaats daarvan, beginnen we Hooks te gebruiken in nieuwe code zij-aan-zij met classes.
 
