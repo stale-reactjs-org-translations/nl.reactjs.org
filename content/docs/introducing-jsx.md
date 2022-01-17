@@ -92,7 +92,7 @@ function getGreeting(user) {
 Je kunt aanhalingstekens gebruiken om string literals als attributen te specificeren:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Je kunt ook accolades gebruiken om een JavaScript expressie in een attribuut te plaatsen:
@@ -181,4 +181,8 @@ We zullen het renderen van React elementen naar het DOM in het [volgende hoofdst
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> b9c33a05520ddc728f15c4eb19a343213309f59f
