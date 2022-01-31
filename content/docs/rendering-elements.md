@@ -38,7 +38,11 @@ Om een React element in de root DOM node te renderen, geef je beide door aan [`R
 
 `embed:rendering-elements/render-an-element.js`
 
+<<<<<<< HEAD
 [Probeer het op Codepen](codepen://rendering-elements/render-an-element)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 Dit zal "Hello, world" op de pagina tonen.
 
@@ -52,7 +56,11 @@ Neem dit voorbeeld van een tikkende klok:
 
 `embed:rendering-elements/update-rendered-element.js`
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://rendering-elements/update-rendered-element)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 Hierin wordt [`ReactDOM.render() (Engels)`](/docs/react-dom.html#render) elke seconde aangeroepen via een [`setInterval()` (Engels)](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
 
@@ -66,7 +74,11 @@ Hierin wordt [`ReactDOM.render() (Engels)`](/docs/react-dom.html#render) elke se
 
 Het React DOM vergelijkt het element en zijn children met het vorige element en voert alleen de wijzigingen in het DOM uit die nodig zijn om deze in de gewenste staat te krijgen.
 
+<<<<<<< HEAD
 Je kunt dit zien door met de browser tools het [laatste voorbeeld](codepen://rendering-elements/update-rendered-element)  te inspecteren:
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 ![DOM inspector toont granulaire updates](../images/docs/granular-dom-updates.gif)
 
