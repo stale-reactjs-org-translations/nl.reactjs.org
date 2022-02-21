@@ -122,7 +122,11 @@ Hoewel het verklaren van een variabele en het gebruiken van een `if` instructie 
 
 ### Inline If Met Logische && Operator {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten. Hieronder valt ook de logische `&&`-operator uit JavaScript, waarmee je handig een element conditioneel kunt renderen.
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> 2310e15532aba273d713996a4c6ef04247dff764
 
 ```js{6-10}
 function Mailbox(props) {
@@ -152,7 +156,24 @@ Dit werkt omdat in JavaScript `true && expression` altijd evalueert naar `expres
 
 Hierdoor verschijnt, als de conditie `true` is, het element meteen na `&&` in de uitvoer. Als ze `false` is, zal React ze negeren en overslaan.
 
+<<<<<<< HEAD
 ### Inline If-Else Met Conditionele Operator {#inline-if-else-with-conditional-operator}
+=======
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      { count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+
+### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+>>>>>>> 2310e15532aba273d713996a4c6ef04247dff764
 
 Een andere methode voor het inline conditioneel renderen van elementen is het gebruik van JavaScript's conditionele operator [`condition ? true : false`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
