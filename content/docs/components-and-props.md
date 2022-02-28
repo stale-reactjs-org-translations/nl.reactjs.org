@@ -76,7 +76,11 @@ ReactDOM.render(
 );
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/rendering-a-component)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
+>>>>>>> 6bd09fe682e18ccd7747fcd7798fa8fb4d3edc42
 
 Laten we samenvatten wat er gebeurt in dit voorbeeld:
 
@@ -118,7 +122,11 @@ ReactDOM.render(
 );
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/composing-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
+>>>>>>> 6bd09fe682e18ccd7747fcd7798fa8fb4d3edc42
 
 Normaal gesproken hebben React applicaties helemaal bovenin een enkele `App` component. Als je React echter integreert in een bestaande applicatie, kan het zijn dat je van onderaf begint met een kleine component, zoals een `Button`, en dan langzaam naar boven werkt in de view hiërarchie.
 
@@ -152,7 +160,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/extracting-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
+>>>>>>> 6bd09fe682e18ccd7747fcd7798fa8fb4d3edc42
 
 Het accepteert `author` (een object), `text` (een string) en `date` (een datum) als props en beschrijft een reactie op een social media website.
 
@@ -231,7 +243,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/extracting-components-continued)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
+>>>>>>> 6bd09fe682e18ccd7747fcd7798fa8fb4d3edc42
 
 Componenten extraheren lijkt misschien zwaar werk in het begin, maar een palet van herbruikbare componenten is de moeite waard in grotere applicaties. Een goede vuistregel is: als een deel van je UI vaker gebruikt wordt (`Button`, `Panel`, `Avatar`) of complex genoeg is van zichzelf (`App`, `FeedStory`, `Comment`), dan is het een goede kandidaat om te extraheren naar een herbruikbare component.
 
