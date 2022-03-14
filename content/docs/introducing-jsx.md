@@ -68,7 +68,11 @@ ReactDOM.render(
 );
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://introducing-jsx)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
+>>>>>>> 7994045415a9066f8663ee5403e874edbb4c5f83
 
 We verspreiden JSX over meerdere regels om het leesbaar te houden. Hoewel het niet vereist is, bevelen we aan om er haakjes omheen te zetten als je JSX over meerdere regels schrijft. Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging (Engels)](https://stackoverflow.com/q/2846283).
 
@@ -92,7 +96,7 @@ function getGreeting(user) {
 Je kunt aanhalingstekens gebruiken om string literals als attributen te specificeren:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Je kunt ook accolades gebruiken om een JavaScript expressie in een attribuut te plaatsen:
@@ -181,4 +185,8 @@ We zullen het renderen van React elementen naar het DOM in het [volgende hoofdst
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 7994045415a9066f8663ee5403e874edbb4c5f83
