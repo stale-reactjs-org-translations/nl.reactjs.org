@@ -64,26 +64,35 @@ Als React een element ziet dat een door de gebruiker gedefinieerd component voor
 
 Deze code toont bijvoorbeeld "Hello, Sara" op de pagina:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const element = <Welcome name="Sara" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+root.render(element);
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/rendering-a-component)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
+>>>>>>> 26caa649827e8f8cadd24dfc420ea802dcbee246
 
 Laten we samenvatten wat er gebeurt in dit voorbeeld:
 
+<<<<<<< HEAD
 1. We roepen `ReactDOM.render() aan met het `<Welcome name="Sara" />` element.
 2. React roept het `Welcome` component aan met `{name: 'Sara'}` als de props.
 3. Onze `Welcome` component geeft een `<h1>Hello, Sara</h1>` element terug als resultaat.
 4. Het React DOM werkt efficiënt het DOM bij zodat het `<h1>Hello, Sara</h1>` bevat.
+=======
+1. We call `root.render()` with the `<Welcome name="Sara" />` element.
+2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
+3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
+4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+>>>>>>> 26caa649827e8f8cadd24dfc420ea802dcbee246
 
 >**Opmerking:** Begin component namen altijd met een hoofdletter.
 >
@@ -111,14 +120,13 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/composing-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
+>>>>>>> 26caa649827e8f8cadd24dfc420ea802dcbee246
 
 Normaal gesproken hebben React applicaties helemaal bovenin een enkele `App` component. Als je React echter integreert in een bestaande applicatie, kan het zijn dat je van onderaf begint met een kleine component, zoals een `Button`, en dan langzaam naar boven werkt in de view hiërarchie.
 
@@ -152,7 +160,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/extracting-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
+>>>>>>> 26caa649827e8f8cadd24dfc420ea802dcbee246
 
 Het accepteert `author` (een object), `text` (een string) en `date` (een datum) als props en beschrijft een reactie op een social media website.
 
@@ -231,7 +243,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/extracting-components-continued)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
+>>>>>>> 26caa649827e8f8cadd24dfc420ea802dcbee246
 
 Componenten extraheren lijkt misschien zwaar werk in het begin, maar een palet van herbruikbare componenten is de moeite waard in grotere applicaties. Een goede vuistregel is: als een deel van je UI vaker gebruikt wordt (`Button`, `Panel`, `Avatar`) of complex genoeg is van zichzelf (`App`, `FeedStory`, `Comment`), dan is het een goede kandidaat om te extraheren naar een herbruikbare component.
 
