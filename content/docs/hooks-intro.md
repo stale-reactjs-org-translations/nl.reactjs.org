@@ -31,8 +31,13 @@ De nieuwe functie `useState` is de eerste "Hook" waarover we zullen leren, maar 
 
 >Opmerking
 >
+<<<<<<< HEAD
 >React 16.8.0 is de eerste release die Hooks ondersteunt. Vergeet niet alle packages te updaten wanneer je upgradet, inclusief React DOM. 
 >React Native ondersteunt Hooks sinds [de 0.59 release van React Native (Engels)](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059).
+=======
+>React 16.8.0 is the first release to support Hooks. When upgrading, don't forget to update all packages, including React DOM.
+>React Native has supported Hooks since [the 0.59 release of React Native](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059).
+>>>>>>> 37cf98d075de3133b5ae69fe80fbecb6a742530a
 
 ## Introductievideo {#video-introduction}
 
@@ -80,7 +85,11 @@ We zullen dit verder bespreken in [De Effect Hook](/docs/hooks-effect.html#tip-u
 
 ### Classes verwarren zowel mensen als machines {#classes-confuse-both-people-and-machines}
 
+<<<<<<< HEAD
 Naast het moeilijker maken van hergebruik en organisatie van code hebben we gemerkt dat classes ook een groot obstakel kunnen zijn bij het leren van React. Je moet begrijpen hoe `this` werkt in JavaScript, wat heel afwijkend is van hoe dat werkt in de meeste andere talen. Je moet er aan denken om de event handlers te binden. Zonder instabiele [syntax voorstellen (Engels)](https://babeljs.io/docs/en/babel-plugin-transform-class-properties/) is de code erg breedsprakig. Mensen kunnen props, state en top-down data flow prima begrijpen maar toch worstelen met classes. Het verschil tussen functie- en class componenten in React en wanneer je welke moet gebruiken leidt tot onenigheid, zelfs onder ervaren React developers.
+=======
+In addition to making code reuse and code organization more difficult, we've found that classes can be a large barrier to learning React. You have to understand how `this` works in JavaScript, which is very different from how it works in most languages. You have to remember to bind the event handlers. Without [ES2022 public class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields), the code is very verbose. People can understand props, state, and top-down data flow perfectly well but still struggle with classes. The distinction between function and class components in React and when to use each one leads to disagreements even between experienced React developers.
+>>>>>>> 37cf98d075de3133b5ae69fe80fbecb6a742530a
 
 Daarnaast is React er nu zo'n vijf jaar en willen we ervoor zorgen dat het de volgende vijf jaar relevant blijft. Zoals [Svelte (Engels)](https://svelte.dev/), [Angular (Engels)](https://angular.io/), [Glimmer (Engels)](https://glimmerjs.com/) en anderen laten zien, heeft [ahead-of-time compilation (Engels)](https://en.wikipedia.org/wiki/Ahead-of-time_compilation) van componenten veel toekomstig potentieel. Vooral als dat niet gelimiteerd is tot templates. Recentelijk hebben we geëxperimenteerd met [component folding (Engels)](https://github.com/facebook/react/issues/7323) gebruikmakend van [Prepack (Engels)](https://prepack.io/) en hebben we veelbelovende eerste resultaten gezien. Maar, we vonden dat class componenten onbedoelde patronen kunnen aanmoedigen, waardoor deze optimalisaties terugvallen naar een langzamer pad. Classes geven ook problemen met tools van vandaag de dag. Zo worden classes niet zo goed ge-minified, en maken ze "hot reloading" slordig en onbetrouwbaar. We willen een API presenteren die het aannemelijker maakt dat code op het optimaliseerbare pad blijft.
 
@@ -96,9 +105,15 @@ Om deze problemen op te lossen, **laten Hooks je meer van React's features gebru
 
 We weten dat React developers gefocused zijn op producten maken en niet de tijd hebben om zich te verdiepen in iedere nieuwe API die wordt uitgebracht. Hooks zijn heel nieuw, en het is misschien beter om te wachten op meer voorbeelden en tutorials, voordat je overweegt ze te leren of te gebruiken.
 
+<<<<<<< HEAD
 We begrijpen ook dat de lat voor het toevoegen van een nieuw principe aan React extreem hoog ligt. Voor nieuwsgierige lezers hebben we een [uitgebreide RFC (Engels)](https://github.com/reactjs/rfcs/pull/68) gemaakt die in meer detail duikt in de motivatie, en extra perspectief biedt op de specifieke ontwerpbeslissingen en stand van de techniek.
 
 **Belangrijker, Hooks werken zij-aan-zij met bestaande code, dus kun je ze geleidelijk adopteren.** Er is geen haast om te mirgeren naar Hooks. We raden aan om "groot herschrijven" te voorkomen, vooral voor bestaande, complexe class componenten. Er is een kleine omslag nodig om te gaan "denken in Hooks". Onze ervaring leert, dat de beste manier is om Hooks eerst te gebruiken in niet-kritische componenten, en zeker te stellen dat iedereen in je team zich er comfortabel mee voelt. Voel je vrij om, nadat je Hooks hebt uitgeprobeert, [ons feedback te sturen (Engels)](https://github.com/facebook/react/issues/new), positief of negatief.
+=======
+We also understand that the bar for adding a new primitive to React is extremely high. For curious readers, we have prepared a [detailed RFC](https://github.com/reactjs/rfcs/pull/68) that dives into the motivation with more details, and provides extra perspective on the specific design decisions and related prior art.
+
+**Crucially, Hooks work side-by-side with existing code so you can adopt them gradually.** There is no rush to migrate to Hooks. We recommend avoiding any "big rewrites", especially for existing, complex class components. It takes a bit of a mind shift to start "thinking in Hooks". In our experience, it's best to practice using Hooks in new and non-critical components first, and ensure that everybody on your team feels comfortable with them. After you give Hooks a try, please feel free to [send us feedback](https://github.com/facebook/react/issues/new), positive or negative.
+>>>>>>> 37cf98d075de3133b5ae69fe80fbecb6a742530a
 
 Onze intentie is dat Hooks alle bestaande use cases van classes overlappen, maar **we zullen class componenten blijven ondersteunen in de voorzienbare toekomst.** Bij Facebook, hebben we tienduizenden componenten geschreven als classes, en we hebben absoluut geen plannen die te herschrijven. In plaats daarvan, beginnen we Hooks te gebruiken in nieuwe code zij-aan-zij met classes.
 
