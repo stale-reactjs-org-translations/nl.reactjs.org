@@ -35,11 +35,6 @@ In het onderstaande voorbeeld wijzen we een string toe aan de variabele `name` e
 ```js{1,2}
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
 Je kunt elke geldige [JavaScript expressie (Engels)](https://developer.mozilla.org/nl/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) tussen accolades plaatsen in JSX. Bijvoorbeeld, `2 + 2`, `user.firstName` of `formatName(user)` zijn allemaal valide JavaScript expressies.
@@ -61,14 +56,13 @@ const element = (
     Hello, {formatName(user)}!
   </h1>
 );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://introducing-jsx)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27
 
 We verspreiden JSX over meerdere regels om het leesbaar te houden. Hoewel het niet vereist is, bevelen we aan om er haakjes omheen te zetten als je JSX over meerdere regels schrijft. Hiermee voorkom je de valkuilen van [automatische puntkomma invoeging (Engels)](https://stackoverflow.com/q/2846283).
 
@@ -92,7 +86,7 @@ function getGreeting(user) {
 Je kunt aanhalingstekens gebruiken om string literals als attributen te specificeren:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Je kunt ook accolades gebruiken om een JavaScript expressie in een attribuut te plaatsen:
@@ -181,4 +175,8 @@ We zullen het renderen van React elementen naar het DOM in het [volgende hoofdst
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >We bevelen het je aan om de ["Babel" taal definitie (Engels)](https://babeljs.io/docs/editors) voor je favoriete editor te gebruiken zodat zowel ES6 als JSX code de juiste highlighting heeft. 
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27
