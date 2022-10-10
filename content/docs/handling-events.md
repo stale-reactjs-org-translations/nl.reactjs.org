@@ -29,32 +29,40 @@ verschilt lichtelijk in React:
 </button>
 ```
 
+<<<<<<< HEAD
 Een ander verschil is dat je `false` niet kan teruggeven om standaard gedrag te voorkomen in React. Je moet `preventDefault` expliciet aanroepen. In eenvoudige HTML kun je bijvoorbeeld, om de standaard manier waarop links in een nieuwe pagina worden geopend te voorkomen, schrijven:
+=======
+Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default form behavior of submitting, you can write:
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27
 
 ```html
-<a href="#" onclick="console.log('The link was clicked.'); return false">
-  Click me
-</a>
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
 ```
 
 In React zou dit het volgende kunnen zijn:
 
-```js{2-5,8}
-function ActionLink() {
-  function handleClick(e) {
+```js{3}
+function Form() {
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
+    console.log('You clicked submit.');
   }
 
   return (
-    <a href="#" onClick={handleClick}>
-      Click me
-    </a>
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 ```
 
+<<<<<<< HEAD
 Hier is `e` een synthetisch event. React definieert deze synthetische events volgens de [W3C-specificatie (Engels)](https://www.w3.org/TR/DOM-Level-3-Events/), zodat je je geen zorgen hoeft te maken over cross-browser compatibiliteit. Zie de referentiegids [`SyntheticEvent`](/docs/events.html) voor meer informatie.
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27
 
 Wanneer je React gebruikt, hoef je over het algemeen `addEventListener` niet aan te roepen om listeners toe te voegen aan een DOM-element nadat het is aangemaakt. Voorzie in plaats daarvan alleen een listener wanneer het element voor het eerst wordt gerenderd.
 
@@ -71,8 +79,8 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
     }));
   }
 
@@ -84,11 +92,6 @@ class Toggle extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <Toggle />,
-  document.getElementById('root')
-);
 ```
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
@@ -97,15 +100,18 @@ Je moet voorzichtig zijn met de betekenis van `this` in JSX callbacks. In JavaSc
 
 Dit gedrag is niet specifiek aan React; het is een onderdeel van [hoe functies werken in JavaScript (Engels)](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Over het algemeen, als je verwijst naar een methode zonder `()` erachter, zoals in `onClick = {this.handleClick}`, moet je deze methode binden.
 
+<<<<<<< HEAD
 Als `bind` aanroepen je ergert, zijn er twee manieren om dit te omzeilen. Als je de experimentele [public class fields syntax (Engels)](https://babeljs.io/docs/plugins/transform-class-properties/) gebruikt, kan je class fields gebruiken om callbacks correct te binden:
+=======
+If calling `bind` annoys you, there are two ways you can get around this. You can use [public class fields syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) to correctly bind callbacks:
+>>>>>>> d07016aea812d26c60252a952bff7ae3e70bde27
 
 ```js{2-6}
 class LoggingButton extends React.Component {
   // This syntax ensures `this` is bound within handleClick.
-  // Warning: this is *experimental* syntax.
   handleClick = () => {
     console.log('this is:', this);
-  }
+  };
 
   render() {
     return (
