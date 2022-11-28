@@ -34,11 +34,19 @@ We noemen dit een "root" DOM node omdat alle inhoud van deze node beheerd zal wo
 
 Applicaties die alleen met React gebouwd zijn, hebben meestal een enkele root DOM node. Als je React probeert te integreren in een bestaande applicatie, kun je zoveel geïsoleerde root DOM nodes hebben als je maar wilt.
 
+<<<<<<< HEAD
 Om een React element in de root DOM node te renderen, geef je beide door aan [`ReactDOM.render()`](/docs/react-dom.html#render):
 
 `embed:rendering-elements/render-an-element.js`
 
 [Probeer het op Codepen](codepen://rendering-elements/render-an-element)
+=======
+To render a React element, first pass the DOM element to [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot), then pass the React element to `root.render()`:
+
+`embed:rendering-elements/render-an-element.js`
+
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
+>>>>>>> 1a641bb88e647186f260dd2a8e56f0b083f2e46b
 
 Dit zal "Hello, world" op de pagina tonen.
 
@@ -46,19 +54,33 @@ Dit zal "Hello, world" op de pagina tonen.
 
 React elementen zijn [immutable (Engels)](https://en.wikipedia.org/wiki/Immutable_object) (onveranderlijk). Nadat je een element hebt gemaakt, kun je zijn children of attributen niet meer wijzigen. Een element is als een enkel frame in een film: het vertegenwoordigt de UI op een bepaald moment in de tijd.
 
+<<<<<<< HEAD
 Voor zover we nu weten, kan de UI alleen bijgewerkt worden door een nieuw element te maken en het door te geven aan [`ReactDOM.render()`](/docs/react-dom.html#render).
+=======
+With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `root.render()`.
+>>>>>>> 1a641bb88e647186f260dd2a8e56f0b083f2e46b
 
 Neem dit voorbeeld van een tikkende klok:
 
 `embed:rendering-elements/update-rendered-element.js`
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://rendering-elements/update-rendered-element)
 
 Hierin wordt [`ReactDOM.render() (Engels)`](/docs/react-dom.html#render) elke seconde aangeroepen via een [`setInterval()` (Engels)](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
+
+It calls [`root.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
+>>>>>>> 1a641bb88e647186f260dd2a8e56f0b083f2e46b
 
 >**Opmerking:**
 >
+<<<<<<< HEAD
 >In de praktijk roepen de meeste React apps [`ReactDOM.render()`](/docs/react-dom.html#render) maar één keer aan. In de volgende hoofdstukken zullen we leren hoe code zoals dit voorbeeld ingekapseld worden in [stateful componenten](/docs/state-and-lifecycle.html).
+=======
+>In practice, most React apps only call `root.render()` once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
+>>>>>>> 1a641bb88e647186f260dd2a8e56f0b083f2e46b
 >
 >We raden aan om geen hoofdstukken over te slaan, omdat ze op elkaar voortbouwen.
 
@@ -66,7 +88,11 @@ Hierin wordt [`ReactDOM.render() (Engels)`](/docs/react-dom.html#render) elke se
 
 Het React DOM vergelijkt het element en zijn children met het vorige element en voert alleen de wijzigingen in het DOM uit die nodig zijn om deze in de gewenste staat te krijgen.
 
+<<<<<<< HEAD
 Je kunt dit zien door met de browser tools het [laatste voorbeeld](codepen://rendering-elements/update-rendered-element)  te inspecteren:
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 1a641bb88e647186f260dd2a8e56f0b083f2e46b
 
 ![DOM inspector toont granulaire updates](../images/docs/granular-dom-updates.gif)
 
