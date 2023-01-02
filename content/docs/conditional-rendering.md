@@ -34,11 +34,9 @@ function Greeting(props) {
   return <GuestGreeting />;
 }
 
-ReactDOM.render(
-  // Try changing to isLoggedIn={true}:
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
 ```
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
@@ -110,10 +108,8 @@ class LoginControl extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <LoginControl />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<LoginControl />);
 ```
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
@@ -122,7 +118,11 @@ Hoewel het verklaren van een variabele en het gebruiken van een `if` instructie 
 
 ### Inline If Met Logische && Operator {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 Je kan [alle expressies insluiten in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) door ze in accolades in te sluiten. Hieronder valt ook de logische `&&`-operator uit JavaScript, waarmee je handig een element conditioneel kunt renderen.
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> e77ba1e90338ff18f965c9b94c733b034b3ac18f
 
 ```js{6-10}
 function Mailbox(props) {
@@ -140,10 +140,9 @@ function Mailbox(props) {
 }
 
 const messages = ['React', 'Re: React', 'Re:Re: React'];
-ReactDOM.render(
-  <Mailbox unreadMessages={messages} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Mailbox unreadMessages={messages} />);
 ```
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
@@ -152,7 +151,24 @@ Dit werkt omdat in JavaScript `true && expression` altijd evalueert naar `expres
 
 Hierdoor verschijnt, als de conditie `true` is, het element meteen na `&&` in de uitvoer. Als ze `false` is, zal React ze negeren en overslaan.
 
+<<<<<<< HEAD
 ### Inline If-Else Met Conditionele Operator {#inline-if-else-with-conditional-operator}
+=======
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      {count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+
+### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+>>>>>>> e77ba1e90338ff18f965c9b94c733b034b3ac18f
 
 Een andere methode voor het inline conditioneel renderen van elementen is het gebruik van JavaScript's conditionele operator [`condition ? true : false`](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
@@ -231,10 +247,8 @@ class Page extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Page />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Page />);
 ```
 
 [**Probeer het op CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
