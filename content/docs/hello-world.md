@@ -8,16 +8,18 @@ next: introducing-jsx.html
 
 Het meest eenvoudige React-voorbeeld ziet er zo uit:
 
-```js
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
+```jsx
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<h1>Hello, world!</h1>);
 ```
 
 Het toont een kop met de tekst "Hello, world!" op de pagina.
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://hello-world)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 Klik op de bovenstaande link om een online editor te openen. Voel je vrij om wat aanpassingen te maken en te zien hoe deze de uitkomst beïnvloeden. De meeste pagina's in deze gids hebben dit soort bewerkbare voorbeelden.
 
@@ -40,8 +42,12 @@ React is een JavaScript library en dus zullen we aannemen dat je een basisbegrip
 
 >Opmerking
 >
+<<<<<<< HEAD
 >Deze gids gebruikt af en toe wat van de nieuwere JavaScript syntax in de voorbeelden.
 Als je in de laatste paar jaar niet met JavaScript hebt gewerkt, zouden [deze drie aandachtspunten (Engels)](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) je op weg moeten helpen.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 ## Laten We Beginnen! {#lets-get-started}
 
