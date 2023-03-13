@@ -16,7 +16,20 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
+<<<<<<< HEAD
 Met componenten splits je de UI in onafhankelijke, herbruikbare delen. Ook kun je over elk deel apart nadenken. Deze pagina introduceert het concept van componenten. Je vindt [hier de volledige component API referentie](/docs/react-component.html)
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Your First Component](https://beta.reactjs.org/learn/your-first-component)
+> - [Passing Props to a Component](https://beta.reactjs.org/learn/passing-props-to-a-component)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Conceptueel zijn componenten hetzelfde als JavaScript functies. Ze accepteren willekeurige invoerwaarden (deze noemen we "props") en geven React elementen terug die beschrijven wat er op het scherm moet verschijnen.
 
@@ -64,26 +77,35 @@ Als React een element ziet dat een door de gebruiker gedefinieerd component voor
 
 Deze code toont bijvoorbeeld "Hello, Sara" op de pagina:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const element = <Welcome name="Sara" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+root.render(element);
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/rendering-a-component)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Laten we samenvatten wat er gebeurt in dit voorbeeld:
 
+<<<<<<< HEAD
 1. We roepen `ReactDOM.render() aan met het `<Welcome name="Sara" />` element.
 2. React roept het `Welcome` component aan met `{name: 'Sara'}` als de props.
 3. Onze `Welcome` component geeft een `<h1>Hello, Sara</h1>` element terug als resultaat.
 4. Het React DOM werkt efficiënt het DOM bij zodat het `<h1>Hello, Sara</h1>` bevat.
+=======
+1. We call `root.render()` with the `<Welcome name="Sara" />` element.
+2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
+3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
+4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 >**Opmerking:** Begin component namen altijd met een hoofdletter.
 >
@@ -111,14 +133,13 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/composing-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Normaal gesproken hebben React applicaties helemaal bovenin een enkele `App` component. Als je React echter integreert in een bestaande applicatie, kan het zijn dat je van onderaf begint met een kleine component, zoals een `Button`, en dan langzaam naar boven werkt in de view hiërarchie.
 
@@ -152,7 +173,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/extracting-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Het accepteert `author` (een object), `text` (een string) en `date` (een datum) als props en beschrijft een reactie op een social media website.
 
@@ -231,7 +256,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Probeer het op CodePen](codepen://components-and-props/extracting-components-continued)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Componenten extraheren lijkt misschien zwaar werk in het begin, maar een palet van herbruikbare componenten is de moeite waard in grotere applicaties. Een goede vuistregel is: als een deel van je UI vaker gebruikt wordt (`Button`, `Panel`, `Avatar`) of complex genoeg is van zichzelf (`App`, `FeedStory`, `Comment`), dan is het een goede kandidaat om te extraheren naar een herbruikbare component.
 
